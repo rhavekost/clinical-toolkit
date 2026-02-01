@@ -1,0 +1,40 @@
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.cache
+
+# Environment files (if any secrets used during development)
+.env
+.env.local
+
+# Build outputs (if any)
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Personal notes (not part of project documentation)
+NOTES.md
+TODO.md
+.scratch/

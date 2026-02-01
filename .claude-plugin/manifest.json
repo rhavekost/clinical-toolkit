@@ -1,0 +1,50 @@
+{
+  "name": "clinical-toolkit",
+  "version": "0.1.0",
+  "description": "Claude skill framework for clinical mental health screening, assessment interpretation, and documentation support",
+  "author": "rhavekost",
+  "license": "MIT",
+  "repository": "https://github.com/rhavekost/clinical-toolkit",
+  "skills": [
+    {
+      "name": "depression-screening",
+      "path": "skills/depression-screening/SKILL.md",
+      "description": "Depression screening and assessment using PHQ-9 and PHQ-2 instruments"
+    },
+    {
+      "name": "anxiety-screening",
+      "path": "skills/anxiety-screening/SKILL.md",
+      "description": "Anxiety screening and assessment using GAD-7 and GAD-2 instruments"
+    },
+    {
+      "name": "trauma-screening",
+      "path": "skills/trauma-screening/SKILL.md",
+      "description": "PTSD and trauma screening using PC-PTSD-5 and PCL-5 assessments"
+    },
+    {
+      "name": "substance-screening",
+      "path": "skills/substance-screening/SKILL.md",
+      "description": "Substance use screening using AUDIT-C (alcohol) and DAST-10 (drugs) assessments"
+    },
+    {
+      "name": "suicide-screening",
+      "path": "skills/suicide-screening/SKILL.md",
+      "description": "Suicide risk screening using C-SSRS (Columbia Protocol) and ASQ (Ask Suicide-Screening Questions)"
+    },
+    {
+      "name": "intake-interview",
+      "path": "skills/intake-interview/SKILL.md",
+      "description": "Structured interview guides: HEADSS assessment, biopsychosocial template, safety protocols"
+    },
+    {
+      "name": "treatment-planning",
+      "path": "skills/treatment-planning/SKILL.md",
+      "description": "Treatment planning using SMART goals framework, level of care guidance, measurement-based care"
+    },
+    {
+      "name": "documentation",
+      "path": "skills/documentation/SKILL.md",
+      "description": "Clinical documentation templates: SOAP notes, progress notes, treatment plans"
+    }
+  ]
+}
