@@ -41,11 +41,11 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 
 | Skill | Instruments | Use When | Status |
 |-------|-------------|----------|--------|
-| **depression-screening** | PHQ-9, PHQ-2 | Assessing depression severity, tracking treatment response | 🚧 Stub |
-| **anxiety-screening** | GAD-7, GAD-2 | Screening for anxiety disorders, measuring anxiety severity | 🚧 Stub |
-| **trauma-screening** | PC-PTSD-5, PCL-5 | PTSD screening, trauma symptom assessment | 🚧 Stub |
-| **substance-screening** | AUDIT-C, DAST-10 | Alcohol/drug use screening, identifying problematic use | 🚧 Stub |
-| **suicide-screening** | C-SSRS, ASQ | Suicide risk assessment, safety planning | 🚧 Stub |
+| **depression-screening** | PHQ-9, PHQ-2 | Assessing depression severity, tracking treatment response | ✅ Implemented |
+| **anxiety-screening** | GAD-7, GAD-2 | Screening for anxiety disorders, measuring anxiety severity | ✅ Implemented |
+| **trauma-screening** | PC-PTSD-5, PCL-5 | PTSD screening, trauma symptom assessment | ✅ Implemented |
+| **substance-screening** | AUDIT-C, DAST-10 | Alcohol/drug use screening, identifying problematic use | ✅ Implemented |
+| **suicide-screening** | C-SSRS, ASQ | Suicide risk assessment, safety planning | ✅ Implemented |
 
 ### Clinical Workflow Skills
 
@@ -152,6 +152,13 @@ All instruments included are public domain or freely available:
 
 ### Reference Materials
 
+**Shared Clinical References** (docs/references/):
+- [Crisis Protocols](docs/references/crisis-protocols.md) - Universal crisis response procedures
+- [Referral Guidelines](docs/references/referral-guidelines.md) - Cross-domain referral guidance
+- [Documentation Standards](docs/references/documentation-standards.md) - Clinical documentation best practices
+- [Legal & Ethical Guidelines](docs/references/legal-ethical-guidelines.md) - HIPAA, informed consent, professional standards
+
+**Project Documentation:**
 - [Clinical References](docs/clinical-references.md) - Scoring tables and interpretation guidelines
 - [Project Overview](00%20-%20Overview.md) - Detailed project background and research notes
 
@@ -172,35 +179,54 @@ All instruments included are public domain or freely available:
 ```
 clinical-toolkit/
 ├── .claude-plugin/
-│   └── manifest.json          # Skill registry
-├── skills/                    # Skill implementations
+│   └── manifest.json              # Skill registry
+├── skills/                        # Skill implementations
 │   ├── depression-screening/
-│   ├── anxiety-screening/
-│   ├── trauma-screening/
-│   ├── substance-screening/
-│   ├── suicide-screening/
+│   │   ├── SKILL.md              # Quick reference + embedded essentials
+│   │   ├── assets/               # Complete assessment files (PHQ-9, PHQ-2)
+│   │   └── references/           # Topic-based guidance (severity, decision trees)
+│   ├── anxiety-screening/         # (Same structure: assets + references)
+│   ├── trauma-screening/          # (Same structure: assets + references)
+│   ├── substance-screening/       # (Same structure: assets + references)
+│   ├── suicide-screening/         # (Same structure: assets + references)
 │   ├── intake-interview/
 │   ├── treatment-planning/
 │   └── documentation/
 ├── docs/
-│   ├── plans/                 # Design documents
-│   └── clinical-references.md # Shared reference materials
+│   ├── plans/                     # Design documents
+│   ├── references/                # Shared clinical references
+│   │   ├── crisis-protocols.md
+│   │   ├── referral-guidelines.md
+│   │   ├── documentation-standards.md
+│   │   └── legal-ethical-guidelines.md
+│   └── clinical-references.md     # Shared reference materials
 └── README.md
 ```
 
 ### Skill File Structure
 
-Each `SKILL.md` follows a standardized template:
+**Screening Skills** (depression, anxiety, trauma, substance, suicide) use a modular structure:
+
+- **SKILL.md**: Embedded essentials with quick reference tables, delegates to detailed files
+- **assets/**: Complete assessment files (full items, scoring, documentation templates)
+- **references/**: Topic-based references (severity levels, screening comparison, clinical decision trees)
+
+**Workflow Skills** (intake-interview, treatment-planning, documentation) use single SKILL.md files for straightforward procedural guidance.
+
+Each `SKILL.md` includes:
 
 ```markdown
 # [Skill Name]
 ## Description
-## Available Assessments/Frameworks
+## Quick Reference: Assessment Selection (screening skills)
 ## Usage
-## Administration & Scoring
-## Clinical Interpretation
+## Quick Reference: Severity Levels (screening skills)
+## Assessment Administration
+## Clinical Decision-Making
 ## Safety Protocols
+## Documentation
 ## Limitations & Considerations
+## Additional Resources (links to assets/ and references/)
 ## References
 ```
 
@@ -269,27 +295,29 @@ Before marking a skill as complete:
 
 ## Development Roadmap
 
-### Phase 1: Core Screening (Current Priority)
+### Phase 1: Core Screening ✅ COMPLETE
 - [x] Project scaffolding complete
-- [ ] Implement depression-screening (PHQ-9, PHQ-2)
-- [ ] Implement anxiety-screening (GAD-7, GAD-2)
-- [ ] Populate clinical-references.md with core instruments
+- [x] Implement depression-screening (PHQ-9, PHQ-2)
+- [x] Implement anxiety-screening (GAD-7, GAD-2)
+- [x] Create shared docs/references/ infrastructure
 
-### Phase 2: Expanded Assessment
-- [ ] Implement trauma-screening (PC-PTSD-5, PCL-5)
-- [ ] Implement substance-screening (AUDIT-C, DAST-10)
-- [ ] Implement suicide-screening (C-SSRS, ASQ)
+### Phase 2: Expanded Assessment ✅ COMPLETE
+- [x] Implement trauma-screening (PC-PTSD-5, PCL-5)
+- [x] Implement substance-screening (AUDIT-C, DAST-10)
+- [x] Implement suicide-screening (C-SSRS, ASQ)
+- [x] Establish modular assets/references structure
 
-### Phase 3: Clinical Workflows
-- [ ] Implement intake-interview frameworks
-- [ ] Implement treatment-planning tools
-- [ ] Implement documentation templates
+### Phase 3: Clinical Workflows (In Planning)
+- [ ] Expand intake-interview frameworks
+- [ ] Expand treatment-planning tools
+- [ ] Expand documentation templates
 
-### Future Considerations
-- Culturally-adapted instrument versions
-- Additional validated screening tools
-- Integration with measurement-based care platforms
-- Multi-language support
+### Phase 4: Content Enhancement (Future)
+- [ ] Populate clinical-references.md with detailed guidance
+- [ ] Add culturally-adapted instrument versions
+- [ ] Additional validated screening tools
+- [ ] Integration with measurement-based care platforms
+- [ ] Multi-language support
 
 ---
 
