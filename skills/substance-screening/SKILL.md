@@ -1,3 +1,9 @@
+---
+name: substance-screening
+description: Use when screening for alcohol or drug use concerns (heavy drinking, cravings, loss of control, withdrawal symptoms, functional impairment), assessing substance use severity, determining level of care, or patient reports substance-related problems. Provides AUDIT-C (alcohol brief) and DAST-10 (drugs comprehensive) assessments.
+license: MIT
+---
+
 # Substance Use Screening
 
 ## Description
@@ -18,20 +24,47 @@ This skill helps administer and interpret validated substance use screening inst
 
 **Recommended approach:** Use AUDIT-C + DAST-10 together for complete substance use screening. See [references/screening-comparison.md](references/screening-comparison.md) for detailed guidance.
 
+### Assessment Selection Decision Tree
+
+```dot
+digraph assessment_selection {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    start [label="Substance Use\nScreening", shape=ellipse];
+    both [label="SCREEN BOTH:\nAUDIT-C (alcohol)\n+\nDAST-10 (drugs)", style="filled", fillcolor=lightblue];
+
+    audit_result [label="AUDIT-C\nPositive?", shape=diamond];
+    dast_result [label="DAST-10\nPositive?", shape=diamond];
+
+    alcohol_only [label="Alcohol Use\nIssue Only", style="filled", fillcolor=yellow];
+    drugs_only [label="Drug Use\nIssue Only", style="filled", fillcolor=yellow];
+    both_positive [label="Both Alcohol\nAND Drugs", style="filled", fillcolor=orange];
+    neither [label="Negative\nScreens\nRoutine f/u", style="filled", fillcolor=lightgreen];
+
+    full_audit [label="Consider\nFull AUDIT\n(if AUDIT-C ≥6)", shape=box];
+    intervention [label="Brief\nIntervention\nor\nReferral", style="filled", fillcolor=lightblue];
+
+    start -> both;
+    both -> audit_result;
+    audit_result -> dast_result [label="yes"];
+    audit_result -> dast_result [label="no"];
+
+    dast_result -> both_positive [label="AUDIT yes\nDAST yes"];
+    dast_result -> alcohol_only [label="AUDIT yes\nDAST no"];
+    dast_result -> drugs_only [label="AUDIT no\nDAST yes"];
+    dast_result -> neither [label="both no"];
+
+    alcohol_only -> full_audit;
+    drugs_only -> intervention;
+    both_positive -> intervention;
+    full_audit -> intervention;
+}
+```
+
 ## Usage
 
-This skill can be invoked when you need to:
-- Screen for alcohol use problems
-- Screen for drug use problems
-- Assess substance use severity
-- Identify need for further assessment or intervention
-- Track changes in substance use patterns
-
-**Example requests:**
-- "Help me screen for alcohol use"
-- "I need to administer a DAST-10"
-- "Can you score this AUDIT-C?"
-- "Interpret these substance use screening results"
+**Example requests:** "Screen for alcohol use", "Administer DAST-10", "Score AUDIT-C", "Interpret substance screening"
 
 ## Quick Reference: Severity Levels
 
@@ -62,222 +95,119 @@ For detailed severity interpretations and treatment recommendations, see [refere
 
 ### AUDIT-C (Alcohol Use Disorders Identification Test - Concise)
 
-**Complete assessment details:** [assets/audit-c.md](assets/audit-c.md)
+**Complete details:** [assets/audit-c.md](assets/audit-c.md)
 
-**Quick Facts:**
-- 3 items assessing alcohol consumption patterns
-- First 3 questions from the full 10-item AUDIT
-- Gender-specific cutoffs (women metabolize alcohol differently)
-- Positive screen warrants brief intervention or full AUDIT
+**Items (0-4 each):** 1) Drinking frequency, 2) Drinks per day, 3) Binge drinking frequency
 
-**Items:**
-1. Frequency of drinking (0-4 points)
-2. Typical number of drinks per day (0-4 points)
-3. Frequency of binge drinking (≥6 drinks on one occasion) (0-4 points)
+**Scoring:** Total 0-12. Men ≥4, Women ≥3 = positive. **Standard drink:** 12oz beer, 5oz wine, 1.5oz spirits.
 
-**Scoring:**
-- Total score range: 0-12
-- Men: ≥4 positive screen
-- Women: ≥3 positive screen
-
-**Standard Drink Definition:**
-- 12 oz beer (5% alcohol) = 1 drink
-- 5 oz wine (12% alcohol) = 1 drink
-- 1.5 oz spirits/liquor (40% alcohol) = 1 drink
-
-**Next Steps:**
-- Score below cutoff: Positive feedback, rescreen annually
-- Score 4-7 (men) or 3-7 (women): Brief intervention, follow-up 1-3 months
-- Score ≥8: Full AUDIT assessment + specialty referral
+**Next Steps:** Below cutoff → annual rescreen. 4-7 (M) or 3-7 (W) → brief intervention, f/u 1-3mo. ≥8 → full AUDIT + referral.
 
 ### DAST-10 (Drug Abuse Screening Test - 10 Item)
 
-**Complete assessment details:** [assets/dast-10.md](assets/dast-10.md)
+**Complete details:** [assets/dast-10.md](assets/dast-10.md)
 
-**Quick Facts:**
-- 10 binary (Yes/No) questions about drug use consequences
-- Covers past 12 months
-- Excludes alcohol and tobacco
-- Assesses consequences and dependence, not just use
-- Item 3 is reverse scored (Yes = 0, No = 1)
+**Format:** 10 Yes/No questions, past 12 months, excludes alcohol/tobacco. Covers use beyond medical reasons, polysubstance, loss of control, blackouts, guilt, family issues, illegal activities, withdrawal, medical complications. Item 3 reverse scored.
 
-**Key Items Cover:**
-- Drug use beyond medical reasons
-- Polysubstance use
-- Loss of control
-- Blackouts/flashbacks
-- Guilt about use
-- Family complaints and neglect
-- Illegal activities to obtain drugs
-- Withdrawal symptoms
-- Medical complications
+**Scoring:** Total 0-10. 1 point per "Yes" (except Item 3). ≥3 = problematic use.
 
-**Scoring:**
-- Total score range: 0-10
-- Score 1 point for each "Yes" (except Item 3: score "No")
-- ≥3 indicates problematic drug use requiring further assessment
-
-**Next Steps:**
-- Score 0-2: Routine monitoring
-- Score ≥3: **Detailed substance use history required** (specific substances, frequency, route)
-- **If opioid use identified:** Immediate medication-assisted treatment (MAT) discussion
-- **If injection drug use:** Infectious disease screening (HIV, Hepatitis C)
+**Next Steps:** 0-2 → monitor. ≥3 → detailed history (substances, frequency, route). Opioids → MAT discussion. Injection use → infectious disease screening.
 
 ## Clinical Decision-Making
 
+### Severity to Intervention Pathway
+
+```dot
+digraph severity_intervention {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    audit [label="AUDIT-C\nScore", shape=ellipse];
+    dast [label="DAST-10\nScore", shape=ellipse];
+
+    audit_low [label="0-3 (Men)\n0-2 (Women)", shape=box];
+    audit_haz [label="4-5 (Men)\n3-4 (Women)", shape=box];
+    audit_harmful [label="6-7 (Men)\n5-7 (Women)", shape=box];
+    audit_severe [label="≥8", shape=box];
+
+    dast_low [label="0-2", shape=box];
+    dast_mod [label="3-5", shape=box];
+    dast_sub [label="6-8", shape=box];
+    dast_severe [label="9-10", shape=box];
+
+    tx_none [label="Annual\nRescreening", style="filled", fillcolor=lightgreen];
+    tx_brief [label="Brief\nIntervention\n(5-15 min)", style="filled", fillcolor=yellow];
+    tx_bi_refer [label="Brief Intervention\n+ Full AUDIT\n+ Consider Referral", style="filled", fillcolor=orange];
+    tx_specialty [label="Specialty\nAddiction\nTreatment", style="filled", fillcolor=red, fontcolor=white];
+
+    tx_monitor [label="Routine\nMonitoring", style="filled", fillcolor=lightgreen];
+    tx_assess [label="Comprehensive\nAssessment\nOutpatient Option", style="filled", fillcolor=yellow];
+    tx_refer [label="Specialty Referral\nMAT if Opioids", style="filled", fillcolor=orange];
+    tx_immediate [label="Immediate Referral\nHigher LOC", style="filled", fillcolor=red, fontcolor=white];
+
+    audit -> audit_low;
+    audit -> audit_haz;
+    audit -> audit_harmful;
+    audit -> audit_severe;
+
+    dast -> dast_low;
+    dast -> dast_mod;
+    dast -> dast_sub;
+    dast -> dast_severe;
+
+    audit_low -> tx_none;
+    audit_haz -> tx_brief;
+    audit_harmful -> tx_bi_refer;
+    audit_severe -> tx_specialty;
+
+    dast_low -> tx_monitor;
+    dast_mod -> tx_assess;
+    dast_sub -> tx_refer;
+    dast_severe -> tx_immediate;
+}
+```
+
 For structured clinical decision trees covering screening pathways, treatment selection, withdrawal management, and co-occurring disorders, see [references/clinical-decision-trees.md](references/clinical-decision-trees.md)
 
-**Quick Treatment Recommendations:**
-
-**AUDIT-C:**
-- Men 4-5, Women 3-4: Brief intervention (5-15 minutes)
-- Men 6-7, Women 5-7: Brief intervention + full AUDIT + consider referral
-- ≥8 (either gender): Specialty addiction treatment + assess withdrawal risk
-
-**DAST-10:**
-- 3-5: Motivational interviewing, assess for substance use disorder, consider outpatient treatment
-- 6-8: Specialty addiction treatment referral, determine specific substances, MAT if opioids
-- 9-10: Immediate specialty referral, consider higher level of care (IOP, residential)
-
-**Substance-Specific Considerations:**
-
-**Opioid Use Disorder:**
-- Medication-Assisted Treatment (MAT) recommended immediately
-- Options: Buprenorphine, methadone, naltrexone
-- Do not require abstinence before MAT
-- Naloxone (Narcan) prescription for all patients (overdose prevention)
-
-**Stimulant Use (cocaine, methamphetamine):**
-- Behavioral therapies (no FDA-approved medications)
-- Cardiac and psychiatric evaluation
-- Contingency management, cognitive-behavioral therapy
-
-**Benzodiazepines:**
-- **Never abrupt discontinuation** (seizure risk)
-- Medically supervised taper required
-- High overdose risk when combined with opioids
+**Substance-Specific:** **Opioids:** MAT immediately (buprenorphine, methadone, naltrexone), naloxone for all. **Stimulants:** Behavioral therapies, cardiac/psychiatric evaluation. **Benzodiazepines:** Never abrupt stop (seizure risk), supervised taper required.
 
 ## Brief Intervention for Positive AUDIT-C (4-7 range)
 
-**Components (5-15 minutes):**
-1. **Provide Feedback:** Compare drinking to low-risk guidelines, discuss health risks
-2. **Assess Readiness:** "How do you feel about your drinking?"
-3. **Set Goals:** Reduce to low-risk limits or abstinence
-4. **Provide Resources:** Written materials, drinking diary, treatment resources
-5. **Follow-Up:** Reassess AUDIT-C in 1-3 months
-
-**Low-Risk Drinking Guidelines:**
-- Men: ≤14 drinks/week, ≤4 drinks/day
-- Women: ≤7 drinks/week, ≤3 drinks/day
+**Components (5-15 min):** Provide feedback (compare to low-risk guidelines), assess readiness, set goals, provide resources, follow-up in 1-3 months. **Low-risk limits:** Men ≤14/week, ≤4/day; Women ≤7/week, ≤3/day.
 
 ## Safety Protocols
 
-**Assessment Approach:**
-- Non-judgmental, confidential environment
-- Normalize screening: "I ask all my patients these questions"
-- Use non-stigmatizing language
-- Assure confidentiality (explain mandatory reporting limits)
-- Create safe space for disclosure
+**Approach:** Non-judgmental, confidential. Normalize screening, use non-stigmatizing language.
 
-**Immediate Safety Concerns:**
-- **Acute intoxication or withdrawal** → Medical evaluation
-- **Alcohol/benzodiazepine withdrawal risk** → Assess for medically supervised detoxification (seizure risk)
-- **Opioid use disorder** → MAT discussion + naloxone prescription
-- **Injection drug use** → Infectious disease screening + harm reduction education
-- **Suicidal ideation** → Crisis intervention per [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
+**Immediate Concerns:** Acute intoxication/withdrawal → medical evaluation. Alcohol/benzodiazepine withdrawal → supervised detox (seizure risk). Opioids → MAT + naloxone. Injection use → infectious disease screening. Suicidal ideation → crisis intervention per [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md).
 
-**Withdrawal Risk Assessment:**
-- **High risk (medical supervision required):** Alcohol, benzodiazepines (can be life-threatening)
-- **Moderate risk:** Opioids (severe discomfort but not typically life-threatening)
-- **DAST-10 Item 9 (withdrawal symptoms) positive = physiological dependence**
-
-**Crisis Resources:**
-- SAMHSA National Helpline: 1-800-662-4357 (24/7, free, confidential treatment referral)
-- 988 Suicide & Crisis Lifeline
-- Crisis Text Line: Text HOME to 741741
-- Emergency Services: 911
+**Crisis Resources:** SAMHSA 1-800-662-4357, 988 Lifeline, Text HOME to 741741, Emergency 911
 
 ## Documentation
 
-### AUDIT-C Documentation
-**Template available in:** [assets/audit-c.md](assets/audit-c.md)
+**AUDIT-C template:** [assets/audit-c.md](assets/audit-c.md) - Include 3 items, score, gender/cutoff, result, risk level, brief intervention, follow-up.
 
-**Essential elements:**
-- All 3 item responses
-- Total score (0-12)
-- Gender and cutoff used
-- Result (Negative/Positive screen)
-- Risk level (Low/Hazardous/Harmful/Severe)
-- Brief intervention provided (Yes/No)
-- Follow-up plan
+**DAST-10 template:** [assets/dast-10.md](assets/dast-10.md) - Include 10 items, score, risk level, substances, red flags (injection/opioids/withdrawal), recommendations, safety, naloxone if needed.
 
-### DAST-10 Documentation
-**Template available in:** [assets/dast-10.md](assets/dast-10.md)
-
-**Essential elements:**
-- All 10 item responses
-- Total score (0-10)
-- Risk level (Minimal/Moderate/Substantial/Severe)
-- Specific substances identified
-- Red flags (injection use, opioids, withdrawal, medical complications)
-- Recommendations (brief intervention/assessment/referral)
-- Safety considerations (overdose risk, withdrawal risk)
-- Naloxone prescribed (if opioid use)
-
-**General documentation standards:** [../../docs/references/documentation-standards.md](../../docs/references/documentation-standards.md)
+**Standards:** [../../docs/references/documentation-standards.md](../../docs/references/documentation-standards.md)
 
 ## Limitations & Considerations
 
-**This is a support tool, not a diagnostic instrument:**
-- Does not diagnose substance use disorders
-- Self-report may underestimate use (especially illegal drugs)
-- Requires interpretation within clinical context
-- Cultural factors affect disclosure and reporting
-- Clinical judgment always supersedes screening scores
+**Support tool, not diagnostic:** Self-report may underestimate use. Requires clinical context interpretation. Cultural factors affect disclosure. Clinical judgment supersedes scores. Use non-judgmental, motivational approach. Avoid stigmatizing language; use "person with substance use disorder," "person in recovery."
 
-**Assessment Best Practices:**
-- Create safe, non-judgmental environment
-- Use motivational interviewing approach
-- Avoid stigmatizing language ("alcoholic," "junkie," "clean," "dirty")
-- Preferred: "person with substance use disorder," "person in recovery"
-- Frame as health issue, not moral failing
+**Special Populations:** Pregnancy (immediate perinatal referral), adolescents (use CRAFFT), older adults (lower cutoffs, medication interactions), chronic pain (assess prescription use).
 
-**Special Populations:**
-- **Pregnancy:** Any substance use = high risk, immediate referral to perinatal services
-- **Adolescents:** Consider CRAFFT screening tool instead
-- **Older adults:** May use lower cutoffs, assess alcohol-medication interactions
-- **Chronic pain patients:** Carefully assess prescription opioid use vs. opioid use disorder
-
-**Co-Occurring Disorders:**
-Very high comorbidity with substance use disorders:
-- Depression (30-50%) - Screen with ../../depression-screening/
-- Anxiety disorders (20-30%) - Screen with ../../anxiety-screening/
-- PTSD (30-50%) - Screen with ../../trauma-screening/
-- Suicidal ideation - Screen with ../../suicide-screening/
-
-**Integrated treatment approach needed when co-occurring disorders present**
+**Comorbidity:** High rates of depression (30-50%), anxiety (20-30%), PTSD (30-50%), suicidal ideation. Screen with ../../depression-screening/, ../../anxiety-screening/, ../../trauma-screening/, ../../suicide-screening/. Integrated treatment required.
 
 ## Workflow Integration
 
-This skill provides assessment tools. For related clinical workflows:
-- **Intake interview:** Use ../../intake-interview/ for comprehensive intake incorporating substance use screening
-- **Treatment planning:** Use ../../treatment-planning/ for developing substance use treatment plans
-- **Clinical documentation:** Use ../../documentation/ for progress notes and treatment documentation
-- **Crisis intervention:** See [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
-- **Referral guidelines:** See [../../docs/references/referral-guidelines.md](../../docs/references/referral-guidelines.md)
+**Related workflows:** ../../intake-interview/ (comprehensive intake), ../../treatment-planning/ (substance treatment plans), ../../documentation/ (progress notes). See [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md) and [../../docs/references/referral-guidelines.md](../../docs/references/referral-guidelines.md).
 
 ## Additional Resources
 
-**For detailed guidance, see:**
-- **[references/severity-levels.md](references/severity-levels.md)** - Complete severity interpretations for AUDIT-C and DAST-10
-- **[references/screening-comparison.md](references/screening-comparison.md)** - When to use AUDIT-C vs full AUDIT, DAST-10 considerations
-- **[references/clinical-decision-trees.md](references/clinical-decision-trees.md)** - Treatment pathways, substance-specific protocols, withdrawal management
+**Detailed guidance:** [references/severity-levels.md](references/severity-levels.md), [references/screening-comparison.md](references/screening-comparison.md), [references/clinical-decision-trees.md](references/clinical-decision-trees.md)
 
-**External Resources:**
-- SAMHSA Treatment Locator: https://findtreatment.gov
-- AA Meetings: https://aa.org
-- NA Meetings: https://na.org
-- SMART Recovery: https://smartrecovery.org
+**External:** https://findtreatment.gov (SAMHSA), https://aa.org, https://na.org, https://smartrecovery.org
 
 ## References
 
@@ -290,8 +220,3 @@ This skill provides assessment tools. For related clinical workflows:
 - Yudko E, Lozhkina O, Fouts A. A comprehensive review of the psychometric properties of the Drug Abuse Screening Test. J Subst Abuse Treat. 2007;32(2):189-198.
 
 **Freely available for clinical and research use**
-
----
-
-**Status:** ✅ Implemented - Assets and references structure complete
-**Last Updated:** 2026-02-01

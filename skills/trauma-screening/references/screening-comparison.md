@@ -270,6 +270,45 @@ Use clinical judgment. PCL-5 provides *provisional* diagnosis. Consider:
 - Post-treatment and follow-up
 - When symptoms worsen
 
+## Psychometric Properties
+
+### PCL-5 Validation Data
+
+**Structure:**
+- 20 items mapping directly to DSM-5 PTSD diagnostic criteria
+- Four symptom clusters:
+  - Intrusion (re-experiencing)
+  - Avoidance
+  - Negative alterations in cognitions and mood
+  - Alterations in arousal and reactivity
+
+**Diagnostic Accuracy:**
+- **Recommended cutoff:** 31-33 for provisional PTSD diagnosis
+- Cutoff varies by population and clinical setting
+
+**Treatment Monitoring:**
+- **Reliable change:** 5-10 point change
+- **Clinically significant improvement:** 10-12 point change
+- **Return to healthy range:** Score <28 may indicate recovery
+- Sensitive to treatment effects in trauma-focused therapy
+
+**Interpretation:**
+- Total score reflects overall PTSD symptom severity
+- Subscale scores identify dominant symptom patterns
+- Useful for targeting treatment interventions
+
+### PC-PTSD-5 Validation Data
+
+**Diagnostic Accuracy:**
+- **Sensitivity:** 93% (excellent at detecting PTSD cases)
+- **Specificity:** 85% (good at ruling out PTSD)
+- **Recommended cutoff:** ≥3 positive responses
+
+**Gender Considerations:**
+- Cutoff of 3-4 may vary by gender and population
+- Some studies suggest different optimal cutoffs
+- Clinical judgment should guide interpretation
+
 ## Summary Recommendations
 
 **Use PC-PTSD-5 when:**
@@ -294,10 +333,11 @@ Use clinical judgment. PCL-5 provides *provisional* diagnosis. Consider:
 - Resources permit follow-up on positive screens
 
 **Always remember:**
-- PC-PTSD-5 cannot diagnose PTSD
+- PC-PTSD-5 cannot diagnose PTSD (93% sensitivity, 85% specificity)
 - PCL-5 provides provisional diagnosis only
 - Clinical interview required for formal diagnosis
 - Safety assessment needed regardless of tool used
 - Trauma-informed approach essential for all trauma screening
+- Treatment monitoring: 10-12 point PCL-5 change = clinically significant improvement
 
 For trauma-informed assessment techniques, see [trauma-informed-approach.md](trauma-informed-approach.md)

@@ -1,3 +1,9 @@
+---
+name: anxiety-screening
+description: Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments.
+license: MIT
+---
+
 # Anxiety Screening
 
 ## Description
@@ -61,16 +67,28 @@ This skill helps administer and interpret validated anxiety screening instrument
 
 ### 1. Choose Assessment
 
-```
-Time-limited encounter (primary care, ER)?
-  → Use GAD-2 first
-  → If score ≥3, give GAD-7
+```dot
+digraph assessment_selection {
+    rankdir=LR;
+    node [shape=box, style=rounded];
 
-Mental health setting or treatment monitoring?
-  → Use GAD-7 directly
+    start [label="Patient\nPresentation", shape=ellipse];
+    time_check [label="Time-limited\nencounter?", shape=diamond];
+    purpose_check [label="Treatment\nmonitoring?", shape=diamond];
+    gad2 [label="Start with\nGAD-2", style="filled", fillcolor=lightblue];
+    gad2_score [label="GAD-2\nscore ≥3?", shape=diamond];
+    gad7 [label="Administer\nGAD-7", style="filled", fillcolor=lightgreen];
+    monitor [label="Negative\nscreen", style="filled", fillcolor=gray90];
 
-Anxiety already suspected?
-  → Use GAD-7 directly
+    start -> time_check;
+    time_check -> gad2 [label="yes\n(primary care,\nER)"];
+    time_check -> purpose_check [label="no"];
+    purpose_check -> gad7 [label="yes"];
+    purpose_check -> gad7 [label="no\n(suspected\nanxiety)"];
+    gad2 -> gad2_score;
+    gad2_score -> gad7 [label="yes"];
+    gad2_score -> monitor [label="no"];
+}
 ```
 
 ### 2. Administer Assessment
@@ -153,50 +171,55 @@ Anxiety already suspected?
 
 ### Differential Diagnosis
 
-**High GAD-7 may indicate:**
-- Generalized Anxiety Disorder
-- Panic Disorder (assess for panic attacks)
-- Social Anxiety Disorder (assess for social fears)
-- PTSD (assess trauma history)
-- Health Anxiety
-- OCD (assess for obsessions/compulsions)
+#### When GAD-7 is Elevated
 
-**Further assessment needed for specific diagnosis**
+```dot
+digraph differential_diagnosis {
+    rankdir=TB;
+    node [shape=box, style=rounded];
 
-### Medical Causes
+    high_gad7 [label="GAD-7 ≥10", shape=ellipse, style="filled", fillcolor=yellow];
+    assess_type [label="Assess Anxiety\nPresentation", style="filled", fillcolor=lightblue];
 
-**Rule out medical conditions:**
-- Hyperthyroidism
-- Cardiac arrhythmias
-- Respiratory conditions
-- Caffeine/substance use
-- Medication side effects
+    chronic_worry [label="Chronic worry\nabout multiple\nthings?", shape=diamond];
+    panic_attacks [label="Recurrent panic\nattacks?", shape=diamond];
+    social_fears [label="Fear of social\nsituations?", shape=diamond];
+    trauma_hx [label="Trauma\nhistory?", shape=diamond];
 
-### Co-occurring Depression
+    gad [label="Likely GAD\n(Generalized\nAnxiety)", style="filled", fillcolor=lightgreen];
+    panic [label="Likely\nPanic Disorder", style="filled", fillcolor=lightgreen];
+    social [label="Likely Social\nAnxiety", style="filled", fillcolor=lightgreen];
+    ptsd [label="Screen for\nPTSD", style="filled", fillcolor=orange];
+    other [label="Consider:\n• Health anxiety\n• OCD\n• Medical causes", style="filled", fillcolor=lightyellow];
 
-**Very common (60% overlap):**
-- Administer both GAD-7 and PHQ-9
-- Integrated treatment for both
-- Monitor both conditions
+    further [label="Further\nClinical Assessment\nRequired", style="filled", fillcolor=lightblue];
 
-### Substance Use
+    high_gad7 -> assess_type;
+    assess_type -> chronic_worry;
+    chronic_worry -> gad [label="yes"];
+    chronic_worry -> panic_attacks [label="no"];
+    panic_attacks -> panic [label="yes"];
+    panic_attacks -> social_fears [label="no"];
+    social_fears -> social [label="yes"];
+    social_fears -> trauma_hx [label="no"];
+    trauma_hx -> ptsd [label="yes"];
+    trauma_hx -> other [label="no"];
 
-- May be self-medication for anxiety
-- Substances can worsen anxiety
-- Withdrawal causes anxiety
-- Address both concurrently
+    gad -> further;
+    panic -> further;
+    social -> further;
+    ptsd -> further;
+    other -> further;
+}
+```
 
-### Cultural Factors
+**Note:** GAD-7 screens for anxiety severity but does not differentiate specific disorders. Further clinical assessment required for diagnosis.
 
-- Expression of anxiety varies across cultures
-- Use culturally validated versions when available
-- Consider language and health literacy
-
-### Age Considerations
-
-- **Adolescents:** GAD-7 validated in teens (ages 12+)
-- **Older adults:** GAD-7 validated, account for medical comorbidity
-- **Children <12:** Different screening tools recommended
+- **Medical causes:** Rule out hyperthyroidism, cardiac arrhythmias, respiratory conditions, caffeine/substances, medication side effects
+- **Co-occurring depression:** Very common (60% overlap)—administer both GAD-7 and PHQ-9, integrated treatment
+- **Substance use:** May be self-medication; substances worsen anxiety; withdrawal causes anxiety
+- **Cultural factors:** Expression varies across cultures; use validated versions
+- **Age:** Validated for teens (12+) and older adults; different tools for children <12
 
 ## Referral Guidelines
 
@@ -217,48 +240,11 @@ Anxiety already suspected?
 
 ## Limitations
 
-**GAD-2 and GAD-7 are screening tools, not diagnostic instruments:**
-- Do not replace comprehensive clinical assessment
-- Require interpretation within clinical context
-- Do not differentiate between specific anxiety disorders
-- Clinical judgment always supersedes screening scores
-- Cannot diagnose based on score alone
-
-**Potential issues:**
-- False positives (medical conditions, substances)
-- False negatives (patient minimization)
-- Cultural/linguistic factors affect responses
-- Requires patient insight and honest reporting
+**Screening tools, not diagnostic instruments.** Do not replace clinical assessment; do not differentiate specific anxiety disorders. Clinical judgment supersedes scores. Potential issues: false positives (medical conditions, substances), false negatives (minimization), cultural/linguistic factors.
 
 ## Usage Examples
 
-This skill can be invoked when you need to:
-- Screen a patient for anxiety symptoms
-- Assess anxiety severity for treatment planning
-- Track treatment response over time
-- Determine appropriate level of care
-- Screen for panic disorder, social anxiety, or PTSD
-
-**Example requests:**
-- "Help me administer a GAD-7"
-- "I need to screen this patient for anxiety"
-- "Score this GAD-7 and interpret results"
-- "What treatment is recommended for GAD-7 score of 17?"
-- "Should I screen for anxiety and depression together?"
-
-## File Structure
-
-```
-anxiety-screening/
-├── SKILL.md (this file - quick reference and workflow)
-├── assets/
-│   ├── gad-7.md (complete GAD-7 assessment)
-│   └── gad-2.md (complete GAD-2 assessment)
-└── references/
-    ├── severity-levels.md (detailed severity interpretations)
-    ├── screening-comparison.md (GAD-2 vs GAD-7 guidance)
-    └── clinical-decision-trees.md (treatment recommendations)
-```
+**Example requests:** "Administer GAD-7", "Screen for anxiety", "Score GAD-7", "Treatment for score 17", "Screen anxiety and depression together?"
 
 ## References
 
@@ -271,8 +257,3 @@ anxiety-screening/
 - Katzman MA, et al. Canadian clinical practice guidelines for the management of anxiety. BMC Psychiatry. 2014;14 Suppl 1:S1.
 
 **No copyright restrictions - GAD-2 and GAD-7 are freely available for clinical and research use**
-
----
-
-**Status:** ✅ Complete - Modular structure implemented
-**Last Updated:** 2026-02-01

@@ -1,7 +1,7 @@
 # Clinical Toolkit
 
-**Version:** 0.1.0
-**Status:** 🚧 In Development - Scaffolding Phase
+**Version:** 1.0.0
+**Status:** ✅ Production Ready - All Core Features Implemented
 **License:** MIT
 
 A Claude skill framework for clinical mental health screening, assessment interpretation, and documentation support.
@@ -51,15 +51,66 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 
 | Skill | Frameworks | Use When | Status |
 |-------|------------|----------|--------|
-| **intake-interview** | HEADSS, Biopsychosocial, Safety Assessment | Conducting comprehensive intake evaluations | 🚧 Stub |
-| **treatment-planning** | SMART Goals, Level of Care, Measurement-Based Care | Developing treatment plans, determining care level | 🚧 Stub |
-| **documentation** | SOAP Notes, Progress Notes, Treatment Plans | Writing clinical documentation | 🚧 Stub |
+| **intake-interview** | HEADSS, Biopsychosocial, Safety Assessment | Conducting comprehensive intake evaluations | ✅ Implemented |
+| **treatment-planning** | SMART Goals, Level of Care, Measurement-Based Care | Developing treatment plans, determining care level | ✅ Implemented |
+| **documentation** | SOAP Notes, Progress Notes, Treatment Plans | Writing clinical documentation | ✅ Implemented |
+
+---
+
+## Installation
+
+### Quick Install
+
+**Claude Code:**
+```bash
+/plugin install github:rhavekost/clinical-toolkit
+```
+
+**GitHub Copilot:**
+```bash
+npx skills add rhavekost/clinical-toolkit
+```
+
+**Cursor IDE:**
+```bash
+skillport add rhavekost/clinical-toolkit
+```
+
+**Gemini CLI:**
+```bash
+gemini extensions install https://github.com/rhavekost/clinical-toolkit
+```
+
+For detailed installation instructions, team setup, and manual installation options, see [Installation Guide](docs/Installation.md).
+
+---
+
+## Releases
+
+### Latest Release
+
+Download the complete toolkit as a single package for easy installation in Claude.ai (web and iOS):
+
+**[📥 Download Latest Release](https://github.com/rhavekost/clinical-toolkit/releases/latest)**
+
+The release package includes all 8 clinical skills with supporting materials. Simply upload the ZIP file to Claude.ai Settings → Capabilities → Skills.
+
+### Creating Releases
+
+For maintainers and contributors, releases are managed through GitHub Actions:
+
+- **Manual trigger** - On-demand releases when ready
+- **Automated packaging** - All skills bundled into single ZIP
+- **Semantic versioning** - Clear version numbering (1.0.0, 1.1.0, etc.)
+- **Auto-generated changelog** - From commit history
+
+**For detailed release process**, see [Release Process Documentation](docs/RELEASE_PROCESS.md).
 
 ---
 
 ## Quick Start
 
-### Using Skills with Claude
+### Using Skills
 
 Skills can be invoked in multiple ways:
 
@@ -160,7 +211,6 @@ All instruments included are public domain or freely available:
 
 **Project Documentation:**
 - [Clinical References](docs/clinical-references.md) - Scoring tables and interpretation guidelines
-- [Project Overview](00%20-%20Overview.md) - Detailed project background and research notes
 
 ### Professional Organizations
 
@@ -179,7 +229,22 @@ All instruments included are public domain or freely available:
 ```
 clinical-toolkit/
 ├── .claude-plugin/
-│   └── manifest.json              # Skill registry
+│   └── manifest.json              # Generated: Claude Code manifest
+├── .github/copilot/
+│   └── manifest.json              # Generated: GitHub Copilot manifest
+├── .cursor/
+│   └── manifest.json              # Generated: Cursor IDE manifest
+├── .gemini/
+│   └── manifest.json              # Generated: Gemini CLI manifest
+├── .codex/
+│   └── manifest.json              # Generated: OpenAI Codex manifest
+├── manifest/
+│   ├── manifest.json              # ⭐ Master manifest (edit this)
+│   ├── templates/                 # Platform-specific templates
+│   ├── overrides/                 # Platform-specific customizations
+│   └── README.md                  # Manifest system documentation
+├── scripts/
+│   └── generate-manifests.js      # Manifest generation script
 ├── skills/                        # Skill implementations
 │   ├── depression-screening/
 │   │   ├── SKILL.md              # Quick reference + embedded essentials
@@ -193,13 +258,13 @@ clinical-toolkit/
 │   ├── treatment-planning/
 │   └── documentation/
 ├── docs/
-│   ├── plans/                     # Design documents
 │   ├── references/                # Shared clinical references
 │   │   ├── crisis-protocols.md
 │   │   ├── referral-guidelines.md
 │   │   ├── documentation-standards.md
 │   │   └── legal-ethical-guidelines.md
 │   └── clinical-references.md     # Shared reference materials
+├── package.json                   # NPM scripts for manifest generation
 └── README.md
 ```
 
@@ -246,16 +311,29 @@ To add a new assessment to an existing skill:
 
 1. **Create skill directory:** `skills/[skill-name]/`
 2. **Create SKILL.md** using the standard template
-3. **Register in manifest.json:**
+3. **Register in master manifest:**
+   Edit `manifest/manifest.json`:
    ```json
    {
-     "name": "skill-name",
-     "path": "skills/skill-name/SKILL.md",
-     "description": "Brief description including specific tool names"
+     "skills": [
+       {
+         "id": "skill-name",
+         "path": "skills/skill-name/SKILL.md",
+         "name": "Skill Display Name",
+         "description": "Brief description including specific tool names",
+         "category": "screening",
+         "tags": ["tag1", "tag2"]
+       }
+     ]
    }
    ```
-4. **Include both generic and specific terms** in description for discoverability
-5. **Document in clinical-references.md** if applicable
+4. **Generate platform manifests:**
+   ```bash
+   npm run generate:manifests
+   ```
+5. **Include both generic and specific terms** in description for discoverability
+6. **Document in clinical-references.md** if applicable
+7. **Commit all changes** (including generated manifests)
 
 ### Contributing Guidelines
 
@@ -280,6 +358,44 @@ To add a new assessment to an existing skill:
 - Content that could be harmful if misapplied
 - Medical advice or prescriptive clinical decisions
 
+### Multi-Platform Manifest System
+
+This project uses an automated manifest generation system to support multiple AI platforms from a single source of truth.
+
+**Supported Platforms:**
+- ✅ Claude Code (`.claude-plugin/`)
+- ✅ GitHub Copilot (`.github/copilot/`)
+- ✅ Cursor IDE (`.cursor/`)
+- ✅ Gemini CLI (`.gemini/`)
+- ✅ OpenAI Codex (`.codex/`)
+
+**How it works:**
+1. **Single source:** Edit `manifest/manifest.json` only
+2. **Generate all:** Run `npm run generate:manifests`
+3. **Automatic sync:** All platform manifests are updated
+
+**Common commands:**
+```bash
+# Generate all platform manifests
+npm run generate:manifests
+
+# Preview without writing files
+npm run generate:manifests:dry-run
+
+# Generate for specific platform
+npm run generate:claude
+npm run generate:copilot
+npm run generate:cursor
+```
+
+**Benefits:**
+- ✅ DRY principle - edit once, deploy everywhere
+- ✅ Platform-specific overrides when needed (`manifest/overrides/`)
+- ✅ Generated files committed for immediate use
+- ✅ CI/CD validation ensures manifests stay in sync
+
+**For detailed documentation**, see [manifest/README.md](manifest/README.md)
+
 ### Testing & Validation
 
 Before marking a skill as complete:
@@ -290,6 +406,8 @@ Before marking a skill as complete:
 - [ ] Limitations clearly stated
 - [ ] Citations complete and accurate
 - [ ] Language professional and non-stigmatizing
+- [ ] Manifests regenerated: `npm run generate:manifests`
+- [ ] Multi-platform testing completed (see [Multi-Platform Testing Guide](docs/testing-multi-platform.md))
 
 ---
 
@@ -307,12 +425,18 @@ Before marking a skill as complete:
 - [x] Implement suicide-screening (C-SSRS, ASQ)
 - [x] Establish modular assets/references structure
 
-### Phase 3: Clinical Workflows (In Planning)
-- [ ] Expand intake-interview frameworks
-- [ ] Expand treatment-planning tools
-- [ ] Expand documentation templates
+### Phase 3: Clinical Workflows ✅ COMPLETE
+- [x] Implement intake-interview frameworks (HEADSS, Biopsychosocial)
+- [x] Implement treatment-planning tools (SMART goals, ASAM/LOCUS)
+- [x] Implement documentation templates (SOAP, DAP notes)
 
-### Phase 4: Content Enhancement (Future)
+### Phase 4: Distribution & Release Management ✅ COMPLETE
+- [x] Multi-platform manifest system (Claude, Copilot, Cursor, Gemini, Codex)
+- [x] Automated release workflow with GitHub Actions
+- [x] Complete packaging for Claude.ai distribution
+- [x] Comprehensive documentation
+
+### Future Enhancements (Optional)
 - [ ] Populate clinical-references.md with detailed guidance
 - [ ] Add culturally-adapted instrument versions
 - [ ] Additional validated screening tools
@@ -371,3 +495,4 @@ Special recognition to:
 ---
 
 *Last Updated: 2026-02-01*
+*Version 1.0.0 - Production Ready*

@@ -1,3 +1,9 @@
+---
+name: depression-screening
+description: Use when screening for depression symptoms (low mood, anhedonia, fatigue, sleep changes, appetite changes), assessing severity for treatment planning, tracking treatment response, or patient has positive PHQ-9 Item 9 (suicidal ideation). Provides PHQ-9 (comprehensive) and PHQ-2 (brief) assessments.
+license: MIT
+---
+
 # Depression Screening
 
 ## Description
@@ -43,6 +49,34 @@ This skill helps administer and interpret validated depression screening instrum
 3. **Intervene** based on risk level (safety plan, crisis resources, emergency evaluation)
 4. **Document** thoroughly
 
+#### Item 9 Response Protocol
+
+```dot
+digraph item9_protocol {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    item9 [label="PHQ-9 Item 9\nscore > 0", shape=ellipse, style="filled", fillcolor=orange];
+    stop [label="STOP\nAssessment", style="filled", fillcolor=red, fontcolor=white];
+    assess [label="Assess Safety:\n• Active ideation?\n• Plan/intent?\n• Means access?\n• Protective factors?", style="filled", fillcolor=yellow];
+    risk_level [label="Risk Level?", shape=diamond];
+    low [label="Low Risk:\n• Safety plan\n• Follow-up\n• Resources", style="filled", fillcolor=lightgreen];
+    moderate [label="Moderate Risk:\n• Safety plan\n• Crisis contacts\n• Urgent referral\n• Reduce means", style="filled", fillcolor=yellow];
+    high [label="High Risk:\n• Do not leave alone\n• Emergency eval\n• 988/911\n• Family notification", style="filled", fillcolor=red, fontcolor=white];
+    document [label="Document\nThoroughly", style="filled", fillcolor=lightblue];
+
+    item9 -> stop;
+    stop -> assess;
+    assess -> risk_level;
+    risk_level -> low [label="Low"];
+    risk_level -> moderate [label="Moderate"];
+    risk_level -> high [label="High/\nImminent"];
+    low -> document;
+    moderate -> document;
+    high -> document;
+}
+```
+
 **See detailed protocol:** [references/item-9-safety-protocol.md](references/item-9-safety-protocol.md)
 
 **Crisis Resources:**
@@ -83,16 +117,28 @@ This skill helps administer and interpret validated depression screening instrum
 
 ### 1. Choose Assessment
 
-```
-Time-limited encounter (primary care, ER)?
-  → Use PHQ-2 first
-  → If score ≥3, give PHQ-9
+```dot
+digraph assessment_selection {
+    rankdir=LR;
+    node [shape=box, style=rounded];
 
-Mental health setting or treatment monitoring?
-  → Use PHQ-9 directly
+    start [label="Patient\nPresentation", shape=ellipse];
+    time_check [label="Time-limited\nencounter?", shape=diamond];
+    purpose_check [label="Treatment\nmonitoring?", shape=diamond];
+    phq2 [label="Start with\nPHQ-2", style="filled", fillcolor=lightblue];
+    phq2_score [label="PHQ-2\nscore ≥3?", shape=diamond];
+    phq9 [label="Administer\nPHQ-9", style="filled", fillcolor=lightgreen];
+    monitor [label="Negative\nscreen", style="filled", fillcolor=gray90];
 
-Depression already suspected?
-  → Use PHQ-9 directly
+    start -> time_check;
+    time_check -> phq2 [label="yes\n(primary care,\nER)"];
+    time_check -> purpose_check [label="no"];
+    purpose_check -> phq9 [label="yes"];
+    purpose_check -> phq9 [label="no\n(suspected\ndepression)"];
+    phq2 -> phq2_score;
+    phq2_score -> phq9 [label="yes"];
+    phq2_score -> monitor [label="no"];
+}
 ```
 
 ### 2. Administer Assessment
@@ -115,16 +161,43 @@ Depression already suspected?
 
 ### 4. Clinical Decision-Making
 
+#### Treatment Decision Pathway
+
+```dot
+digraph treatment_decision {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    score [label="PHQ-9\nTotal Score", shape=ellipse];
+    minimal [label="0-4\nMinimal", shape=box];
+    mild [label="5-9\nMild", shape=box];
+    moderate [label="10-14\nModerate", shape=box];
+    mod_severe [label="15-19\nMod. Severe", shape=box];
+    severe [label="20-27\nSevere", shape=box];
+
+    tx_minimal [label="• Monitor\n• Psychoeducation\n• Annual f/u", style="filled", fillcolor=gray90];
+    tx_mild [label="• Behavioral interventions\n• Lifestyle changes\n• F/u 2-4 weeks", style="filled", fillcolor=lightblue];
+    tx_moderate [label="• Therapy OR\n  medication\n• F/u 2-4 weeks", style="filled", fillcolor=yellow];
+    tx_mod_severe [label="• Combination therapy\n• Specialty referral\n• F/u 1-2 weeks", style="filled", fillcolor=orange];
+    tx_severe [label="• Immediate specialty\n• Higher LOC\n• Weekly+ f/u", style="filled", fillcolor=red, fontcolor=white];
+
+    score -> minimal;
+    score -> mild;
+    score -> moderate;
+    score -> mod_severe;
+    score -> severe;
+
+    minimal -> tx_minimal;
+    mild -> tx_mild;
+    moderate -> tx_moderate;
+    mod_severe -> tx_mod_severe;
+    severe -> tx_severe;
+}
+```
+
 **Follow clinical decision trees:** [references/clinical-decision-trees.md](references/clinical-decision-trees.md)
 
-**General pathways:**
-- **PHQ-9 0-4:** Monitor, psychoeducation
-- **PHQ-9 5-9:** Behavioral interventions, watchful waiting
-- **PHQ-9 10-14:** Active treatment (therapy or medication)
-- **PHQ-9 15-19:** Combination therapy, specialty referral
-- **PHQ-9 20-27:** Immediate specialty care, higher level of care
-
-**Any Item 9 > 0:** Follow safety protocol regardless of total score
+**⚠️ Any Item 9 > 0:** Follow safety protocol regardless of total score
 
 ### 5. Document
 
@@ -149,27 +222,10 @@ Depression already suspected?
 
 ## Special Considerations
 
-### Medical Comorbidity
-- Physical illness can elevate somatic symptom scores (items 3, 4, 5, 8)
-- Chronic pain, sleep disorders, fatigue inflate scores
-- Interpret in context of medical conditions
-- Still treat depression even if "explained" by medical illness
-
-### Cultural Factors
-- Somatic symptoms may be more prominent in some cultural groups
-- Expression of mood symptoms varies across cultures
-- Use culturally validated versions when available
-- Consider language and health literacy
-
-### Age Considerations
-- **Adolescents:** PHQ-9 Modified for Teens (PHQ-A) available
-- **Older adults:** PHQ-9 validated, account for medical comorbidity
-- **Children <12:** Different screening tools recommended
-
-### Substance Use
-- Active substance use can inflate or confound depression scores
-- May need to assess after detox for accurate baseline
-- Co-occurring disorders require integrated treatment
+- **Medical comorbidity:** Physical illness elevates somatic scores (items 3,4,5,8)—interpret in context, treat depression regardless
+- **Cultural factors:** Symptom expression varies; use culturally validated versions when available
+- **Age:** PHQ-A for adolescents; validated for older adults; different tools for children <12
+- **Substance use:** Can confound scores; assess post-detox for baseline; integrated treatment required
 
 ## Referral Guidelines
 
@@ -190,48 +246,11 @@ Depression already suspected?
 
 ## Limitations
 
-**PHQ-2 and PHQ-9 are screening tools, not diagnostic instruments:**
-- Do not replace comprehensive clinical assessment
-- Require interpretation within clinical context
-- Clinical judgment always supersedes screening scores
-- Cannot diagnose based on score alone
-
-**Potential issues:**
-- False positives (especially with medical illness affecting somatic items)
-- False negatives (patient minimization, literacy issues)
-- Cultural/linguistic factors affect responses
-- Requires patient insight and honest reporting
+**Screening tools, not diagnostic instruments.** Do not replace clinical assessment. Clinical judgment supersedes scores. Potential issues: false positives (medical illness), false negatives (minimization, literacy), cultural/linguistic factors.
 
 ## Usage Examples
 
-This skill can be invoked when you need to:
-- Screen a patient for depression symptoms
-- Assess depression severity for treatment planning
-- Track treatment response over time
-- Determine appropriate level of care
-- Support clinical decision-making with validated data
-
-**Example requests:**
-- "Help me administer a PHQ-9"
-- "I need to screen this patient for depression"
-- "Score this PHQ-9 and interpret results"
-- "What treatment is recommended for PHQ-9 score of 16?"
-- "Patient scored 2 on Item 9 - what do I do?"
-
-## File Structure
-
-```
-depression-screening/
-├── SKILL.md (this file - quick reference and workflow)
-├── assets/
-│   ├── phq-9.md (complete PHQ-9 assessment)
-│   └── phq-2.md (complete PHQ-2 assessment)
-└── references/
-    ├── severity-levels.md (detailed severity interpretations)
-    ├── screening-comparison.md (PHQ-2 vs PHQ-9 guidance)
-    ├── item-9-safety-protocol.md (suicidal ideation response)
-    └── clinical-decision-trees.md (treatment recommendations)
-```
+**Example requests:** "Administer PHQ-9", "Screen for depression", "Score and interpret PHQ-9", "Treatment for score 16", "Item 9 positive—what now?"
 
 ## References
 
@@ -244,8 +263,3 @@ depression-screening/
 - Veterans Affairs/DoD. (2022). Clinical Practice Guideline for Management of Major Depressive Disorder.
 
 **No copyright restrictions - PHQ-2 and PHQ-9 are freely available for clinical and research use**
-
----
-
-**Status:** ✅ Complete - Modular structure implemented
-**Last Updated:** 2026-02-01

@@ -1,3 +1,9 @@
+---
+name: treatment-planning
+description: Use when developing treatment plans, writing SMART goals, determining appropriate level of care, implementing measurement-based care protocols, or adapting treatment based on patient progress. Provides SMART goals framework, ASAM/LOCUS criteria guidance, and treatment monitoring strategies.
+license: MIT
+---
+
 # Treatment Planning
 
 ## Description

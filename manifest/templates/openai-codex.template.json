@@ -1,0 +1,23 @@
+{
+  "_comment": "Template for OpenAI Codex CLI (.codex/manifest.json)",
+  "_mapping": {
+    "name": "{{meta.name}}",
+    "version": "{{meta.version}}",
+    "description": "{{meta.description}}",
+    "author": "{{meta.author}}",
+    "license": "{{meta.license}}",
+    "repository": "{{meta.repository}}",
+    "skills": "{{skills}}",
+    "skills[].name": "{{id}}",
+    "skills[].path": "{{path}}",
+    "skills[].description": "{{description}}"
+  },
+  "_skillsFrontmatter": {
+    "enabled": true,
+    "fields": {
+      "name": "{{id}}",
+      "description": "{{description}}"
+    }
+  },
+  "_output": ".codex/manifest.json"
+}

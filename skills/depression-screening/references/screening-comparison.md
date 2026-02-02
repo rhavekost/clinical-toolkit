@@ -247,6 +247,38 @@ A: Trust your clinical judgment. Administer PHQ-9 if clinical concern remains de
 **Q: How do I handle positive Item 9 on PHQ-9?**
 A: Any positive response on Item 9 requires immediate safety assessment. See [item-9-safety-protocol.md](item-9-safety-protocol.md) and [docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
 
+## Psychometric Properties
+
+### PHQ-9 Validation Data
+
+**Diagnostic Accuracy:**
+- **Sensitivity:** 88% for major depression (at cutoff of 10)
+- **Specificity:** 88% for major depression (at cutoff of 10)
+- Excellent balance of sensitivity and specificity
+
+**Reliability:**
+- **Internal consistency:** Cronbach's α = 0.89 (excellent)
+- Test-retest reliability well-established
+
+**Treatment Monitoring:**
+- **Minimal clinically important difference:** 5-point change
+- **Clinically significant improvement:** 10-point change
+- Sensitive to treatment effects across multiple studies
+
+**Suicidal Ideation Screening:**
+- Item 9 is a validated screener for suicidal thoughts
+- ANY positive response on Item 9 requires immediate clinical follow-up
+
+### PHQ-2 Validation Data
+
+**Diagnostic Accuracy:**
+- Optimized for sensitivity to minimize missed cases
+- Positive screen (≥3) requires full PHQ-9 for specificity
+
+**Efficiency:**
+- Reduces screening burden when combined with PHQ-9
+- Two-stage approach maintains high sensitivity with better efficiency
+
 ## Summary Table
 
 | Feature | PHQ-2 | PHQ-9 |
@@ -256,9 +288,11 @@ A: Any positive response on Item 9 requires immediate safety assessment. See [it
 | **Purpose** | Initial screening | Comprehensive assessment |
 | **Scoring** | 0-6 | 0-27 |
 | **Cutoff** | ≥3 (positive screen) | ≥10 (moderate depression) |
+| **Sensitivity/Specificity** | High sensitivity | 88% / 88% (at cutoff 10) |
+| **Internal consistency** | - | α = 0.89 |
 | **Severity levels** | No | Yes (5 levels) |
 | **Suicidal ideation** | No | Yes (Item 9) |
-| **Treatment monitoring** | No | Yes |
+| **Treatment monitoring** | No | Yes (5-10 pt change meaningful) |
 | **Diagnostic** | No | No (but better clinical detail) |
 | **Best for** | Busy settings, universal screening | Mental health settings, treatment monitoring |
 

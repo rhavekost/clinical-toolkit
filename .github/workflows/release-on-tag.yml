@@ -1,0 +1,83 @@
+name: Release on Tag Push
+
+# This workflow automatically creates a release when you push a version tag
+# Disabled by default - uncomment 'on:' section to enable
+
+# on:
+#   push:
+#     tags:
+#       - 'v*.*.*'  # Trigger on version tags like v1.0.0
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          # Remove 'v' prefix from tag
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+
+      - name: Build package
+        run: |
+          chmod +x scripts/package-for-claude-ai.sh
+          ./scripts/package-for-claude-ai.sh
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          # Get previous tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)
+
+          echo "Generating changelog from $PREV_TAG to $GITHUB_REF_NAME..."
+
+          CHANGELOG=$(git log ${PREV_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges)
+
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="- Initial release"
+          fi
+
+          cat > release-notes.md << EOF
+          # Clinical Toolkit v${{ steps.version.outputs.version }}
+
+          ## What's Changed
+
+          ${CHANGELOG}
+
+          ## Installation
+
+          Download \`clinical-toolkit-complete.zip\` and upload to Claude.ai Settings → Capabilities → Skills
+
+          ## Included Skills
+
+          - Depression Screening (PHQ-9, PHQ-2)
+          - Anxiety Screening (GAD-7, GAD-2)
+          - Trauma Screening (PCL-5, PC-PTSD-5)
+          - Substance Screening (AUDIT-C, DAST-10)
+          - Suicide Screening (ASQ, C-SSRS)
+          - Intake Interview (HEADSS, Biopsychosocial)
+          - Treatment Planning (SMART goals, ASAM/LOCUS)
+          - Documentation (SOAP, DAP notes)
+          EOF
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Clinical Toolkit v${{ steps.version.outputs.version }}
+          body_path: release-notes.md
+          files: |
+            clinical-toolkit-complete.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

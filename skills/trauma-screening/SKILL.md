@@ -1,3 +1,9 @@
+---
+name: trauma-screening
+description: Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments.
+license: MIT
+---
+
 # Trauma Screening
 
 ## Description
@@ -17,20 +23,33 @@ This skill helps administer and interpret validated PTSD and trauma screening in
 
 **Decision guide:** Start with PC-PTSD-5 for quick screening. If score ≥3, administer full PCL-5. See [references/screening-comparison.md](references/screening-comparison.md) for detailed guidance.
 
+### Assessment Selection Decision Tree
+
+```dot
+digraph assessment_selection {
+    rankdir=LR;
+    node [shape=box, style=rounded];
+
+    start [label="Trauma\nExposure\nReported", shape=ellipse];
+    time_check [label="Time/setting?", shape=diamond];
+    pc_ptsd [label="PC-PTSD-5\n(1-2 min)\n5 questions", style="filled", fillcolor=lightblue];
+    pc_result [label="PC-PTSD-5\nscore ≥3?", shape=diamond];
+    pcl5 [label="PCL-5\n(5-10 min)\n20 items", style="filled", fillcolor=lightgreen];
+    monitor [label="Negative Screen\nRoutine\nMonitoring", style="filled", fillcolor=gray90];
+    direct_pcl [label="PCL-5 Directly\n(comprehensive)", style="filled", fillcolor=lightgreen];
+
+    start -> time_check;
+    time_check -> pc_ptsd [label="Brief\nscreening"];
+    time_check -> direct_pcl [label="Full\nassessment\nneeded"];
+    pc_ptsd -> pc_result;
+    pc_result -> pcl5 [label="yes\n(≥3)"];
+    pc_result -> monitor [label="no\n(0-2)"];
+}
+```
+
 ## Usage
 
-This skill can be invoked when you need to:
-- Screen for PTSD symptoms
-- Assess PTSD severity
-- Track trauma treatment response
-- Quantify symptom changes
-- Monitor recovery progress
-
-**Example requests:**
-- "Help me screen for PTSD"
-- "I need to administer a PCL-5"
-- "Can you score this trauma screening?"
-- "Interpret these PTSD assessment results"
+**Example requests:** "Screen for PTSD", "Administer PCL-5", "Score trauma screening", "Interpret PTSD results"
 
 ## Quick Reference: Severity Levels
 
@@ -102,125 +121,87 @@ For detailed severity interpretations and treatment recommendations, see [refere
 
 ## Clinical Decision-Making
 
+### Trauma-Informed Response Pathway
+
+```dot
+digraph trauma_response {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    positive [label="Positive Screen\nPC-PTSD-5 ≥3\nor\nPCL-5 ≥33", shape=ellipse, style="filled", fillcolor=yellow];
+
+    assess_safety [label="Assess Safety:\n• Suicidal ideation?\n• Substance use?\n• Dissociation?", style="filled", fillcolor=orange];
+
+    safety_concern [label="Immediate\nSafety Concern?", shape=diamond];
+
+    crisis [label="CRISIS RESPONSE:\n• Safety protocol\n• Stabilization\n• Do not proceed\n  with trauma work", style="filled", fillcolor=red, fontcolor=white];
+
+    assess_severity [label="Assess PTSD\nSeverity\n(PCL-5 score)", style="filled", fillcolor=lightblue];
+
+    mild [label="PCL-5 0-30\nMild/Subclinical", shape=box];
+    moderate [label="PCL-5 31-44\nModerate", shape=box];
+    severe [label="PCL-5 45-59\nSevere", shape=box];
+    extreme [label="PCL-5 ≥60\nExtreme", shape=box];
+
+    tx_mild [label="• Psychoeducation\n• Coping strategies\n• Monitor", style="filled", fillcolor=lightgreen];
+    tx_moderate [label="• Trauma therapy\n  (PE, CPT, EMDR)\n• Medication option\n• Regular f/u", style="filled", fillcolor=yellow];
+    tx_severe [label="• Combination tx\n• Specialty referral\n• Close monitoring", style="filled", fillcolor=orange];
+    tx_extreme [label="• Immediate specialty\n• Higher LOC\n• Intensive tx", style="filled", fillcolor=red, fontcolor=white];
+
+    positive -> assess_safety;
+    assess_safety -> safety_concern;
+    safety_concern -> crisis [label="yes"];
+    safety_concern -> assess_severity [label="no"];
+
+    assess_severity -> mild;
+    assess_severity -> moderate;
+    assess_severity -> severe;
+    assess_severity -> extreme;
+
+    mild -> tx_mild;
+    moderate -> tx_moderate;
+    severe -> tx_severe;
+    extreme -> tx_extreme;
+}
+```
+
 For structured clinical decision trees covering screening, treatment selection, safety assessment, and treatment monitoring, see [references/clinical-decision-trees.md](references/clinical-decision-trees.md)
 
-**Quick Treatment Selection:**
-- **PCL-5 0-30:** Watchful waiting, psychoeducation, coping strategies
-- **PCL-5 31-44:** Evidence-based trauma therapy (PE, CPT, EMDR) or medication
-- **PCL-5 45-59:** Combination therapy + medication, specialty referral
-- **PCL-5 ≥60:** Immediate specialty referral, consider higher level of care
+**⚠️ Safety-First:** Assess for suicidal ideation (use suicide-screening), substance use, dissociation. Do NOT begin trauma work if safety concerns present.
 
-**Evidence-Based Trauma Therapies:**
-- Prolonged Exposure (PE)
-- Cognitive Processing Therapy (CPT)
-- Eye Movement Desensitization and Reprocessing (EMDR)
-- Trauma-Focused Cognitive Behavioral Therapy (TF-CBT)
+**Evidence-Based Therapies:** PE, CPT, EMDR, TF-CBT
 
-**Medication Options:**
-- First-line SSRIs: Sertraline, paroxetine, fluoxetine
-- SNRI: Venlafaxine
+**Medications:** SSRIs (sertraline, paroxetine, fluoxetine), SNRI (venlafaxine)
 
 ## Safety Protocols
 
-**⚠️ TRAUMA-INFORMED CARE REQUIRED**
+**⚠️ TRAUMA-INFORMED CARE REQUIRED:** Follow trauma-informed principles (safety/trust, voluntary participation, patient-controlled pacing, prepare for emotional reactions). See [references/trauma-informed-approach.md](references/trauma-informed-approach.md).
 
-All trauma screening must follow trauma-informed principles:
-- Establish safety and trust before administering
-- Explain purpose and voluntary nature
-- Allow patient to decline or pause at any time
-- Patient controls pacing
-- Be prepared for emotional reactions and dissociation
-- Have grounding techniques ready
-- Focus on symptoms, not trauma narrative
-- Validate and normalize trauma responses
+**Safety Assessment:** Screen for suicidal ideation (use ../../suicide-screening/), assess current safety. Crisis intervention required per [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md).
 
-**Comprehensive trauma-informed guidance:** [references/trauma-informed-approach.md](references/trauma-informed-approach.md)
+**Crisis Resources:** 988 Lifeline, Text HOME to 741741, Veterans 988 Press 1, Emergency 911
 
-**Safety Assessment Required:**
-- Screen for suicidal ideation separately (use ../../suicide-screening/ tools)
-- Assess current safety and coping
-- Any safety concerns require immediate intervention per [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
-
-**Crisis Resources:**
-- 988 Suicide & Crisis Lifeline
-- Crisis Text Line: Text HOME to 741741
-- Veterans Crisis Line: 988 then Press 1
-- Emergency Services: 911
-
-**When to Escalate:**
-- Active suicidal ideation → Crisis intervention immediately
-- Severe functional impairment → Specialty mental health referral
-- PCL-5 ≥60 → Immediate specialty referral
-- Psychotic symptoms, severe self-harm → Consider hospitalization
+**Escalate when:** Active SI, severe impairment, PCL-5 ≥60, psychotic symptoms, severe self-harm
 
 ## Documentation
 
-### PC-PTSD-5 Documentation
-**Template available in:** [assets/pc-ptsd-5.md](assets/pc-ptsd-5.md)
+**PC-PTSD-5 template:** [assets/pc-ptsd-5.md](assets/pc-ptsd-5.md) - Include trauma exposure, item responses, score (0-5), result, next steps.
 
-**Essential elements:**
-- Trauma exposure confirmed: Yes/No
-- Item responses (Yes/No for each)
-- Total score (0-5)
-- Result (Negative/Positive screen)
-- Next steps (monitor vs. administer PCL-5)
+**PCL-5 template:** [assets/pcl-5.md](assets/pcl-5.md) - Include all 20 items (0-4), cluster subtotals, total score, severity, DSM-5 criteria met, provisional diagnosis, treatment recommendations, safety assessment.
 
-### PCL-5 Documentation
-**Template available in:** [assets/pcl-5.md](assets/pcl-5.md)
-
-**Essential elements:**
-- All 20 item responses (0-4)
-- Cluster subtotals (B, C, D, E)
-- Total score (0-80)
-- Severity level
-- DSM-5 criteria met (Yes/No for each cluster)
-- Provisional diagnosis (Yes/No)
-- Dominant symptom clusters
-- Treatment recommendations
-- Safety assessment
-
-**General documentation standards:** [../../docs/references/documentation-standards.md](../../docs/references/documentation-standards.md)
+**Standards:** [../../docs/references/documentation-standards.md](../../docs/references/documentation-standards.md)
 
 ## Limitations & Considerations
 
-**This is a support tool, not a diagnostic instrument:**
-- Does not replace comprehensive clinical assessment
-- PCL-5 provides *provisional* diagnosis; clinical interview required for formal diagnosis
-- Requires interpretation within trauma history context
-- Cultural factors affect trauma expression
-- Dissociation may affect accurate reporting
-- Clinical judgment always supersedes screening scores
+**Support tool, not diagnostic:** PCL-5 provides provisional diagnosis; clinical interview required. Scores require interpretation within trauma context. Cultural factors and dissociation affect reporting. Clinical judgment supersedes scores. Use collaborative, trauma-informed approach respecting autonomy and timing. See [references/trauma-informed-approach.md](references/trauma-informed-approach.md).
 
-**Trauma-Informed Considerations:**
-- Use collaborative, empowering approach
-- Respect patient autonomy in assessment process
-- Consider timing and therapeutic relationship
-- Be aware of potential re-traumatization
-- Avoid forcing disclosure of trauma details during screening
-- See [references/trauma-informed-approach.md](references/trauma-informed-approach.md)
+**Special Populations:** Military/veterans (combat context), complex trauma (developmental/relational impact), childhood trauma (attachment issues), recent trauma <1 month (acute stress vs PTSD).
 
-**Special Populations:**
-- **Military/veteran populations:** Consider combat-specific contexts
-- **Complex trauma:** PCL-5 may not capture full developmental/relational impact
-- **Childhood trauma:** Consider developmental impact and attachment issues
-- **Recent trauma (<1 month):** May be acute stress reaction, not PTSD; reassess at 1 month
-
-**Comorbidity Considerations:**
-PTSD commonly co-occurs with:
-- Depression (50% comorbidity) - Screen with ../../depression-screening/
-- Substance use disorders (30-50%) - Screen with ../../substance-screening/
-- Anxiety disorders - Screen with ../../anxiety-screening/
-
-Address comorbid conditions in treatment planning.
+**Comorbidity:** PTSD commonly co-occurs with depression (50%), substance use (30-50%), anxiety. Screen with ../../depression-screening/, ../../substance-screening/, ../../anxiety-screening/. Address in treatment planning.
 
 ## Workflow Integration
 
-This skill provides assessment tools. For related clinical workflows:
-- **Intake interview:** Use ../../intake-interview/ for comprehensive intake incorporating trauma screening
-- **Treatment planning:** Use ../../treatment-planning/ for developing trauma treatment plans
-- **Clinical documentation:** Use ../../documentation/ for progress notes and treatment documentation
-- **Safety planning:** See [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
-- **Referral guidelines:** See [../../docs/references/referral-guidelines.md](../../docs/references/referral-guidelines.md)
+**Related workflows:** ../../intake-interview/ (comprehensive intake), ../../treatment-planning/ (trauma treatment plans), ../../documentation/ (progress notes). See [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md) and [../../docs/references/referral-guidelines.md](../../docs/references/referral-guidelines.md).
 
 ## Additional Resources
 
@@ -240,8 +221,3 @@ This skill provides assessment tools. For related clinical workflows:
 - Bovin MJ, et al. Psychometric properties of the PTSD Checklist for Diagnostic and Statistical Manual of Mental Disorders–Fifth Edition (PCL-5) in veterans. Psychological Assessment. 2016;28(11):1379-1391.
 
 **Public domain - VA National Center for PTSD, freely available for clinical and research use**
-
----
-
-**Status:** ✅ Implemented - Assets and references structure complete
-**Last Updated:** 2026-02-01

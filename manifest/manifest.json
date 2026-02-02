@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "name": "clinical-toolkit",
+    "version": "1.0.0",
+    "description": "Agent skill framework for clinical mental health screening, assessment interpretation, and documentation support",
+    "author": "rhavekost",
+    "license": "MIT",
+    "repository": "https://github.com/rhavekost/clinical-toolkit",
+    "keywords": [
+      "clinical",
+      "mental-health",
+      "screening",
+      "assessment",
+      "healthcare",
+      "therapy",
+      "psychiatry"
+    ],
+    "compatiblePlatforms": [
+      "claude",
+      "github-copilot",
+      "cursor",
+      "gemini-cli",
+      "openai-codex"
+    ]
+  },
+  "skills": [
+    {
+      "id": "depression-screening",
+      "path": "skills/depression-screening/SKILL.md",
+      "name": "Depression Screening",
+      "description": "Use when screening for depression symptoms (low mood, anhedonia, fatigue, sleep changes, appetite changes), assessing severity for treatment planning, tracking treatment response, or patient has positive PHQ-9 Item 9 (suicidal ideation). Provides PHQ-9 (comprehensive) and PHQ-2 (brief) assessments.",
+      "category": "screening",
+      "tags": [
+        "depression",
+        "phq-9",
+        "phq-2",
+        "mood",
+        "low-mood",
+        "anhedonia",
+        "suicidal-ideation",
+        "item-9",
+        "fatigue",
+        "sleep-changes",
+        "treatment-monitoring",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "PHQ-2",
+          "PHQ-9"
+        ]
+      }
+    },
+    {
+      "id": "anxiety-screening",
+      "path": "skills/anxiety-screening/SKILL.md",
+      "name": "Anxiety Screening",
+      "description": "Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments.",
+      "category": "screening",
+      "tags": [
+        "anxiety",
+        "gad-7",
+        "gad-2",
+        "worry",
+        "panic",
+        "panic-attacks",
+        "restlessness",
+        "fear",
+        "avoidance",
+        "muscle-tension",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "GAD-2",
+          "GAD-7"
+        ]
+      }
+    },
+    {
+      "id": "trauma-screening",
+      "path": "skills/trauma-screening/SKILL.md",
+      "name": "Trauma Screening",
+      "description": "Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments.",
+      "category": "screening",
+      "tags": [
+        "trauma",
+        "ptsd",
+        "pc-ptsd-5",
+        "pcl-5",
+        "flashbacks",
+        "nightmares",
+        "intrusive-memories",
+        "avoidance",
+        "hypervigilance",
+        "trauma-informed",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "PC-PTSD-5",
+          "PCL-5"
+        ]
+      }
+    },
+    {
+      "id": "substance-screening",
+      "path": "skills/substance-screening/SKILL.md",
+      "name": "Substance Use Screening",
+      "description": "Use when screening for alcohol or drug use concerns (heavy drinking, cravings, loss of control, withdrawal symptoms, functional impairment), assessing substance use severity, determining level of care, or patient reports substance-related problems. Provides AUDIT-C (alcohol brief) and DAST-10 (drugs comprehensive) assessments.",
+      "category": "screening",
+      "tags": [
+        "substance-use",
+        "alcohol",
+        "drugs",
+        "audit-c",
+        "dast-10",
+        "addiction",
+        "cravings",
+        "withdrawal",
+        "heavy-drinking",
+        "loss-of-control",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "AUDIT-C",
+          "DAST-10"
+        ]
+      }
+    },
+    {
+      "id": "suicide-screening",
+      "path": "skills/suicide-screening/SKILL.md",
+      "name": "Suicide Risk Screening",
+      "description": "Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused.",
+      "category": "screening",
+      "tags": [
+        "suicide",
+        "crisis",
+        "safety",
+        "c-ssrs",
+        "asq",
+        "risk-assessment",
+        "suicidal-thoughts",
+        "self-harm",
+        "hopelessness",
+        "safety-planning",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "criticalSafety": true,
+        "validatedInstruments": [
+          "ASQ",
+          "C-SSRS"
+        ]
+      }
+    },
+    {
+      "id": "intake-interview",
+      "path": "skills/intake-interview/SKILL.md",
+      "name": "Intake Interview",
+      "description": "Use when conducting initial patient intake, gathering comprehensive history, establishing therapeutic rapport, assessing safety and risk factors, or need structured interview framework. Provides HEADSS assessment (adolescents), biopsychosocial interview template, and safety protocols.",
+      "category": "clinical-workflow",
+      "tags": [
+        "intake",
+        "interview",
+        "assessment",
+        "biopsychosocial",
+        "headss",
+        "initial-visit",
+        "history-taking",
+        "rapport",
+        "safety-assessment",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "treatment-planning",
+      "path": "skills/treatment-planning/SKILL.md",
+      "name": "Treatment Planning",
+      "description": "Use when developing treatment plans, writing SMART goals, determining appropriate level of care, implementing measurement-based care protocols, or adapting treatment based on patient progress. Provides SMART goals framework, ASAM/LOCUS criteria guidance, and treatment monitoring strategies.",
+      "category": "clinical-workflow",
+      "tags": [
+        "treatment-planning",
+        "smart-goals",
+        "level-of-care",
+        "measurement-based-care",
+        "asam",
+        "locus",
+        "treatment-goals",
+        "progress-monitoring",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "documentation",
+      "path": "skills/documentation/SKILL.md",
+      "name": "Clinical Documentation",
+      "description": "Use when writing clinical notes, documenting sessions, creating treatment plans for insurance/authorization, ensuring HIPAA compliance, or need structured documentation templates. Provides SOAP notes, progress notes (DAP format), and treatment plan templates. HIPAA-compliant guidance included.",
+      "category": "documentation",
+      "tags": [
+        "documentation",
+        "soap-notes",
+        "progress-notes",
+        "ehr",
+        "hipaa",
+        "dap",
+        "clinical-notes",
+        "session-notes",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "hipaaCompliance": true
+      }
+    }
+  ]
+}

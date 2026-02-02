@@ -309,6 +309,46 @@ A: Trust your clinical judgment. Administer GAD-7 if clinical concern remains de
 **Q: Does a high GAD-7 mean the patient has Generalized Anxiety Disorder?**
 A: Not necessarily. GAD-7 screens for anxiety generally. High scores can indicate GAD, panic disorder, social anxiety, PTSD, or other anxiety conditions. Further assessment needed for specific diagnosis.
 
+## Psychometric Properties
+
+### GAD-7 Validation Data
+
+**Diagnostic Accuracy:**
+- **Optimal cutoff:** Score of 8 (balances sensitivity and specificity)
+- **Sensitivity:** 92% for generalized anxiety disorder (at cutoff of 8)
+- **Specificity:** 76% for generalized anxiety disorder (at cutoff of 8)
+- Cutoff of 10 commonly used in practice (higher specificity, adequate sensitivity)
+
+**Cross-Disorder Screening:**
+- Screens reasonably well for multiple anxiety disorders:
+  - Panic disorder
+  - Social anxiety disorder
+  - PTSD (though disorder-specific tools preferred)
+- Not limited to generalized anxiety disorder despite the name
+
+**Reliability:**
+- **Internal consistency:** Excellent across multiple studies
+- Test-retest reliability well-established
+
+**Treatment Monitoring:**
+- **Meaningful change:** 5-point decrease indicates treatment response
+- Sensitive to symptom changes during treatment
+- Goal: Reduction to <10 (below moderate threshold) or <5 (minimal symptoms)
+
+**Development:**
+- Created by same research team as PHQ-9 (Spitzer, Kroenke, Williams)
+- Parallel design facilitates combined depression-anxiety screening
+
+### GAD-2 Validation Data
+
+**Diagnostic Accuracy:**
+- Optimized for sensitivity to minimize missed cases
+- Positive screen (≥3) requires full GAD-7 for specificity
+
+**Efficiency:**
+- Reduces screening burden when combined with GAD-7
+- Two-stage approach maintains high sensitivity with better efficiency
+
 ## Summary Table
 
 | Feature | GAD-2 | GAD-7 |
@@ -317,9 +357,11 @@ A: Not necessarily. GAD-7 screens for anxiety generally. High scores can indicat
 | **Time** | < 1 minute | 2-3 minutes |
 | **Purpose** | Initial screening | Comprehensive assessment |
 | **Scoring** | 0-6 | 0-21 |
-| **Cutoff** | ≥3 (positive screen) | ≥10 (moderate anxiety) |
+| **Cutoff** | ≥3 (positive screen) | ≥10 (moderate); 8 (optimal) |
+| **Sensitivity/Specificity** | High sensitivity | 92% / 76% (at cutoff 8) |
 | **Severity levels** | No | Yes (4 levels) |
-| **Treatment monitoring** | No | Yes |
+| **Cross-disorder utility** | - | Yes (panic, social, PTSD) |
+| **Treatment monitoring** | No | Yes (5 pt change meaningful) |
 | **Diagnostic** | No | No (but better clinical detail) |
 | **Best for** | Busy settings, universal screening | Mental health settings, treatment monitoring |
 

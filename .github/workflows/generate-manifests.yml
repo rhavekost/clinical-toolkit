@@ -1,0 +1,82 @@
+name: Generate Platform Manifests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'manifest/**'
+      - 'scripts/generate-manifests.js'
+  pull_request:
+    paths:
+      - 'manifest/**'
+      - 'scripts/generate-manifests.js'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Needed to commit changes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate manifests
+        run: |
+          echo "🚀 Generating platform manifests..."
+          node scripts/generate-manifests.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected"
+            git diff --stat
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true' && github.event_name == 'push'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .claude-plugin/manifest.json
+          git add .github/copilot/manifest.json
+          git add .cursor/manifest.json
+          git add .gemini/manifest.json
+          git add .codex/manifest.json
+          git add skills/*/SKILL.md
+          git commit -m "chore: auto-generate platform manifests" -m "Generated from manifest/manifest.json by GitHub Actions" -m "Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+          git push
+
+      - name: PR Check - Verify manifests are in sync
+        if: github.event_name == 'pull_request' && steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "❌ ERROR: Generated manifests are out of sync!"
+          echo ""
+          echo "The manifest/ directory has been modified,"
+          echo "but the generated platform manifests have not been updated."
+          echo ""
+          echo "Please run locally:"
+          echo "  npm run generate:manifests"
+          echo ""
+          echo "Then commit the changes."
+          git diff
+          exit 1
+
+      - name: PR Check - Success
+        if: github.event_name == 'pull_request' && steps.check_changes.outputs.changed == 'false'
+        run: |
+          echo "✅ Platform manifests are in sync!"

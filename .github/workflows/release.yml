@@ -1,0 +1,162 @@
+name: Create Release
+
+on:
+  # Manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., 1.0.0)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark as pre-release?'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for changelog generation
+
+      - name: Validate version format
+        run: |
+          if ! [[ "${{ github.event.inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Error: Version must be in format X.Y.Z (e.g., 1.0.0)"
+            exit 1
+          fi
+
+      - name: Check if tag already exists
+        run: |
+          if git rev-parse "v${{ github.event.inputs.version }}" >/dev/null 2>&1; then
+            echo "Error: Tag v${{ github.event.inputs.version }} already exists"
+            exit 1
+          fi
+
+      - name: Update manifest version
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          sed -i.bak "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" .claude-plugin/manifest.json
+          rm .claude-plugin/manifest.json.bak
+
+          echo "Updated manifest.json to version $VERSION"
+          cat .claude-plugin/manifest.json | grep version
+
+      - name: Build package
+        run: |
+          chmod +x scripts/package-for-claude-ai.sh
+          ./scripts/package-for-claude-ai.sh
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+
+          # Get the last tag, or use initial commit if no tags
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || git rev-list --max-parents=0 HEAD)
+
+          echo "Generating changelog from $LAST_TAG to HEAD..."
+
+          # Generate changelog
+          CHANGELOG=$(git log ${LAST_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges)
+
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="- Initial release"
+          fi
+
+          # Create release notes
+          cat > release-notes.md << EOF
+          # Clinical Toolkit v${VERSION}
+
+          ## What's Changed
+
+          ${CHANGELOG}
+
+          ## Installation
+
+          ### For Claude.ai (Web & iOS)
+
+          1. Download \`clinical-toolkit-complete.zip\` below
+          2. Open [Claude.ai](https://claude.ai) or the iOS app
+          3. Go to **Settings → Capabilities**
+          4. Enable the **Skills** toggle
+          5. Click **Upload skill**
+          6. Select the downloaded ZIP file
+          7. Turn the skill toggle **ON**
+
+          ### For Claude Code (CLI)
+
+          \`\`\`bash
+          # Clone or download the repository
+          git clone https://github.com/rhavekost/clinical-toolkit.git
+          cd clinical-toolkit
+
+          # Install skills
+          claude install-skill skills/depression-screening
+          claude install-skill skills/anxiety-screening
+          # ... (or all at once with a script)
+          \`\`\`
+
+          ## Included Skills
+
+          This package includes 8 clinical mental health skills:
+
+          - **Depression Screening** - PHQ-9 and PHQ-2 assessments
+          - **Anxiety Screening** - GAD-7 and GAD-2 assessments
+          - **Trauma Screening** - PCL-5 and PC-PTSD-5 assessments
+          - **Substance Screening** - AUDIT-C and DAST-10 assessments
+          - **Suicide Screening** - ASQ and C-SSRS protocols
+          - **Intake Interview** - HEADSS and biopsychosocial templates
+          - **Treatment Planning** - SMART goals and ASAM/LOCUS criteria
+          - **Documentation** - SOAP and DAP note templates (HIPAA-compliant)
+
+          ## Support
+
+          For questions or issues, please [open an issue](https://github.com/rhavekost/clinical-toolkit/issues).
+          EOF
+
+          echo "Release notes created"
+          cat release-notes.md
+
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .claude-plugin/manifest.json
+          git commit -m "chore: bump version to ${{ github.event.inputs.version }}"
+          git push
+
+      - name: Create Git tag
+        run: |
+          git tag -a "v${{ github.event.inputs.version }}" -m "Release v${{ github.event.inputs.version }}"
+          git push origin "v${{ github.event.inputs.version }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: Clinical Toolkit v${{ github.event.inputs.version }}
+          body_path: release-notes.md
+          files: |
+            clinical-toolkit-complete.zip
+          prerelease: ${{ github.event.inputs.prerelease }}
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release Summary
+        run: |
+          echo "✅ Release v${{ github.event.inputs.version }} created successfully!"
+          echo ""
+          echo "📦 Package: clinical-toolkit-complete.zip"
+          echo "🔗 Release: https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}"
+          echo ""
+          echo "Users can now download and install the complete toolkit from the Releases page."

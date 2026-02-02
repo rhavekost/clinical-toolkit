@@ -1,3 +1,9 @@
+---
+name: suicide-screening
+description: Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused.
+license: MIT
+---
+
 # Suicide Risk Screening
 
 ## Description
@@ -38,56 +44,45 @@ This skill helps administer and interpret validated suicide risk screening instr
 
 ### ASQ (Ask Suicide-Screening Questions)
 
-**Complete assessment with questions and protocol:**
-→ [assets/asq.md](assets/asq.md)
+**Complete assessment:** [assets/asq.md](assets/asq.md)
 
-**Key Facts:**
-- **4 questions** + 1 acuity question if positive
-- **Time:** 20 seconds
-- **Any "yes" = positive screen** → Requires comprehensive assessment
-- **Developed by:** NIMH for medical settings
-- **Validated:** Ages 10+, high sensitivity
+**4 questions (20 sec), Ages 10+.** Any "yes" = positive → comprehensive assessment required.
 
-**The 4 Questions:**
-1. Wished you were dead (past few weeks)?
-2. Family better off if you were dead (past few weeks)?
-3. Thoughts of killing yourself (past week)?
-4. Ever tried to kill yourself? (If yes, when?)
-
-**If any "yes" → Ask acuity:** "Thoughts of killing yourself right now?"
+**Questions:** (1) Wished dead? (2) Family better off without you? (3) Thoughts of killing yourself? (4) Ever tried?
+**If positive → Ask:** "Thoughts right now?"
 
 ### C-SSRS (Columbia-Suicide Severity Rating Scale)
 
-**Complete assessment with all sections:**
-→ [assets/c-ssrs.md](assets/c-ssrs.md)
+**Complete assessment:** [assets/c-ssrs.md](assets/c-ssrs.md)
 
-**Key Facts:**
-- **Multiple sections:** Ideation, intensity, behavior
-- **Time:** 5-15 minutes
-- **Ideation severity:** 0-5 scale (passive thoughts → plan with intent)
-- **Assesses behavior:** Attempts, preparatory acts
-- **Determines risk level** when combined with clinical judgment
-
-**What it assesses:**
-- Suicidal ideation (severity 0-5)
-- Intensity (frequency, duration, control)
-- Suicidal behavior (attempts, preparatory acts)
-- Timeline (lifetime + recent)
+**5-15 minutes.** Multiple sections: ideation (severity 0-5), intensity, behavior (attempts, prep acts), timeline. Determines risk level with clinical judgment.
 
 ## Clinical Workflow
 
 ### 1. Choose Assessment
 
-```
-Very brief screening needed (20 seconds)?
-  → Use ASQ
-  → If positive → C-SSRS for full assessment
+```dot
+digraph assessment_selection {
+    rankdir=LR;
+    node [shape=box, style=rounded];
 
-Comprehensive assessment needed (5-15 minutes)?
-  → Use C-SSRS directly
+    start [label="Need Suicide\nScreening", shape=ellipse];
+    time_check [label="Time\navailable?", shape=diamond];
+    phq9_check [label="PHQ-9 Item 9\npositive?", shape=diamond];
+    asq [label="Start with\nASQ\n(20 sec)", style="filled", fillcolor=lightblue];
+    asq_result [label="ASQ\nPositive?", shape=diamond];
+    cssrs [label="C-SSRS\nFull Assessment\n(5-15 min)", style="filled", fillcolor=orange];
+    negative [label="Negative Screen\n(Still assess\nclinically)", style="filled", fillcolor=gray90];
 
-Already did PHQ-9 with positive Item 9?
-  → Can use ASQ or go directly to C-SSRS
+    start -> time_check;
+    time_check -> asq [label="<1 min"];
+    time_check -> phq9_check [label="5-15 min\navailable"];
+    phq9_check -> cssrs [label="yes"];
+    phq9_check -> cssrs [label="no\n(suspected\nrisk)"];
+    asq -> asq_result;
+    asq_result -> cssrs [label="yes"];
+    asq_result -> negative [label="no"];
+}
 ```
 
 ### 2. Administer Assessment
@@ -97,16 +92,53 @@ Already did PHQ-9 with positive Item 9?
 
 ### 3. Determine Risk Level
 
+#### Risk Assessment Decision Tree
+
+```dot
+digraph risk_determination {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+
+    ideation [label="Suicidal\nIdeation?", shape=diamond];
+    passive [label="Passive Only\n(wishes to die)", shape=diamond];
+    active [label="Active Ideation\n(thoughts of\nkilling self)", style="filled", fillcolor=yellow];
+
+    plan_intent [label="Plan AND\nIntent?", shape=diamond];
+    means [label="Access to\nMeans?", shape=diamond];
+    recent_behavior [label="Recent\nAttempt/Prep?", shape=diamond];
+    immediate [label="Imminent\nPlan?", shape=diamond];
+
+    low [label="LOW RISK\n• Safety plan\n• 1-week f/u\n• Resources", style="filled", fillcolor=lightgreen];
+    moderate [label="MODERATE\n• Same-day eval\n• Safety planning\n• Remove means\n• Close monitoring", style="filled", fillcolor=yellow];
+    high [label="HIGH RISK\n• Psychiatric eval\n• Hospitalization\n  likely\n• Do not leave\n  alone", style="filled", fillcolor=orange];
+    imminent [label="IMMINENT\n• Call 911\n• Emergency\n  hospitalization\n• Constant\n  observation", style="filled", fillcolor=red, fontcolor=white];
+
+    ideation -> passive [label="yes"];
+    ideation -> low [label="no\n(denied)"];
+    passive -> low [label="yes"];
+    passive -> active [label="no\n(active)"];
+    active -> plan_intent;
+    plan_intent -> recent_behavior [label="no"];
+    plan_intent -> means [label="yes"];
+    means -> immediate [label="yes"];
+    means -> high [label="no"];
+    immediate -> imminent [label="yes"];
+    immediate -> high [label="no"];
+    recent_behavior -> moderate [label="no"];
+    recent_behavior -> high [label="yes"];
+}
+```
+
 **Use comprehensive protocol:**
 → [references/risk-assessment-protocol.md](references/risk-assessment-protocol.md)
 
-**Integrate:**
+**Integrate all factors:**
 - Ideation (presence, frequency, intensity)
 - Plan and intent (specificity, access to means)
 - Behavior (attempts, preparatory acts)
-- Protective factors
-- Risk factors
-- Mental status
+- Protective factors (reasons for living, social support)
+- Risk factors (prior attempts, mental illness, substance use)
+- Mental status (hopelessness, agitation, impulsivity)
 
 **Risk levels:** See [references/risk-levels.md](references/risk-levels.md)
 
@@ -140,133 +172,25 @@ Already did PHQ-9 with positive Item 9?
 
 ## ⚠️ CRITICAL SAFETY PROTOCOLS
 
-### ANY Positive Response Requires:
+**ANY positive response:** (1) DO NOT leave patient alone, (2) Comprehensive assessment, (3) Assess plan/intent/means, (4) Remove lethal means, (5) Determine risk level, (6) Intervene appropriately, (7) Document thoroughly, (8) Ensure continuous safety.
 
-1. **DO NOT leave patient alone** - Ever
-2. **Comprehensive assessment** - Not just screening
-3. **Assess plan, intent, means** - Specific details critical
-4. **Remove lethal means** - Firearms, medications, etc.
-5. **Determine risk level** - Low/Moderate/High/Imminent
-6. **Intervene appropriately** - Based on risk level
-7. **Document thoroughly** - Everything
-8. **Ensure continuous safety** - Until secured
+**Essential questions:** Plan? Access to means? Intent to act? When? What's kept you safe? Prior attempts? **Complete protocol:** [references/risk-assessment-protocol.md](references/risk-assessment-protocol.md)
 
-### Immediate Questions After Positive Screen:
+**Crisis resources (provide ALL patients):** 988 Lifeline (call/text), Text HOME to 741741, Veterans: 988 press 1 or text 838255, Trevor Project (LGBTQ+ youth): 1-866-488-7386, Emergency: 911.
 
-**Essential assessment:**
-- "Do you have a plan?" (If yes: What exactly?)
-- "Do you have access to [method]?" (Means assessment)
-- "Do you intend to act on these thoughts?"
-- "When are you thinking about doing this?"
-- "What's kept you safe so far?"
-- "Have you attempted before?" (When? How? What happened?)
+**Safety planning (required all risk levels):** Warning signs, coping strategies, distraction, support contacts, crisis services, means restriction, reasons for living. **Guide:** [references/safety-planning.md](references/safety-planning.md)
 
-**See complete protocol:** [references/risk-assessment-protocol.md](references/risk-assessment-protocol.md)
+**Means restriction (CRITICAL, saves lives):** Firearms—remove completely (preferred) or lock separately from ammunition with someone else controlling access. Medications—remove excess, family/pharmacy holds, weekly dispensing. Other—remove based on plan (ropes, cords, chemicals).
 
-### Crisis Resources - Provide to ALL Patients
-
-**Always give crisis resources:**
-- **988 Suicide & Crisis Lifeline** (call or text 988, 24/7)
-- **Crisis Text Line:** Text HOME to 741741
-- **Veterans Crisis Line:** Call 988 then press 1, or text 838255
-- **Trevor Project** (LGBTQ+ youth): 1-866-488-7386 or text START to 678678
-- **Emergency:** 911
-
-### Safety Planning
-
-**Required for all risk levels:**
-See complete guide: [references/safety-planning.md](references/safety-planning.md)
-
-**Essential elements:**
-1. Warning signs (personal indicators of crisis)
-2. Internal coping strategies (self-soothing)
-3. People/places for distraction
-4. People to call for help
-5. Professionals/crisis services to contact
-6. Make environment safe (means restriction)
-7. Reasons for living
-
-### Means Restriction
-
-**CRITICAL intervention - saves lives:**
-
-**Firearms (most lethal):**
-- Remove from home completely (preferred)
-- If must remain: Locked, someone else controls key/combo
-- Ammunition stored separately
-
-**Medications:**
-- Remove excess medications
-- Give to family member or pharmacy
-- Weekly dispensing only
-
-**Other means:**
-- Based on patient's specific plan
-- Remove ropes, cords, chemicals as indicated
-
-**See details:** [references/safety-planning.md](references/safety-planning.md#step-6-make-the-environment-safe)
-
-### NEVER:
-
-- Leave suicidal patient alone
-- Assume someone else will handle it
-- Accept "I'm fine" without full assessment
-- Discharge without safety plan
-- Minimize or dismiss suicidal statements
-- Skip means restriction
-- Use "no-suicide contracts" (not evidence-based)
+**NEVER:** Leave patient alone, assume others will handle, accept "I'm fine" without assessment, discharge without safety plan, minimize suicidal statements, skip means restriction, use "no-suicide contracts" (not evidence-based).
 
 ## Special Considerations
 
-### Special Populations
+**High-risk populations:** Adolescents (impulsivity, social media), LGBTQ+ individuals (minority stress), veterans (combat trauma, firearm access), older adults (isolation, higher lethality), post-discharge patients (first weeks post-hospitalization).
 
-**Adolescents:**
-- Higher impulsivity
-- Peer influence, bullying, social media
-- Involve parents (balance with privacy)
-- School notification may be needed
+**Screen when:** Severe depression (PHQ-9 ≥15), psychosis, substance use, PTSD, chronic pain, terminal illness, recent loss. See [PHQ-9 Item 9 protocol](../depression-screening/references/item-9-safety-protocol.md).
 
-**LGBTQ+ Individuals:**
-- Higher risk (minority stress, discrimination)
-- Family acceptance is protective
-- Trevor Project resources
-
-**Veterans:**
-- Combat trauma, PTSD
-- Access to firearms common
-- Veterans Crisis Line
-- VA mental health services
-
-**Older Adults:**
-- Medical illness, loss, isolation
-- Higher lethality of attempts
-- Don't avoid asking due to age
-
-**Post-Discharge:**
-- Highest risk: First weeks after psychiatric hospitalization
-- Close follow-up essential
-- Safety plan review
-
-### Co-occurring Conditions
-
-**Screen for suicidal ideation when:**
-- Severe depression (PHQ-9 ≥15)
-- Psychosis
-- Substance use disorder
-- PTSD
-- Chronic pain
-- Terminal illness
-- Recent significant loss
-
-**Use PHQ-9 Item 9 alongside:** See [../depression-screening/references/item-9-safety-protocol.md](../depression-screening/references/item-9-safety-protocol.md)
-
-### Cultural Considerations
-
-- Ask directly across all cultures
-- Expression of suicidal thoughts varies
-- Religious/cultural beliefs may affect disclosure
-- Use interpreters when needed
-- Understand cultural protective factors
+**Cultural:** Ask directly across cultures; expression varies; use interpreters; understand protective factors.
 
 ## Referral Guidelines
 
@@ -292,49 +216,11 @@ See complete guide: [references/safety-planning.md](references/safety-planning.m
 
 ## Limitations
 
-**Suicide screening tools have limitations:**
-- Cannot predict suicide with certainty
-- Patient may not disclose
-- Risk changes rapidly
-- Tools support but don't replace clinical judgment
-- Negative screen doesn't mean no risk
-
-**Clinical judgment essential:**
-- When in doubt, assess more thoroughly
-- Consult when uncertain
-- Err on side of safety
-- Trust your clinical intuition
+**Cannot predict suicide with certainty.** Patients may not disclose; risk changes rapidly. Tools support clinical judgment, not replace it. Negative screen ≠ no risk. When in doubt: assess thoroughly, consult, err on side of safety.
 
 ## Usage Examples
 
-This skill can be invoked when you need to:
-- Screen for suicide risk in any setting
-- Assess severity of suicidal ideation
-- Determine appropriate level of care
-- Create safety plans
-- Document suicide risk assessment
-
-**Example requests:**
-- "Help me screen for suicide risk"
-- "Patient screened positive on ASQ - what now?"
-- "Guide me through C-SSRS administration"
-- "How do I create a safety plan?"
-- "Patient has suicidal thoughts - how do I assess risk level?"
-
-## File Structure
-
-```
-suicide-screening/
-├── SKILL.md (this file - quick reference and workflow)
-├── assets/
-│   ├── asq.md (ASQ 4-question screener)
-│   └── c-ssrs.md (Columbia-Suicide Severity Rating Scale)
-└── references/
-    ├── risk-levels.md (low/moderate/high/imminent definitions)
-    ├── screening-comparison.md (ASQ vs C-SSRS guidance)
-    ├── safety-planning.md (complete safety planning guide)
-    └── risk-assessment-protocol.md (comprehensive assessment protocol)
-```
+**Example requests:** "Screen for suicide risk", "ASQ positive—what now?", "Guide C-SSRS", "Create safety plan", "Assess risk level"
 
 ## References
 
@@ -353,11 +239,6 @@ suicide-screening/
 - 988 Suicide & Crisis Lifeline: 988lifeline.org
 
 **Freely available - NIMH (ASQ) and Columbia University (C-SSRS)**
-
----
-
-**Status:** ✅ Complete - Modular structure implemented
-**Last Updated:** 2026-02-01
 
 **⚠️ This skill addresses life-threatening situations. ALL safety protocols must be followed without exception.**
 

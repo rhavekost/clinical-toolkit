@@ -1,0 +1,24 @@
+{
+  "_comment": "Template for Cursor IDE (.cursor/manifest.json)",
+  "_mapping": {
+    "name": "{{meta.name}}",
+    "version": "{{meta.version}}",
+    "description": "{{meta.description}}",
+    "author": "{{meta.author}}",
+    "license": "{{meta.license}}",
+    "repository": "{{meta.repository}}",
+    "skills": "{{skills}}",
+    "skills[].name": "{{id}}",
+    "skills[].path": "{{path}}",
+    "skills[].description": "{{description}}"
+  },
+  "_skillsFrontmatter": {
+    "enabled": true,
+    "fields": {
+      "name": "{{id}}",
+      "description": "{{description}}",
+      "license": "{{meta.license}}"
+    }
+  },
+  "_output": ".cursor/manifest.json"
+}

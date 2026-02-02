@@ -1,0 +1,16 @@
+{
+  "_comment": "Template for Claude Code (.claude-plugin/manifest.json)",
+  "_mapping": {
+    "name": "{{meta.name}}",
+    "version": "{{meta.version}}",
+    "description": "{{meta.description}}",
+    "author": "{{meta.author}}",
+    "license": "{{meta.license}}",
+    "repository": "{{meta.repository}}",
+    "skills": "{{skills}}",
+    "skills[].name": "{{id}}",
+    "skills[].path": "{{path}}",
+    "skills[].description": "{{description}}"
+  },
+  "_output": ".claude-plugin/manifest.json"
+}
