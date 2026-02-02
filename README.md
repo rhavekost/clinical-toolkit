@@ -89,11 +89,37 @@ For detailed installation instructions, team setup, and manual installation opti
 
 ### Latest Release
 
-Download the complete toolkit as a single package for easy installation in Claude.ai (web and iOS):
-
 **[📥 Download Latest Release](https://github.com/rhavekost/clinical-toolkit/releases/latest)**
 
-The release package includes all 8 clinical skills with supporting materials. Simply upload the ZIP file to Claude.ai Settings → Capabilities → Skills.
+#### For Claude.ai (Web & iOS)
+
+Download **individual skill .zip files** from the release assets. Claude.ai requires exactly one SKILL.md per upload.
+
+**Installation:**
+1. Download the skills you need (e.g., `depression-screening.zip`, `anxiety-screening.zip`)
+2. Go to [Claude.ai](https://claude.ai) → Settings → Capabilities
+3. Enable the **Skills** toggle
+4. Click **Upload skill** and select a .zip file
+5. Repeat for each skill you want to use
+
+**Available individual skills:**
+- `depression-screening.zip` - PHQ-9 and PHQ-2 assessments
+- `anxiety-screening.zip` - GAD-7 and GAD-2 assessments
+- `trauma-screening.zip` - PCL-5 and PC-PTSD-5 assessments
+- `substance-screening.zip` - AUDIT-C and DAST-10 assessments
+- `suicide-screening.zip` - ASQ and C-SSRS protocols
+- `intake-interview.zip` - HEADSS and biopsychosocial templates
+- `treatment-planning.zip` - SMART goals and ASAM/LOCUS criteria
+- `documentation.zip` - SOAP and DAP note templates
+
+#### For Claude Code (CLI)
+
+Download `clinical-toolkit-complete.zip` for multi-skill plugin support:
+
+```bash
+# Download and install complete package
+claude install-plugin clinical-toolkit-complete.zip
+```
 
 ### Creating Releases
 

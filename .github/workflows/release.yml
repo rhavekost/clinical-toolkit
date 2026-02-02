@@ -50,10 +50,14 @@ jobs:
           echo "Updated manifest.json to version $VERSION"
           cat .claude-plugin/manifest.json | grep version
 
-      - name: Build package
+      - name: Build packages
         run: |
+          # Build complete package for Claude Code
           chmod +x scripts/package-for-claude-ai.sh
           ./scripts/package-for-claude-ai.sh
+
+          # Build individual skill packages for claude.ai web
+          npm run package:claudeai
 
       - name: Generate changelog
         id: changelog
@@ -84,25 +88,34 @@ jobs:
 
           ### For Claude.ai (Web & iOS)
 
-          1. Download \`clinical-toolkit-complete.zip\` below
+          **Individual Skills (Recommended):**
+          1. Download individual skill .zip files from the Assets section below
           2. Open [Claude.ai](https://claude.ai) or the iOS app
           3. Go to **Settings → Capabilities**
           4. Enable the **Skills** toggle
           5. Click **Upload skill**
-          6. Select the downloaded ZIP file
+          6. Select a skill .zip file (e.g., \`depression-screening.zip\`)
           7. Turn the skill toggle **ON**
+          8. Repeat for each skill you want to use
+
+          **Note:** claude.ai requires exactly one SKILL.md per upload. Use the individual skill .zip files, not the complete package.
 
           ### For Claude Code (CLI)
 
+          **Complete Package:**
           \`\`\`bash
-          # Clone or download the repository
+          # Download clinical-toolkit-complete.zip from Assets
+          # Extract and install
+          claude install-plugin clinical-toolkit-complete.zip
+          \`\`\`
+
+          **Or install from repository:**
+          \`\`\`bash
           git clone https://github.com/rhavekost/clinical-toolkit.git
           cd clinical-toolkit
-
-          # Install skills
           claude install-skill skills/depression-screening
           claude install-skill skills/anxiety-screening
-          # ... (or all at once with a script)
+          # ... (install each skill individually)
           \`\`\`
 
           ## Included Skills
@@ -154,6 +167,7 @@ jobs:
           body_path: release-notes.md
           files: |
             clinical-toolkit-complete.zip
+            dist/claudeai/*.zip
           prerelease: ${{ github.event.inputs.prerelease }}
           generate_release_notes: false
         env:

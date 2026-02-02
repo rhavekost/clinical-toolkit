@@ -15,7 +15,8 @@
     "generate:copilot": "node scripts/generate-manifests.js --platform=github-copilot",
     "generate:cursor": "node scripts/generate-manifests.js --platform=cursor",
     "generate:gemini": "node scripts/generate-manifests.js --platform=gemini-cli",
-    "generate:codex": "node scripts/generate-manifests.js --platform=openai-codex"
+    "generate:codex": "node scripts/generate-manifests.js --platform=openai-codex",
+    "package:claudeai": "node scripts/package-for-claudeai.js"
   },
   "keywords": [
     "clinical",
