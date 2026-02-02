@@ -1,6 +1,6 @@
 # Clinical Toolkit
 
-**Version:** 1.0.0
+**Version:** 1.0.1
 **Status:** ✅ Production Ready - All Core Features Implemented
 **License:** MIT
 
