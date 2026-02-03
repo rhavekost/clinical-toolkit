@@ -303,6 +303,22 @@ for skill in skills/*/SKILL.md; do
 done
 ```
 
+### 1b. Consumer Chatbot Bundle Validation
+
+If you are generating consumer chatbot bundles, validate outputs:
+
+```bash
+# Generate consumer bundles
+npm run generate:consumers
+
+# Validate consumer bundles
+npm run validate:consumers
+```
+
+The consumer validator checks required files and validates JSON templates
+against schema files in `docs/schemas/consumer/`, including the generic
+instruction pack format.
+
 ### 2. Symptom-Based Discovery Testing
 
 Test each skill with symptom-based queries (not tool names):

@@ -33,6 +33,13 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 - **Evidence-Based:** All instruments are validated, public domain tools with established psychometric properties
 - **Measurement-Based Care:** Support for systematic outcome tracking and treatment adjustment
 
+## Documentation
+
+- [Installation Guide](docs/Installation.md)
+- [Consumer Chatbot Guide](docs/consumer/README.md)
+- [Multi-Platform Testing Guide](docs/testing-multi-platform.md)
+- [Manifest System](manifest/README.md)
+
 ---
 
 ## Available Skills
@@ -71,27 +78,30 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 
 ### Quick Install
 
-**Claude Code:**
+**Developer / Agent Platforms**
 ```bash
-/plugin install github:rhavekost/clinical-toolkit
+# Generate platform manifests for IDE/CLI agents
+npm run generate:manifests
 ```
 
-**GitHub Copilot:**
+For platform-specific install commands and team setup, see:
+- [Installation Guide](docs/Installation.md)
+- [Manifest System](manifest/README.md)
+
+**Consumer Chatbots (ChatGPT, Gemini, Perplexity, Claude Consumer, Ollama)**
 ```bash
-npx skills add rhavekost/clinical-toolkit
+# Build all consumer chatbot bundles
+npm run generate:consumers
+
+# Validate outputs
+npm run validate:consumers
+
+# Optional: build Claude consumer zip files (one skill per zip)
+npm run package:claudeai
 ```
 
-**Cursor IDE:**
-```bash
-skillport add rhavekost/clinical-toolkit
-```
-
-**Gemini CLI:**
-```bash
-gemini extensions install https://github.com/rhavekost/clinical-toolkit
-```
-
-For detailed installation instructions, team setup, and manual installation options, see [Installation Guide](docs/Installation.md).
+Consumer bundles are written to `dist/consumer/`. For step-by-step setup, see:
+- [Consumer Chatbot Guide](docs/consumer/README.md)
 
 ---
 

@@ -7,10 +7,18 @@ on:
     paths:
       - 'manifest/**'
       - 'scripts/generate-manifests.js'
+      - 'scripts/generate-consumer-targets.js'
+      - 'scripts/validate-consumer-targets.js'
+      - 'skills/**'
+      - 'docs/schemas/consumer/**'
   pull_request:
     paths:
       - 'manifest/**'
       - 'scripts/generate-manifests.js'
+      - 'scripts/generate-consumer-targets.js'
+      - 'scripts/validate-consumer-targets.js'
+      - 'skills/**'
+      - 'docs/schemas/consumer/**'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -34,6 +42,10 @@ jobs:
         run: |
           echo "🚀 Generating platform manifests..."
           node scripts/generate-manifests.js
+          echo "🚀 Generating consumer bundles..."
+          node scripts/generate-consumer-targets.js
+          echo "🧪 Validating consumer bundles..."
+          node scripts/validate-consumer-targets.js
 
       - name: Check for changes
         id: check_changes
@@ -58,6 +70,7 @@ jobs:
           git add .gemini/manifest.json
           git add .codex/manifest.json
           git add skills/*/SKILL.md
+          git add dist/consumer
           git commit -m "chore: auto-generate platform manifests" -m "Generated from manifest/manifest.json by GitHub Actions" -m "Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
           git push
 
@@ -67,10 +80,12 @@ jobs:
           echo "❌ ERROR: Generated manifests are out of sync!"
           echo ""
           echo "The manifest/ directory has been modified,"
-          echo "but the generated platform manifests have not been updated."
+          echo "but the generated platform manifests or consumer bundles have not been updated."
           echo ""
           echo "Please run locally:"
           echo "  npm run generate:manifests"
+          echo "  npm run generate:consumers"
+          echo "  npm run validate:consumers"
           echo ""
           echo "Then commit the changes."
           git diff

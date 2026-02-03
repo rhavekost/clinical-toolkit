@@ -16,6 +16,15 @@
     "generate:cursor": "node scripts/generate-manifests.js --platform=cursor",
     "generate:gemini": "node scripts/generate-manifests.js --platform=gemini-cli",
     "generate:codex": "node scripts/generate-manifests.js --platform=openai-codex",
+    "generate:consumers": "node scripts/generate-consumer-targets.js",
+    "generate:consumer:claude": "node scripts/generate-consumer-targets.js --target=claude-consumer",
+    "generate:consumer:chatgpt": "node scripts/generate-consumer-targets.js --target=chatgpt",
+    "generate:consumer:gemini": "node scripts/generate-consumer-targets.js --target=gemini",
+    "generate:consumer:perplexity": "node scripts/generate-consumer-targets.js --target=perplexity",
+    "generate:consumer:ollama": "node scripts/generate-consumer-targets.js --target=ollama",
+    "generate:consumer:copilot": "node scripts/generate-consumer-targets.js --target=copilot-consumer",
+    "generate:consumer:instruction-pack": "node scripts/generate-consumer-targets.js --target=instruction-pack",
+    "validate:consumers": "node scripts/validate-consumer-targets.js",
     "package:claudeai": "node scripts/package-for-claudeai.js"
   },
   "keywords": [

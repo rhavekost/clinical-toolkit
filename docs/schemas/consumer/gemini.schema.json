@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gemini Gem Template",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "instructions",
+    "suggested_prompts",
+    "tags",
+    "category"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "instructions": { "type": "string", "minLength": 1 },
+    "suggested_prompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "category": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

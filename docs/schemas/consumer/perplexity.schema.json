@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Perplexity Space Template",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "instructions",
+    "tags",
+    "category"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "instructions": { "type": "string", "minLength": 1 },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "category": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}
