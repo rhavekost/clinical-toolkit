@@ -16,11 +16,14 @@ This skill supports use of the Consensus Sleep Diary (CSD) for longitudinal slee
 Use the unaltered form and include the required citation.
 See: [assets/consensus-sleep-diary.md](assets/consensus-sleep-diary.md)
 
-## Interactive Administration (Daily)
+## Interactive Mode (Lightweight)
 
-1. Provide the official CSD form.
-2. Have the patient complete it every morning.
-3. Review weekly to identify trends (sleep onset latency, awakenings, total sleep time).
+Use this mode when the clinician wants step-by-step guidance for diary use.
+
+1. Provide the official CSD form and explain the daily completion expectation.
+2. If collecting entries interactively, ask one field at a time and wait for responses.
+3. Review entries weekly to identify trends (sleep onset latency, awakenings, total sleep time).
+4. Summarize patterns and suggest next steps (e.g., CBT-I targets, sleep hygiene).
 
 ## Clinical Workflow
 

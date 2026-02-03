@@ -1,7 +1,7 @@
 {
   "name": "Cognitive Concerns Intake",
   "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument.",
-  "instructions": "# Cognitive Concerns Intake (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** intake guide for cognitive complaints. It does **not** replace validated cognitive instruments.\n\n## Intake Guide\n\nSee: [assets/history-template.md](assets/history-template.md)\n\n## Referral Guidance\n\nSee: [references/referral-guidance.md](references/referral-guidance.md)\n",
+  "instructions": "# Cognitive Concerns Intake (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** intake guide for cognitive complaints. It does **not** replace validated cognitive instruments.\n\n## Interactive Mode (Lightweight)\n\nUse this mode when the clinician asks to go step-by-step.\n\n1. Confirm this is a non-validated intake guide and check readiness.\n2. Ask one prompt at a time from the intake guide and wait for a response.\n3. Summarize key points and confirm accuracy before moving on.\n4. At the end, synthesize cognitive concerns, functional impact, and suggested next steps.\n5. If safety concerns arise, pause and follow appropriate safety protocols.\n\n## Intake Guide\n\nSee: [assets/history-template.md](assets/history-template.md)\n\n## Referral Guidance\n\nSee: [references/referral-guidance.md](references/referral-guidance.md)\n",
   "conversation_starters": [
     "Help me with cognitive concerns intake.",
     "Guide me through cognitive concerns intake."

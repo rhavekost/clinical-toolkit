@@ -30,6 +30,18 @@ This skill helps administer and interpret validated anxiety screening instrument
 
 **For treatment recommendations:** See [references/clinical-decision-trees.md](references/clinical-decision-trees.md)
 
+## Interactive Administration (Optional)
+
+Use this mode when the clinician says "start" or "administer" the GAD-2/GAD-7.
+
+1. Confirm readiness and explain the past 2 weeks time frame plus the 0-3 response scale.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+4. Record each response and keep a running total.
+5. If responses indicate severe anxiety or there is any safety concern, pause and assess safety (see Safety Considerations).
+6. After the final item, calculate the total score, interpret severity, and provide next-step guidance.
+7. Offer a brief documentation summary if requested.
+
 ## Assessment Tools
 
 ### GAD-7 (Generalized Anxiety Disorder-7)

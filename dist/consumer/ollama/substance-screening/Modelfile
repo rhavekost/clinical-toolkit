@@ -59,6 +59,18 @@ digraph assessment_selection {
 }
 ```
 
+## Interactive Administration (Optional)
+
+Use this mode when the clinician says "start" or "administer" AUDIT-C and/or DAST-10.
+
+1. Confirm whether to administer AUDIT-C, DAST-10, or both (recommended: both).
+2. Explain the time frame and response format for each instrument.
+3. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+4. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+5. Record each response and keep running totals (remember DAST-10 Item 3 is reverse scored).
+6. After each instrument, calculate totals, interpret severity, and provide next-step guidance.
+7. Offer a brief documentation summary if requested.
+
 ## Usage
 
 **Example requests:** "Screen for alcohol use", "Administer DAST-10", "Score AUDIT-C", "Interpret substance screening"

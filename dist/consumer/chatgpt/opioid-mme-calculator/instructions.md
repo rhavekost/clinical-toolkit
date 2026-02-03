@@ -10,6 +10,16 @@ This skill provides a structured way to calculate total daily MME using CDC conv
 |-----|---------|
 | MME calculation | Standardize opioid dose comparisons and monitor risk |
 
+## Interactive Mode (Lightweight)
+
+Use this mode when the clinician asks to calculate MME step-by-step.
+
+1. Confirm readiness and the target time period (current daily regimen).
+2. Collect one medication at a time: name, route, dose, and frequency.
+3. Clarify PRN vs scheduled dosing and any long-acting vs short-acting formulations.
+4. Calculate per-opioid MME and then total daily MME.
+5. Summarize results and reference safety cautions.
+
 ## Calculation Guide
 
 See: [assets/mme-calculation.md](assets/mme-calculation.md)

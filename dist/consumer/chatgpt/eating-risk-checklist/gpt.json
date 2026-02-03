@@ -1,7 +1,7 @@
 {
   "name": "Eating Risk Checklist",
   "description": "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool.",
-  "instructions": "# Eating Risk Checklist (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** checklist for eating disorder risk factors and medical red flags. It is **not** a validated screener and does not diagnose.\n\n## Checklist\n\nSee: [assets/red-flags.md](assets/red-flags.md)\n\n## Medical Risk\n\nSee: [references/medical-risk.md](references/medical-risk.md)\n",
+  "instructions": "# Eating Risk Checklist (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** checklist for eating disorder risk factors and medical red flags. It is **not** a validated screener and does not diagnose.\n\n## Interactive Mode (Lightweight)\n\nUse this mode when the clinician asks to go step-by-step.\n\n1. Confirm this is a non-validated checklist and check readiness.\n2. Ask one item at a time from the checklist and wait for a response.\n3. Summarize key risks and confirm accuracy before moving on.\n4. At the end, synthesize red flags and recommended next steps.\n5. If immediate medical or safety concerns arise, pause and follow appropriate protocols.\n\n## Checklist\n\nSee: [assets/red-flags.md](assets/red-flags.md)\n\n## Medical Risk\n\nSee: [references/medical-risk.md](references/medical-risk.md)\n",
   "conversation_starters": [
     "Help me with eating risk checklist.",
     "Guide me through eating risk checklist."

@@ -66,6 +66,18 @@ digraph assessment_selection {
 
 For detailed severity interpretations and treatment recommendations, see [references/severity-levels.md](references/severity-levels.md)
 
+## Interactive Administration (Optional)
+
+Use this mode when the clinician says "start" or "administer" the PC-PTSD-5/PCL-5.
+
+1. Confirm readiness, use a trauma-informed approach, and remind the patient they can pause or skip questions.
+2. Explain the time frame and response scale for the selected instrument.
+3. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+4. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+5. If the patient becomes distressed or safety concerns arise, pause and follow trauma-informed safety guidance before continuing.
+6. After the final item, calculate totals (and cluster scores for PCL-5), interpret severity, and provide next-step guidance.
+7. Offer a brief documentation summary if requested.
+
 ## Assessment Administration
 
 ### PC-PTSD-5 (Primary Care PTSD Screen for DSM-5)

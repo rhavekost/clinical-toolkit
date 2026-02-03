@@ -16,11 +16,16 @@ This skill provides the WHO-5 Well-Being Index, a brief measure of positive well
 
 - **WHO-5**: [assets/who-5.md](assets/who-5.md)
 
-## Interactive Administration (Item-by-Item)
+## Interactive Administration (Optional)
 
-1. Read each item verbatim (past two weeks).
-2. Record response from 0-5 scale.
-3. Sum for raw score and multiply by 4 for 0-100 index.
+Use this mode when the clinician says "start" or "administer" the WHO-5.
+
+1. Confirm readiness and explain the past 2 weeks time frame plus the 0-5 response scale.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+4. Record each response, sum the raw score, and multiply by 4 to calculate the 0-100 index.
+5. Interpret results per the asset file guidance and suggest next steps if indicated.
+6. Offer a brief documentation summary if requested.
 
 ## Documentation
 

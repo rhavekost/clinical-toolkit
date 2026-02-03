@@ -10,6 +10,16 @@ This is an **original, non‑validated** interview guide for exploring bipolar r
 - When antidepressant response has been atypical or poor
 - When family history suggests bipolar disorder
 
+## Interactive Mode (Lightweight)
+
+Use this mode when the clinician asks to go step-by-step.
+
+1. Confirm this is a non-validated interview guide and check readiness.
+2. Ask one prompt at a time from the interview guide and wait for a response.
+3. Summarize key points and confirm accuracy before moving on.
+4. At the end, synthesize risk factors, red flags, and functional impact with suggested next steps.
+5. If safety concerns arise, pause and follow appropriate safety protocols.
+
 ## Interview Guide
 
 See: [assets/interview-guide.md](assets/interview-guide.md)

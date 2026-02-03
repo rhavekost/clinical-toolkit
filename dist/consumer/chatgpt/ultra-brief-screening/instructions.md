@@ -17,11 +17,16 @@ This skill provides the PHQ-4, a rapid combined depression and anxiety screener 
 **Complete assessment with items, scoring, and documentation:**
 → [assets/phq-4.md](assets/phq-4.md)
 
-## Interactive Administration (Item-by-Item)
+## Interactive Administration (Optional)
 
-1. Read each item verbatim and record the 0-3 rating.
-2. Sum total score (0-12).
-3. Determine if follow-up PHQ-9/GAD-7 is indicated.
+Use this mode when the clinician says "start" or "administer" the PHQ-4.
+
+1. Confirm readiness and explain the past 2 weeks time frame plus the 0-3 response scale.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+4. Record each response, compute the total score (0-12), and track depression/anxiety sub-scores.
+5. If the screen is positive, recommend PHQ-9 and/or GAD-7 for severity assessment.
+6. Offer a brief documentation summary if requested.
 
 ## Clinical Workflow
 

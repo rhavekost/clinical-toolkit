@@ -28,6 +28,16 @@ This skill provides structured interview guides and frameworks for comprehensive
 | 3 | Run HEADSS or Biopsychosocial |
 | 4 | Summarize 4Ps formulation and level of care |
 
+## Interactive Mode (Lightweight)
+
+Use this mode when the clinician asks to go step-by-step.
+
+1. Confirm readiness and explain confidentiality/limits before starting.
+2. Screen safety early (SI/HI/abuse) and pause if urgent concerns arise.
+3. Ask one domain at a time from the selected framework and wait for responses.
+4. Summarize key findings and confirm accuracy before moving on.
+5. At the end, synthesize 4Ps and suggested next steps.
+
 ## Usage
 
 This skill can be invoked when you need to:

@@ -34,6 +34,17 @@ This skill helps administer and interpret validated suicide risk screening instr
 
 **For detailed risk levels:** See [references/risk-levels.md](references/risk-levels.md)
 
+## Interactive Administration (Optional)
+
+Use this mode when the clinician says "start" or "administer" ASQ or C-SSRS.
+
+1. Confirm readiness and ensure a safe setting; if the patient is in crisis, initiate emergency protocols immediately.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. If any response is positive, **pause the screening** and move immediately to comprehensive risk assessment and safety planning.
+4. For ASQ: any "yes" requires the acuity question and full assessment.
+5. For C-SSRS: follow the sections in order; if imminent risk is identified, stop and implement safety interventions.
+6. Document risk level, protective factors, and immediate actions.
+
 ## Assessment Tools
 
 ### ASQ (Ask Suicide-Screening Questions)
@@ -235,5 +246,4 @@ digraph risk_determination {
 **Freely available - NIMH (ASQ) and Columbia University (C-SSRS)**
 
 **⚠️ This skill addresses life-threatening situations. ALL safety protocols must be followed without exception.**
-
 

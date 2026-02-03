@@ -1,7 +1,7 @@
 {
   "name": "Functional Impairment Interview",
   "description": "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument.",
-  "instructions": "# Functional Impairment Interview (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** interview guide for functional impact. It does **not** replace validated disability instruments.\n\n## Interview Guide\n\nSee: [assets/domain-checklist.md](assets/domain-checklist.md)\n\n## Goal Tracking\n\nSee: [references/goal-tracking.md](references/goal-tracking.md)\n",
+  "instructions": "# Functional Impairment Interview (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** interview guide for functional impact. It does **not** replace validated disability instruments.\n\n## Interactive Mode (Lightweight)\n\nUse this mode when the clinician asks to go step-by-step.\n\n1. Confirm this is a non-validated interview guide and check readiness.\n2. Ask one domain at a time from the interview guide and wait for a response.\n3. Summarize functional impacts and confirm accuracy before moving on.\n4. At the end, synthesize impairment patterns and suggested next steps.\n5. If safety concerns arise, pause and follow appropriate safety protocols.\n\n## Interview Guide\n\nSee: [assets/domain-checklist.md](assets/domain-checklist.md)\n\n## Goal Tracking\n\nSee: [references/goal-tracking.md](references/goal-tracking.md)\n",
   "conversation_starters": [
     "Help me with functional impairment interview.",
     "Guide me through functional impairment interview."

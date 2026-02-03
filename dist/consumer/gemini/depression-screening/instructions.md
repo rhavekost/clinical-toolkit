@@ -80,6 +80,18 @@ digraph item9_protocol {
 
 **Universal crisis protocols:** [../../docs/references/crisis-protocols.md](../../docs/references/crisis-protocols.md)
 
+## Interactive Administration (Optional)
+
+Use this mode when the clinician says "start" or "administer" the PHQ-2/PHQ-9.
+
+1. Confirm readiness and explain the past 2 weeks time frame plus the 0-3 response scale.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+4. Record each response and keep a running total.
+5. **Item 9 safety rule:** If Item 9 > 0, STOP and follow the Item 9 safety protocol before continuing.
+6. After the final item, calculate the total score, interpret severity, and provide next-step guidance.
+7. Offer a brief documentation summary if requested.
+
 ## Assessment Tools
 
 ### PHQ-9 (Patient Health Questionnaire-9)

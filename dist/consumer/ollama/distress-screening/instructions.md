@@ -18,11 +18,16 @@ This skill provides the K6 and K10 psychological distress scales. Use K6 for bri
 - **K6**: [assets/k6.md](assets/k6.md)
 - **K10**: [assets/k10.md](assets/k10.md)
 
-## Interactive Administration (Item-by-Item)
+## Interactive Administration (Optional)
 
-1. Read each item verbatim with the past 30 days time frame.
-2. Record responses using the five-category frequency scale.
-3. Recode responses to 0-4 scoring and sum.
+Use this mode when the clinician says "start" or "administer" the K6/K10.
+
+1. Confirm readiness and explain the past 30 days time frame plus the 5-point response scale.
+2. Ask one item at a time (verbatim from the asset file) and wait for a response before continuing.
+3. Accept numeric or verbal responses; if unclear or out of range, ask for clarification.
+4. Recode responses to 0-4 scoring and keep a running total.
+5. After the final item, calculate the total score, interpret severity, and provide next-step guidance.
+6. Offer a brief documentation summary if requested.
 
 ## Documentation
 

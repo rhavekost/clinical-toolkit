@@ -30,6 +30,16 @@ This skill provides frameworks and tools for developing evidence-based, collabor
 | 2 | Select level of care | OP, IOP, PHP, residential, inpatient |
 | 3 | Write SMART goals and monitoring plan | SMART + outcome tracking |
 
+## Interactive Mode (Lightweight)
+
+Use this mode when the clinician asks to build a plan step-by-step.
+
+1. Confirm readiness, target problems, and recent assessment results.
+2. Ask one domain at a time (goals, objectives, interventions, timeframe).
+3. Propose SMART goals and check for clinician approval.
+4. Identify level of care considerations and monitoring plan.
+5. Summarize the plan and offer documentation-ready bullets.
+
 ## Usage
 
 This skill can be invoked when you need to:
