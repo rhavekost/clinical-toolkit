@@ -1,0 +1,16 @@
+{
+  "id": "eating-risk-checklist",
+  "name": "Eating Risk Checklist",
+  "description": "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool.",
+  "category": "clinical-workflow",
+  "tags": [
+    "eating",
+    "risk",
+    "checklist",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

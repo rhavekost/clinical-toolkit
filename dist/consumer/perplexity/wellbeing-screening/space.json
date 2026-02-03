@@ -1,0 +1,12 @@
+{
+  "name": "Well-Being Screening",
+  "description": "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance.",
+  "instructions": "# Well-Being Screening (WHO-5)\n\n## Description\n\nThis skill provides the WHO-5 Well-Being Index, a brief measure of positive well-being that complements symptom-focused screening.\n\n**Permission:** WHO-5 is free of charge and does not require permission for use.\n\n## Quick Reference\n\n| Assessment | Items | Time | Purpose | Score Range |\n|------------|-------|------|---------|-------------|\n| **WHO-5** | 5 | <1 min | Well-being screening | 0-25 raw (x4 to 0-100) |\n\n## Assessment Tool\n\n- **WHO-5**: [assets/who-5.md](assets/who-5.md)\n\n## Interactive Administration (Item-by-Item)\n\n1. Read each item verbatim (past two weeks).\n2. Record response from 0-5 scale.\n3. Sum for raw score and multiply by 4 for 0-100 index.\n\n## Documentation\n\nUse the template in the asset file.\n\n## References\n\n- Permission and scoring guidance: [references/permissions-and-scoring.md](references/permissions-and-scoring.md)\n",
+  "tags": [
+    "wellbeing",
+    "who-5",
+    "screening",
+    "mental-health"
+  ],
+  "category": "screening"
+}

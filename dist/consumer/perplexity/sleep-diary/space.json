@@ -1,0 +1,15 @@
+{
+  "name": "Sleep Diary",
+  "description": "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow.",
+  "instructions": "# Sleep Diary (Consensus Sleep Diary)\n\n## Description\n\nThis skill supports use of the Consensus Sleep Diary (CSD) for longitudinal sleep monitoring. The CSD is permitted for not‑for‑profit use when unaltered and properly cited. This skill provides instructions, interpretation guidance, and a summary workflow.\n\n## Quick Reference\n\n| Tool | Time | Purpose | Notes |\n|------|------|---------|-------|\n| **Consensus Sleep Diary (CSD)** | Daily, 1-2 weeks | Track sleep patterns and treatment response | Use official unaltered diary form |\n\n## Official Diary Form\n\n**The official CSD form is not reproduced here.**\nUse the unaltered form and include the required citation.\nSee: [assets/consensus-sleep-diary.md](assets/consensus-sleep-diary.md)\n\n## Interactive Administration (Daily)\n\n1. Provide the official CSD form.\n2. Have the patient complete it every morning.\n3. Review weekly to identify trends (sleep onset latency, awakenings, total sleep time).\n\n## Clinical Workflow\n\n1. **Start diary** for 1-2 weeks\n2. **Review patterns** (bedtime, wake time, total sleep time, awakenings)\n3. **Adjust treatment** (CBT-I, sleep hygiene, medical evaluation)\n4. **Continue tracking** for response\n\n## Documentation\n\nUse summary notes in the references file.\n\n## References\n\n- CSD use and permission: see references in `assets/consensus-sleep-diary.md` and `references/summary-notes.md`.\n",
+  "tags": [
+    "sleep",
+    "sleep-diary",
+    "csd",
+    "insomnia",
+    "treatment-monitoring",
+    "workflow",
+    "mental-health"
+  ],
+  "category": "clinical-workflow"
+}

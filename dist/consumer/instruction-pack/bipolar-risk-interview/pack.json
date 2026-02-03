@@ -1,0 +1,16 @@
+{
+  "id": "bipolar-risk-interview",
+  "name": "Bipolar Risk Interview",
+  "description": "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument.",
+  "category": "clinical-workflow",
+  "tags": [
+    "bipolar",
+    "risk",
+    "interview",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

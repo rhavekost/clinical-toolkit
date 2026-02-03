@@ -1,0 +1,14 @@
+{
+  "id": "wellbeing-screening",
+  "name": "Well-Being Screening",
+  "description": "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance.",
+  "category": "screening",
+  "tags": [
+    "wellbeing",
+    "who-5",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

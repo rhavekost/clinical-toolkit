@@ -1,0 +1,122 @@
+{
+  "targets": [
+    "claude-consumer",
+    "chatgpt",
+    "gemini",
+    "perplexity",
+    "ollama",
+    "copilot-consumer",
+    "instruction-pack"
+  ],
+  "skillCount": 18,
+  "skills": [
+    {
+      "id": "depression-screening",
+      "name": "Depression Screening",
+      "description": "Use when screening for depression symptoms (low mood, anhedonia, fatigue, sleep changes, appetite changes), assessing severity for treatment planning, tracking treatment response, or patient has positive PHQ-9 Item 9 (suicidal ideation). Provides PHQ-9 (comprehensive) and PHQ-2 (brief) assessments.",
+      "category": "screening"
+    },
+    {
+      "id": "anxiety-screening",
+      "name": "Anxiety Screening",
+      "description": "Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments.",
+      "category": "screening"
+    },
+    {
+      "id": "trauma-screening",
+      "name": "Trauma Screening",
+      "description": "Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments.",
+      "category": "screening"
+    },
+    {
+      "id": "substance-screening",
+      "name": "Substance Use Screening",
+      "description": "Use when screening for alcohol or drug use concerns (heavy drinking, cravings, loss of control, withdrawal symptoms, functional impairment), assessing substance use severity, determining level of care, or patient reports substance-related problems. Provides AUDIT-C (alcohol brief) and DAST-10 (drugs comprehensive) assessments.",
+      "category": "screening"
+    },
+    {
+      "id": "suicide-screening",
+      "name": "Suicide Risk Screening",
+      "description": "Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused.",
+      "category": "screening"
+    },
+    {
+      "id": "intake-interview",
+      "name": "Intake Interview",
+      "description": "Use when conducting initial patient intake, gathering comprehensive history, establishing therapeutic rapport, assessing safety and risk factors, or need structured interview framework. Provides HEADSS assessment (adolescents), biopsychosocial interview template, and safety protocols.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "treatment-planning",
+      "name": "Treatment Planning",
+      "description": "Use when developing treatment plans, writing SMART goals, determining appropriate level of care, implementing measurement-based care protocols, or adapting treatment based on patient progress. Provides SMART goals framework, ASAM/LOCUS criteria guidance, and treatment monitoring strategies.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "documentation",
+      "name": "Clinical Documentation",
+      "description": "Use when writing clinical notes, documenting sessions, creating treatment plans for insurance/authorization, ensuring HIPAA compliance, or need structured documentation templates. Provides SOAP notes, progress notes (DAP format), and treatment plan templates. HIPAA-compliant guidance included.",
+      "category": "documentation"
+    },
+    {
+      "id": "ultra-brief-screening",
+      "name": "Ultra-Brief Screening",
+      "description": "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance.",
+      "category": "screening"
+    },
+    {
+      "id": "sleep-diary",
+      "name": "Sleep Diary",
+      "description": "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "motivation-assessment",
+      "name": "Motivation Assessment",
+      "description": "Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "bipolar-risk-interview",
+      "name": "Bipolar Risk Interview",
+      "description": "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "functional-impairment-interview",
+      "name": "Functional Impairment Interview",
+      "description": "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "eating-risk-checklist",
+      "name": "Eating Risk Checklist",
+      "description": "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "cognitive-concerns-intake",
+      "name": "Cognitive Concerns Intake",
+      "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "opioid-mme-calculator",
+      "name": "Opioid MME Calculator",
+      "description": "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions.",
+      "category": "clinical-workflow"
+    },
+    {
+      "id": "distress-screening",
+      "name": "Distress Screening",
+      "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.",
+      "category": "screening"
+    },
+    {
+      "id": "wellbeing-screening",
+      "name": "Well-Being Screening",
+      "description": "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance.",
+      "category": "screening"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "documentation",
+  "name": "Clinical Documentation",
+  "description": "Use when writing clinical notes, documenting sessions, creating treatment plans for insurance/authorization, ensuring HIPAA compliance, or need structured documentation templates. Provides SOAP notes, progress notes (DAP format), and treatment plan templates. HIPAA-compliant guidance included.",
+  "category": "documentation",
+  "tags": [
+    "documentation",
+    "soap-notes",
+    "progress-notes",
+    "ehr",
+    "hipaa",
+    "dap",
+    "clinical-notes",
+    "session-notes",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

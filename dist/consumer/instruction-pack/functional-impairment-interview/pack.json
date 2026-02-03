@@ -1,0 +1,16 @@
+{
+  "id": "functional-impairment-interview",
+  "name": "Functional Impairment Interview",
+  "description": "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument.",
+  "category": "clinical-workflow",
+  "tags": [
+    "functioning",
+    "impairment",
+    "interview",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "distress-screening",
+  "name": "Distress Screening",
+  "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.",
+  "category": "screening",
+  "tags": [
+    "distress",
+    "k6",
+    "k10",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

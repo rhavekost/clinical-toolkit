@@ -1,0 +1,19 @@
+{
+  "name": "Opioid MME Calculator",
+  "description": "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions.",
+  "instructions": "# Opioid MME Calculator\n\n## Description\n\nThis skill provides a structured way to calculate total daily MME using CDC conversion factors and safety cautions. It is a support tool and does not replace clinical judgment or patient-specific considerations.\n\n## Quick Reference\n\n| Use | Purpose |\n|-----|---------|\n| MME calculation | Standardize opioid dose comparisons and monitor risk |\n\n## Calculation Guide\n\nSee: [assets/mme-calculation.md](assets/mme-calculation.md)\n\n## Safety & Limitations\n\nSee: [references/cautions.md](references/cautions.md)\n\n## Documentation\n\n- List each opioid, route, dose, and frequency\n- Calculate each opioid’s daily MME\n- Sum totals and note risk thresholds\n",
+  "suggested_prompts": [
+    "Use Opioid MME Calculator for this scenario.",
+    "Walk me through Opioid MME Calculator."
+  ],
+  "tags": [
+    "opioid",
+    "mme",
+    "dose-conversion",
+    "pain",
+    "medication-safety",
+    "workflow",
+    "clinical"
+  ],
+  "category": "clinical-workflow"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Distress Screening",
+  "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.",
+  "instructions": "# Distress Screening (K6 / K10)\n\n## Description\n\nThis skill provides the K6 and K10 psychological distress scales. Use K6 for brief screening and K10 for more detailed monitoring.\n\n**Permission:** Use of K6 and K10 is free and does not require formal permission; include the required copyright and citation.\n\n## Quick Reference\n\n| Assessment | Items | Time | Purpose | Score Range |\n|------------|-------|------|---------|-------------|\n| **K6** | 6 | 1-2 min | Brief distress screening | 0-24 (0-4 coding) |\n| **K10** | 10 | 2-3 min | Distress monitoring | 0-40 (0-4 coding) |\n\n## Assessment Tools\n\n- **K6**: [assets/k6.md](assets/k6.md)\n- **K10**: [assets/k10.md](assets/k10.md)\n\n## Interactive Administration (Item-by-Item)\n\n1. Read each item verbatim with the past 30 days time frame.\n2. Record responses using the five-category frequency scale.\n3. Recode responses to 0-4 scoring and sum.\n\n## Documentation\n\nUse templates in each asset file.\n\n## References\n\n- Permission and scoring guidance: [references/permissions-and-scoring.md](references/permissions-and-scoring.md)\n",
+  "conversation_starters": [
+    "Help me with distress screening.",
+    "Guide me through distress screening."
+  ],
+  "knowledge_files": [],
+  "tags": [
+    "distress",
+    "k6",
+    "k10",
+    "screening",
+    "mental-health"
+  ],
+  "category": "screening"
+}

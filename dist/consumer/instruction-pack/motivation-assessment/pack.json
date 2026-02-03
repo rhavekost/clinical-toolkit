@@ -1,0 +1,18 @@
+{
+  "id": "motivation-assessment",
+  "name": "Motivation Assessment",
+  "description": "Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance.",
+  "category": "clinical-workflow",
+  "tags": [
+    "motivation",
+    "stages-of-change",
+    "urica",
+    "readiness",
+    "behavior-change",
+    "substance-use",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "suicide-screening",
+  "name": "Suicide Risk Screening",
+  "description": "Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused.",
+  "category": "screening",
+  "tags": [
+    "suicide",
+    "crisis",
+    "safety",
+    "c-ssrs",
+    "asq",
+    "risk-assessment",
+    "suicidal-thoughts",
+    "self-harm",
+    "hopelessness",
+    "safety-planning",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

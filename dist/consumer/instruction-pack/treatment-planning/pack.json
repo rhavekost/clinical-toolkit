@@ -1,0 +1,20 @@
+{
+  "id": "treatment-planning",
+  "name": "Treatment Planning",
+  "description": "Use when developing treatment plans, writing SMART goals, determining appropriate level of care, implementing measurement-based care protocols, or adapting treatment based on patient progress. Provides SMART goals framework, ASAM/LOCUS criteria guidance, and treatment monitoring strategies.",
+  "category": "clinical-workflow",
+  "tags": [
+    "treatment-planning",
+    "smart-goals",
+    "level-of-care",
+    "measurement-based-care",
+    "asam",
+    "locus",
+    "treatment-goals",
+    "progress-monitoring",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

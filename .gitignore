@@ -29,7 +29,9 @@ Thumbs.db
 .env.local
 
 # Build outputs (if any)
-dist/
+dist/*
+!dist/consumer/
+!dist/consumer/**
 build/
 *.pyc
 __pycache__/

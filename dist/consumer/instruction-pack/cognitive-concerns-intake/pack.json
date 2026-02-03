@@ -1,0 +1,16 @@
+{
+  "id": "cognitive-concerns-intake",
+  "name": "Cognitive Concerns Intake",
+  "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument.",
+  "category": "clinical-workflow",
+  "tags": [
+    "cognition",
+    "memory",
+    "intake",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

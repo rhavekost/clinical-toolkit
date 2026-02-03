@@ -1,0 +1,14 @@
+{
+  "name": "Bipolar Risk Interview",
+  "description": "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument.",
+  "instructions": "# Bipolar Risk Interview (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** interview guide for exploring bipolar risk factors. It is **not diagnostic** and should not be used as a screening instrument.\n\n## Use Cases\n\n- When clinical history suggests possible bipolar spectrum features\n- When antidepressant response has been atypical or poor\n- When family history suggests bipolar disorder\n\n## Interview Guide\n\nSee: [assets/interview-guide.md](assets/interview-guide.md)\n\n## Safety Notes\n\nSee: [references/safety-notes.md](references/safety-notes.md)\n\n## Documentation\n\nSummarize history of mood elevation, sleep reduction, impulsivity, and functional impact.\n",
+  "tags": [
+    "bipolar",
+    "risk",
+    "interview",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "category": "clinical-workflow"
+}

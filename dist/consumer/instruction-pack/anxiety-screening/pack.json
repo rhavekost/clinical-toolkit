@@ -1,0 +1,22 @@
+{
+  "id": "anxiety-screening",
+  "name": "Anxiety Screening",
+  "description": "Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments.",
+  "category": "screening",
+  "tags": [
+    "anxiety",
+    "gad-7",
+    "gad-2",
+    "worry",
+    "panic",
+    "panic-attacks",
+    "restlessness",
+    "fear",
+    "avoidance",
+    "muscle-tension",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

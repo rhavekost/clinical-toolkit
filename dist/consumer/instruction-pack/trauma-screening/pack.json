@@ -1,0 +1,22 @@
+{
+  "id": "trauma-screening",
+  "name": "Trauma Screening",
+  "description": "Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments.",
+  "category": "screening",
+  "tags": [
+    "trauma",
+    "ptsd",
+    "pc-ptsd-5",
+    "pcl-5",
+    "flashbacks",
+    "nightmares",
+    "intrusive-memories",
+    "avoidance",
+    "hypervigilance",
+    "trauma-informed",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

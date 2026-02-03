@@ -1,0 +1,19 @@
+{
+  "name": "Cognitive Concerns Intake",
+  "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument.",
+  "instructions": "# Cognitive Concerns Intake (Non‑Validated)\n\n## Description\n\nThis is an **original, non‑validated** intake guide for cognitive complaints. It does **not** replace validated cognitive instruments.\n\n## Intake Guide\n\nSee: [assets/history-template.md](assets/history-template.md)\n\n## Referral Guidance\n\nSee: [references/referral-guidance.md](references/referral-guidance.md)\n",
+  "conversation_starters": [
+    "Help me with cognitive concerns intake.",
+    "Guide me through cognitive concerns intake."
+  ],
+  "knowledge_files": [],
+  "tags": [
+    "cognition",
+    "memory",
+    "intake",
+    "non-validated",
+    "workflow",
+    "mental-health"
+  ],
+  "category": "clinical-workflow"
+}

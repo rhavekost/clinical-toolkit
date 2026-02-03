@@ -1,0 +1,17 @@
+{
+  "id": "sleep-diary",
+  "name": "Sleep Diary",
+  "description": "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow.",
+  "category": "clinical-workflow",
+  "tags": [
+    "sleep",
+    "sleep-diary",
+    "csd",
+    "insomnia",
+    "treatment-monitoring",
+    "workflow",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

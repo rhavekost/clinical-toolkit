@@ -1,0 +1,18 @@
+{
+  "id": "ultra-brief-screening",
+  "name": "Ultra-Brief Screening",
+  "description": "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance.",
+  "category": "screening",
+  "tags": [
+    "phq-4",
+    "brief-screening",
+    "depression",
+    "anxiety",
+    "triage",
+    "primary-care",
+    "screening",
+    "mental-health"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

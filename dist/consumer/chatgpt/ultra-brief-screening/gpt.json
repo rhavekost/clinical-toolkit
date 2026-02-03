@@ -1,0 +1,21 @@
+{
+  "name": "Ultra-Brief Screening",
+  "description": "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance.",
+  "instructions": "# Ultra-Brief Screening\n\n## Description\n\nThis skill provides the PHQ-4, a rapid combined depression and anxiety screener ideal for high-volume or time-limited settings.\n\n## Quick Reference\n\n| Assessment | Items | Time | Purpose | Cutoff | When to Use |\n|------------|-------|------|---------|--------|-------------|\n| **PHQ-4** | 4 | <1 min | Ultra-brief depression + anxiety screen | Total ≥6 suggests high likelihood | Primary care, universal screening, triage |\n\n## Assessment Tool\n\n### PHQ-4\n\n**Complete assessment with items, scoring, and documentation:**\n→ [assets/phq-4.md](assets/phq-4.md)\n\n## Interactive Administration (Item-by-Item)\n\n1. Read each item verbatim and record the 0-3 rating.\n2. Sum total score (0-12).\n3. Determine if follow-up PHQ-9/GAD-7 is indicated.\n\n## Clinical Workflow\n\n1. **Administer PHQ-4**\n2. **Score and interpret**\n3. **If positive**, proceed to PHQ-9 and/or GAD-7 for severity\n4. **Document** results and next steps\n\n## Documentation\n\nUse the documentation template in the PHQ-4 asset file.\n\n## References\n\n- See references files in this skill and shared clinical references.\n",
+  "conversation_starters": [
+    "Help me with ultra-brief screening.",
+    "Guide me through ultra-brief screening."
+  ],
+  "knowledge_files": [],
+  "tags": [
+    "phq-4",
+    "brief-screening",
+    "depression",
+    "anxiety",
+    "triage",
+    "primary-care",
+    "screening",
+    "mental-health"
+  ],
+  "category": "screening"
+}

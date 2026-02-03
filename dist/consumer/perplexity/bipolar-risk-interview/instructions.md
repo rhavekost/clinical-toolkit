@@ -1,0 +1,24 @@
+# Bipolar Risk Interview (Non‑Validated)
+
+## Description
+
+This is an **original, non‑validated** interview guide for exploring bipolar risk factors. It is **not diagnostic** and should not be used as a screening instrument.
+
+## Use Cases
+
+- When clinical history suggests possible bipolar spectrum features
+- When antidepressant response has been atypical or poor
+- When family history suggests bipolar disorder
+
+## Interview Guide
+
+See: [assets/interview-guide.md](assets/interview-guide.md)
+
+## Safety Notes
+
+See: [references/safety-notes.md](references/safety-notes.md)
+
+## Documentation
+
+Summarize history of mood elevation, sleep reduction, impulsivity, and functional impact.
+
