@@ -4,7 +4,7 @@
 **Status:** ✅ Production Ready - All Core Features Implemented
 **License:** MIT
 
-A Claude skill framework for clinical mental health screening, assessment interpretation, and documentation support.
+Multi‑platform clinical mental‑health LLM prompts and skills for screening, scoring, safety, intake, treatment planning, documentation, sleep diary, and opioid MME.
 
 ---
 
