@@ -44,11 +44,23 @@ jobs:
       - name: Update manifest version
         run: |
           VERSION="${{ github.event.inputs.version }}"
-          sed -i.bak "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" .claude-plugin/manifest.json
-          rm .claude-plugin/manifest.json.bak
+          SKILL_COUNT=$(node -p "require('./manifest/manifest.json').skills.length")
+          node -e "const fs=require('fs');const path='manifest/manifest.json';const m=JSON.parse(fs.readFileSync(path,'utf8'));m.meta.version=process.env.VERSION;fs.writeFileSync(path, JSON.stringify(m, null, 2)+'\\n');"
+          echo "Updated manifest/manifest.json to version $VERSION"
+          cat manifest/manifest.json | grep version
 
-          echo "Updated manifest.json to version $VERSION"
-          cat .claude-plugin/manifest.json | grep version
+      - name: Generate manifests and consumer bundles
+        run: |
+          echo "🚀 Generating platform manifests..."
+          node scripts/generate-manifests.js
+          echo "🚀 Generating consumer bundles..."
+          node scripts/generate-consumer-targets.js
+          echo "🧪 Validating consumer bundles..."
+          node scripts/validate-consumer-targets.js
+
+      - name: Sync README and package versions
+        run: |
+          node scripts/sync-version.js
 
       - name: Build packages
         run: |
@@ -120,16 +132,8 @@ jobs:
 
           ## Included Skills
 
-          This package includes 8 clinical mental health skills:
-
-          - **Depression Screening** - PHQ-9 and PHQ-2 assessments
-          - **Anxiety Screening** - GAD-7 and GAD-2 assessments
-          - **Trauma Screening** - PCL-5 and PC-PTSD-5 assessments
-          - **Substance Screening** - AUDIT-C and DAST-10 assessments
-          - **Suicide Screening** - ASQ and C-SSRS protocols
-          - **Intake Interview** - HEADSS and biopsychosocial templates
-          - **Treatment Planning** - SMART goals and ASAM/LOCUS criteria
-          - **Documentation** - SOAP and DAP note templates (HIPAA-compliant)
+          This package includes ${SKILL_COUNT} clinical mental health skills.
+          See \`manifest/manifest.json\` for the current list.
 
           ## Support
 
@@ -143,7 +147,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest/manifest.json
           git add .claude-plugin/manifest.json
+          git add .github/copilot/manifest.json
+          git add .cursor/manifest.json
+          git add .gemini/manifest.json
+          git add .codex/manifest.json
+          git add skills/*/SKILL.md
+          git add dist/consumer
+          git add README.md
+          git add package.json
 
           # Only commit if there are changes
           if git diff --cached --quiet; then

@@ -1,7 +1,6 @@
 ---
-name: depression-screening
-description: Use when screening for depression symptoms (low mood, anhedonia, fatigue, sleep changes, appetite changes), assessing severity for treatment planning, tracking treatment response, or patient has positive PHQ-9 Item 9 (suicidal ideation). Provides PHQ-9 (comprehensive) and PHQ-2 (brief) assessments.
-license: MIT
+name: "depression-screening"
+description: "Use when screening for depression symptoms (low mood, anhedonia, fatigue, sleep changes, appetite changes), assessing severity for treatment planning, tracking treatment response, or patient has positive PHQ-9 Item 9 (suicidal ideation). Provides PHQ-9 (comprehensive) and PHQ-2 (brief) assessments."
 ---
 
 # Depression Screening

@@ -63,7 +63,7 @@ Use natural language queries to test skill discovery:
 - Skill content loads when invoked
 
 **Validation Checklist:**
-- [ ] All 8 skills appear in skill list
+- [ ] All skills appear in skill list
 - [ ] Descriptions match `manifest/manifest.json`
 - [ ] Symptom-based queries trigger correct skills (90%+ accuracy)
 - [ ] Tool-based queries trigger correct skills
@@ -562,9 +562,9 @@ Create a log file to track testing results:
 **Version:** [Toolkit Version]
 
 **Discovery Tests:**
-- [ ] Symptom-based queries (8/8 skills)
+- [ ] Symptom-based queries (all relevant skills)
 - [ ] Tool-based queries (5/5 screening skills)
-- [ ] Scenario-based queries (8/8 skills)
+- [ ] Scenario-based queries (all relevant skills)
 
 **Rendering Tests:**
 - [ ] Markdown rendering

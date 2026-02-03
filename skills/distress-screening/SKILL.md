@@ -1,7 +1,6 @@
 ---
-name: distress-screening
-description: Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.
-license: MIT
+name: "distress-screening"
+description: "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance."
 ---
 
 # Distress Screening (K6 / K10)

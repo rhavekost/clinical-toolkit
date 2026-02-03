@@ -44,15 +44,18 @@ fi
 # Get current branch
 CURRENT_BRANCH=$(git branch --show-current)
 
-# Update manifest version
+# Update manifest version (source of truth)
 echo "📝 Updating manifest version..."
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # macOS
-  sed -i '' "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" .claude-plugin/manifest.json
-else
-  # Linux
-  sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" .claude-plugin/manifest.json
-fi
+node -e "const fs=require('fs');const path='manifest/manifest.json';const m=JSON.parse(fs.readFileSync(path,'utf8'));m.meta.version='${VERSION}';fs.writeFileSync(path, JSON.stringify(m, null, 2)+'\\n');"
+
+# Regenerate manifests and consumer bundles
+echo "🧩 Regenerating manifests and consumer bundles..."
+node scripts/generate-manifests.js
+node scripts/generate-consumer-targets.js
+node scripts/validate-consumer-targets.js
+
+# Sync README/package versions
+node scripts/sync-version.js
 
 # Build package
 echo "📦 Building package..."
@@ -73,13 +76,13 @@ echo ""
 echo "Next steps:"
 echo ""
 echo "1. Review the changes:"
-echo "   git diff .claude-plugin/manifest.json"
+echo "   git diff manifest/manifest.json"
 echo ""
 echo "2. Test the package:"
 echo "   unzip -l clinical-toolkit-complete.zip"
 echo ""
 echo "3. If everything looks good, commit and push:"
-echo "   git add .claude-plugin/manifest.json"
+echo "   git add manifest/manifest.json .claude-plugin/manifest.json .github/copilot/manifest.json .cursor/manifest.json .gemini/manifest.json .codex/manifest.json skills/*/SKILL.md dist/consumer README.md package.json"
 echo "   git commit -m \"chore: bump version to ${VERSION}\""
 echo "   git push origin ${CURRENT_BRANCH}"
 echo ""

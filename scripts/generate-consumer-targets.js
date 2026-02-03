@@ -422,7 +422,6 @@ function generateInstructionPack(skills) {
 
 function writeIndex(skills, targets) {
   const index = {
-    generatedAt: new Date().toISOString(),
     targets,
     skillCount: skills.length,
     skills: skills.map(skill => ({

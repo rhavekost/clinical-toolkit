@@ -1,7 +1,6 @@
 ---
-name: eating-risk-checklist
-description: Use when you need a structured, non‑validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool.
-license: MIT
+name: "eating-risk-checklist"
+description: "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool."
 ---
 
 # Eating Risk Checklist (Non‑Validated)

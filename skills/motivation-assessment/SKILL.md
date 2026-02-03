@@ -1,7 +1,6 @@
 ---
-name: motivation-assessment
-description: Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance.
-license: MIT
+name: "motivation-assessment"
+description: "Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance."
 ---
 
 # Motivation Assessment

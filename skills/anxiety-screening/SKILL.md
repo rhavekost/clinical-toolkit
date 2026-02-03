@@ -1,7 +1,6 @@
 ---
-name: anxiety-screening
-description: Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments.
-license: MIT
+name: "anxiety-screening"
+description: "Use when screening for anxiety symptoms (excessive worry, restlessness, difficulty concentrating, muscle tension, panic attacks), differentiating anxiety disorders, assessing treatment response, or patient reports overwhelming fear or avoidance behaviors. Provides GAD-7 (comprehensive) and GAD-2 (brief) assessments."
 ---
 
 # Anxiety Screening

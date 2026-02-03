@@ -1,7 +1,6 @@
 ---
-name: suicide-screening
-description: Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused.
-license: MIT
+name: "suicide-screening"
+description: "Use when screening for suicide risk (suicidal thoughts, self-harm urges, hopelessness, plans or intent to die), patient has positive PHQ-9 Item 9, recent suicide attempt, psychiatric crisis, or establishing safety planning. Provides ASQ (brief) and C-SSRS Columbia Protocol (comprehensive risk assessment). Critical safety-focused."
 ---
 
 # Suicide Risk Screening

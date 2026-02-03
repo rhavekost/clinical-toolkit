@@ -1,7 +1,6 @@
 ---
-name: wellbeing-screening
-description: Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance.
-license: MIT
+name: "wellbeing-screening"
+description: "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance."
 ---
 
 # Well-Being Screening (WHO-5)

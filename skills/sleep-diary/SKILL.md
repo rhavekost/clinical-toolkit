@@ -1,7 +1,6 @@
 ---
-name: sleep-diary
-description: Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and clinician-friendly summary workflow.
-license: MIT
+name: "sleep-diary"
+description: "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow."
 ---
 
 # Sleep Diary (Consensus Sleep Diary)

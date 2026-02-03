@@ -1,7 +1,6 @@
 ---
-name: ultra-brief-screening
-description: Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance.
-license: MIT
+name: "ultra-brief-screening"
+description: "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance."
 ---
 
 # Ultra-Brief Screening

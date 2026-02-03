@@ -1,7 +1,6 @@
 ---
-name: opioid-mme-calculator
-description: Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions.
-license: MIT
+name: "opioid-mme-calculator"
+description: "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions."
 ---
 
 # Opioid MME Calculator

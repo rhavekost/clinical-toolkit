@@ -190,7 +190,7 @@ Don't manually edit frontmatter - let the script manage it.
 
 ### Custom template variables
 
-Edit templates in `.manifest-templates/`:
+Edit templates in `manifest/templates/`:
 - Use `{{meta.field}}` for package metadata
 - Use `{{skill.field}}` for skill properties
 - Deep paths work: `{{meta.author.name}}`

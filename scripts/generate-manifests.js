@@ -147,13 +147,7 @@ function addSkillFrontmatter(template, masterManifest) {
       return;
     }
 
-    let content = fs.readFileSync(skillPath, 'utf8');
-
-    // Check if frontmatter already exists
-    if (content.startsWith('---\n')) {
-      console.log(`    ℹ️  Frontmatter already exists: ${skill.id}`);
-      return;
-    }
+    const content = fs.readFileSync(skillPath, 'utf8');
 
     // Build frontmatter
     const frontmatter = {};
@@ -169,13 +163,31 @@ function addSkillFrontmatter(template, masterManifest) {
       .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
       .join('\n');
 
-    const newContent = `---\n${frontmatterYaml}\n---\n\n${content}`;
+    const frontmatterBlock = `---\n${frontmatterYaml}\n---\n\n`;
+    let newContent = '';
+
+    if (content.startsWith('---\n')) {
+      const endIndex = content.indexOf('\n---', 4);
+      if (endIndex !== -1) {
+        const afterFrontmatter = content.slice(endIndex + 4).replace(/^\n+/, '');
+        newContent = frontmatterBlock + afterFrontmatter;
+      } else {
+        newContent = frontmatterBlock + content;
+      }
+    } else {
+      newContent = frontmatterBlock + content;
+    }
+
+    if (newContent === content) {
+      console.log(`    ℹ️  Frontmatter up to date: ${skill.id}`);
+      return;
+    }
 
     if (!options.dryRun) {
       fs.writeFileSync(skillPath, newContent, 'utf8');
     }
 
-    console.log(`    ✅ Added frontmatter: ${skill.id}`);
+    console.log(`    ✅ Updated frontmatter: ${skill.id}`);
   });
 }
 
@@ -221,8 +233,20 @@ function generateManifest(platform, template, masterManifest) {
     console.log(manifestJson.split('\n').slice(0, 10).join('\n'));
     console.log('  ...');
   } else {
-    fs.writeFileSync(outputPath, manifestJson, 'utf8');
-    console.log(`  ✅ Written: ${path.relative(ROOT_DIR, outputPath)}`);
+    try {
+      fs.writeFileSync(outputPath, manifestJson, 'utf8');
+      console.log(`  ✅ Written: ${path.relative(ROOT_DIR, outputPath)}`);
+    } catch (error) {
+      const isCodexManifest = path.resolve(outputPath) === path.join(ROOT_DIR, '.codex', 'manifest.json');
+      const isPermError = error && (error.code === 'EPERM' || error.code === 'EACCES');
+
+      if (isCodexManifest && isPermError) {
+        console.warn(`  ⚠️  Skipping .codex/manifest.json (permission denied in this environment).`);
+        return;
+      }
+
+      throw error;
+    }
   }
 }
 

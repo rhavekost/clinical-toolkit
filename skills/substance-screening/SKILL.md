@@ -1,7 +1,6 @@
 ---
-name: substance-screening
-description: Use when screening for alcohol or drug use concerns (heavy drinking, cravings, loss of control, withdrawal symptoms, functional impairment), assessing substance use severity, determining level of care, or patient reports substance-related problems. Provides AUDIT-C (alcohol brief) and DAST-10 (drugs comprehensive) assessments.
-license: MIT
+name: "substance-screening"
+description: "Use when screening for alcohol or drug use concerns (heavy drinking, cravings, loss of control, withdrawal symptoms, functional impairment), assessing substance use severity, determining level of care, or patient reports substance-related problems. Provides AUDIT-C (alcohol brief) and DAST-10 (drugs comprehensive) assessments."
 ---
 
 # Substance Use Screening

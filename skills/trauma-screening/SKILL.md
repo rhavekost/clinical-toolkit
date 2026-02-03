@@ -1,7 +1,6 @@
 ---
-name: trauma-screening
-description: Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments.
-license: MIT
+name: "trauma-screening"
+description: "Use when screening for PTSD and trauma-related symptoms (intrusive memories, flashbacks, nightmares, avoidance, hypervigilance, emotional numbing), patient reports traumatic exposure, assessing trauma severity, or using trauma-informed approaches. Provides PC-PTSD-5 (brief) and PCL-5 (comprehensive) assessments."
 ---
 
 # Trauma Screening

@@ -3,13 +3,11 @@
   "title": "Consumer Bundle Index",
   "type": "object",
   "required": [
-    "generatedAt",
     "targets",
     "skillCount",
     "skills"
   ],
   "properties": {
-    "generatedAt": { "type": "string", "minLength": 1 },
     "targets": {
       "type": "array",
       "minItems": 1,

@@ -1,7 +1,6 @@
 ---
-name: functional-impairment-interview
-description: Use when you need a structured, non‑validated interview for functional impact across work, social, and home domains. Not a validated instrument.
-license: MIT
+name: "functional-impairment-interview"
+description: "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument."
 ---
 
 # Functional Impairment Interview (Non‑Validated)

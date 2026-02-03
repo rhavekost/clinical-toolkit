@@ -12,7 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 const SKILLS_DIR = path.join(__dirname, '../skills');
 const DIST_DIR = path.join(__dirname, '../dist/claudeai');
@@ -50,15 +50,19 @@ function packageSkill(skillName) {
   }
 
   // Use system zip command to create archive
-  // -r: recursive, -j: junk (flatten) directory structure for top-level files
-  // For claude.ai, we want all files at the top level of the zip
+  // -r: recursive
+  // For claude.ai, we want all files at the top level of the zip, so we run from the skill directory.
   try {
-    execSync(`cd "${skillDir}" && zip -r "${outputPath}" .`, { stdio: 'pipe' });
+    execFileSync('zip', ['-r', outputPath, '.'], { cwd: skillDir, stdio: 'pipe' });
 
     const stats = fs.statSync(outputPath);
     console.log(`✅ ${skillName}.zip (${stats.size} bytes)`);
   } catch (error) {
-    throw new Error(`Failed to create zip for ${skillName}: ${error.message}`);
+    const isMissingZip = error && error.code === 'ENOENT';
+    const message = isMissingZip
+      ? 'zip command not found. Install zip (e.g., `brew install zip` on macOS).'
+      : error.message;
+    throw new Error(`Failed to create zip for ${skillName}: ${message}`);
   }
 }
 

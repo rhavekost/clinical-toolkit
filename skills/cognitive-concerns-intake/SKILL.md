@@ -1,7 +1,6 @@
 ---
-name: cognitive-concerns-intake
-description: Use when you need a structured, non‑validated intake for cognitive concerns. Not a validated cognitive screening instrument.
-license: MIT
+name: "cognitive-concerns-intake"
+description: "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument."
 ---
 
 # Cognitive Concerns Intake (Non‑Validated)

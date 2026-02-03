@@ -50,7 +50,7 @@ The Clinical Toolkit uses **manual release workflows** to give you full control 
 2. **Review changes**
    ```bash
    # Check the updated manifest
-   git diff .claude-plugin/manifest.json
+   git diff manifest/manifest.json
 
    # Test the package
    unzip -l clinical-toolkit-complete.zip
@@ -58,7 +58,7 @@ The Clinical Toolkit uses **manual release workflows** to give you full control 
 
 3. **Commit and push**
    ```bash
-   git add .claude-plugin/manifest.json
+   git add manifest/manifest.json .claude-plugin/manifest.json .github/copilot/manifest.json .cursor/manifest.json .gemini/manifest.json .codex/manifest.json skills/*/SKILL.md dist/consumer README.md package.json
    git commit -m "chore: bump version to 1.0.0"
    git push origin main
    ```
@@ -105,7 +105,7 @@ Follow [Semantic Versioning](https://semver.org/) format: `MAJOR.MINOR.PATCH`
 Each release automatically includes:
 
 1. **Package ZIP** (`clinical-toolkit-complete.zip`)
-   - All 8 skill directories
+   - All skill directories listed in `manifest/manifest.json`
    - All supporting files (assets, references)
    - Updated manifest.json
 

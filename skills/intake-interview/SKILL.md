@@ -1,7 +1,6 @@
 ---
-name: intake-interview
-description: Use when conducting initial patient intake, gathering comprehensive history, establishing therapeutic rapport, assessing safety and risk factors, or need structured interview framework. Provides HEADSS assessment (adolescents), biopsychosocial interview template, and safety protocols.
-license: MIT
+name: "intake-interview"
+description: "Use when conducting initial patient intake, gathering comprehensive history, establishing therapeutic rapport, assessing safety and risk factors, or need structured interview framework. Provides HEADSS assessment (adolescents), biopsychosocial interview template, and safety protocols."
 ---
 
 # Intake Interview

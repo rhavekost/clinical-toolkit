@@ -1,7 +1,6 @@
 ---
-name: bipolar-risk-interview
-description: Use when you need a structured, non‑validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument.
-license: MIT
+name: "bipolar-risk-interview"
+description: "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument."
 ---
 
 # Bipolar Risk Interview (Non‑Validated)
