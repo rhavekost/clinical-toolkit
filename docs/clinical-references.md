@@ -54,6 +54,40 @@ This document provides quick reference tables and scoring guides for the validat
 
 ---
 
+## Ultra-Brief Screening
+
+### PHQ-4 Scoring
+
+**Total score (0-12):**
+- 0-2: None
+- 3-5: Mild
+- 6-8: Moderate
+- 9-12: Severe
+
+**Subscales:**
+- Anxiety (items 1-2): 0-6
+- Depression (items 3-4): 0-6
+
+**Triage guidance:** Total ≥6 or subscale ≥3 → administer PHQ-9 and/or GAD-7.
+
+---
+
+## Distress Screening
+
+### K6 / K10 Scoring (0-4 coding)
+
+- K6 total range: 0-24
+- K10 total range: 0-40
+- Higher scores indicate greater distress.
+- Use setting-specific cutoffs where available.
+
+### Common Cutoffs (Verify Locally)
+
+- **K6:** ≥13 is commonly used to indicate high likelihood of serious mental illness.
+- **K10:** 10-19 likely well, 20-24 mild, 25-29 moderate, 30-50 severe.
+
+---
+
 ## Trauma Screening
 
 ### PC-PTSD-5 Scoring
@@ -137,6 +171,93 @@ This document provides quick reference tables and scoring guides for the validat
 
 *[Guidelines for determining clinically meaningful improvement to be added]*
 
+### Outcome Tracking Template
+
+Template: [docs/templates/outcome-tracking.md](templates/outcome-tracking.md)
+
+---
+
+## Sleep Tracking
+
+### Consensus Sleep Diary (CSD)
+
+- Use the official unaltered diary form for 1-2 weeks.
+- Summarize trends in sleep onset latency, awakenings, and total sleep time.
+- See the CSD project site for the official form and citation requirements.
+
+---
+
+## Motivation Assessment
+
+### Readiness Ruler (Brief)
+
+- 0-3: Precontemplation
+- 4-6: Contemplation
+- 7-8: Preparation
+- 9-10: Action/Maintenance
+
+### URICA (Stage Profile)
+
+- Calculate stage subscales and identify dominant stage.
+- Use stage-matched interventions to guide approach.
+- UMBC HABITS Lab lists TTM measures (including URICA) as public domain.
+
+---
+
+## Original Non‑Validated Tools
+
+These tools are original checklists and interview guides. They are **not validated instruments** and are **not diagnostic**.
+
+- Bipolar Risk Interview Guide
+- Functional Impairment Interview
+- Eating Risk Checklist
+- Cognitive Concerns Intake
+
+---
+
+## Medication Safety
+
+### Opioid MME
+
+- Use CDC conversion factors for MME calculations.
+- Do not use MME for equianalgesic conversion when switching opioids.
+- Use extra caution with methadone and fentanyl.
+
+---
+
+## Cross-Tool Workflow Chaining
+
+### Depression Pathway
+
+**Use when:** universal screening, depression complaints, or positive PHQ-2.
+
+1. PHQ-4 (if available) for ultra-brief screen
+2. PHQ-9 for severity and treatment monitoring
+
+### Distress Pathway
+
+**Use when:** nonspecific distress or high K6/K10 scores.
+
+1. K6 or K10 for distress screening
+2. PHQ-9 and GAD-7 for symptom specificity
+3. Suicide risk assessment if distress is severe or safety concerns emerge
+
+### Sleep Pathway
+
+**Use when:** sleep complaints or early treatment response tracking.
+
+1. Consensus Sleep Diary (CSD) for 1-2 weeks
+2. PHQ-9 to evaluate depressive symptoms
+3. GAD-7 to evaluate anxiety symptoms
+4. Substance use screen if indicated (AUDIT-C/DAST-10)
+
+### Adolescent Pathway
+
+**Use when:** adolescent intakes or general mental health screening.
+
+1. PHQ-4 (or PHQ-2/GAD-2 if PHQ-4 not available)
+2. HEADSS for structured adolescent intake
+
 ---
 
 ## Crisis Resources
@@ -186,6 +307,30 @@ This document provides quick reference tables and scoring guides for the validat
 - Harvey A. Skinner
 - Freely available for clinical use
 - Source: Various public health sources
+
+**PHQ-4:**
+- Part of the PHQ family; permitted for reproduction and use without permission
+- Source: https://www.phqscreeners.com
+
+**Consensus Sleep Diary (CSD):**
+- Free for not‑for‑profit use with citation; use unaltered official form
+- Source: https://consensussleepdiary.com
+
+**URICA / TTM Measures:**
+- UMBC HABITS Lab indicates most TTM measures (including URICA) are public domain
+- Source: https://habitslab.umbc.edu/ttm-measures/
+
+**Opioid MME Conversion Factors:**
+- CDC conversion factor table (MME) and cautions
+- Source: https://www.cdc.gov/opioids/providers/prescribing/guideline.html
+
+**K6 / K10:**
+- Kessler Psychological Distress Scales; free to use with citation
+- Source: https://www.hcp.med.harvard.edu/ncs/k6_scales.php
+
+**WHO-5:**
+- WHO-5 Well-Being Index; free of charge and no permission required
+- Source: https://www.psykiatri-regionh.dk/who-5/who-5-questionnaires/Pages/default.aspx
 
 ---
 

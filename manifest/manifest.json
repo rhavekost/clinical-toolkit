@@ -233,6 +233,199 @@
         "clinicalContext": true,
         "hipaaCompliance": true
       }
+    },
+    {
+      "id": "ultra-brief-screening",
+      "path": "skills/ultra-brief-screening/SKILL.md",
+      "name": "Ultra-Brief Screening",
+      "description": "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance.",
+      "category": "screening",
+      "tags": [
+        "phq-4",
+        "brief-screening",
+        "depression",
+        "anxiety",
+        "triage",
+        "primary-care",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "PHQ-4"
+        ]
+      }
+    },
+    {
+      "id": "sleep-diary",
+      "path": "skills/sleep-diary/SKILL.md",
+      "name": "Sleep Diary",
+      "description": "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow.",
+      "category": "clinical-workflow",
+      "tags": [
+        "sleep",
+        "sleep-diary",
+        "csd",
+        "insomnia",
+        "treatment-monitoring",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "motivation-assessment",
+      "path": "skills/motivation-assessment/SKILL.md",
+      "name": "Motivation Assessment",
+      "description": "Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance.",
+      "category": "clinical-workflow",
+      "tags": [
+        "motivation",
+        "stages-of-change",
+        "urica",
+        "readiness",
+        "behavior-change",
+        "substance-use",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "bipolar-risk-interview",
+      "path": "skills/bipolar-risk-interview/SKILL.md",
+      "name": "Bipolar Risk Interview",
+      "description": "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument.",
+      "category": "clinical-workflow",
+      "tags": [
+        "bipolar",
+        "risk",
+        "interview",
+        "non-validated",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "functional-impairment-interview",
+      "path": "skills/functional-impairment-interview/SKILL.md",
+      "name": "Functional Impairment Interview",
+      "description": "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument.",
+      "category": "clinical-workflow",
+      "tags": [
+        "functioning",
+        "impairment",
+        "interview",
+        "non-validated",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "eating-risk-checklist",
+      "path": "skills/eating-risk-checklist/SKILL.md",
+      "name": "Eating Risk Checklist",
+      "description": "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool.",
+      "category": "clinical-workflow",
+      "tags": [
+        "eating",
+        "risk",
+        "checklist",
+        "non-validated",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "cognitive-concerns-intake",
+      "path": "skills/cognitive-concerns-intake/SKILL.md",
+      "name": "Cognitive Concerns Intake",
+      "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument.",
+      "category": "clinical-workflow",
+      "tags": [
+        "cognition",
+        "memory",
+        "intake",
+        "non-validated",
+        "workflow",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "opioid-mme-calculator",
+      "path": "skills/opioid-mme-calculator/SKILL.md",
+      "name": "Opioid MME Calculator",
+      "description": "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions.",
+      "category": "clinical-workflow",
+      "tags": [
+        "opioid",
+        "mme",
+        "dose-conversion",
+        "pain",
+        "medication-safety",
+        "workflow",
+        "clinical"
+      ],
+      "requirements": {
+        "clinicalContext": true
+      }
+    },
+    {
+      "id": "distress-screening",
+      "path": "skills/distress-screening/SKILL.md",
+      "name": "Distress Screening",
+      "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.",
+      "category": "screening",
+      "tags": [
+        "distress",
+        "k6",
+        "k10",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "K6",
+          "K10"
+        ]
+      }
+    },
+    {
+      "id": "wellbeing-screening",
+      "path": "skills/wellbeing-screening/SKILL.md",
+      "name": "Well-Being Screening",
+      "description": "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance.",
+      "category": "screening",
+      "tags": [
+        "wellbeing",
+        "who-5",
+        "screening",
+        "mental-health"
+      ],
+      "requirements": {
+        "clinicalContext": true,
+        "validatedInstruments": [
+          "WHO-5"
+        ]
+      }
     }
   ]
 }

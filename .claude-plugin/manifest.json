@@ -1,6 +1,6 @@
 {
   "name": "clinical-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Agent skill framework for clinical mental health screening, assessment interpretation, and documentation support",
   "author": "rhavekost",
   "license": "MIT",
@@ -45,6 +45,56 @@
       "name": "documentation",
       "path": "skills/documentation/SKILL.md",
       "description": "Use when writing clinical notes, documenting sessions, creating treatment plans for insurance/authorization, ensuring HIPAA compliance, or need structured documentation templates. Provides SOAP notes, progress notes (DAP format), and treatment plan templates. HIPAA-compliant guidance included."
+    },
+    {
+      "name": "ultra-brief-screening",
+      "path": "skills/ultra-brief-screening/SKILL.md",
+      "description": "Use when time is limited and you need a rapid combined depression and anxiety screen. Provides PHQ-4 (PHQ-2 + GAD-2) with interpretation and triage guidance."
+    },
+    {
+      "name": "sleep-diary",
+      "path": "skills/sleep-diary/SKILL.md",
+      "description": "Use when assessing sleep patterns over time, monitoring insomnia treatment response, or establishing baseline sleep behavior. Provides guidance for the Consensus Sleep Diary (CSD) and a summary workflow."
+    },
+    {
+      "name": "motivation-assessment",
+      "path": "skills/motivation-assessment/SKILL.md",
+      "description": "Use when assessing readiness to change, planning behavioral interventions, or matching treatment approach to patient motivation. Provides URICA access guidance and a brief readiness ruler with stage-based guidance."
+    },
+    {
+      "name": "bipolar-risk-interview",
+      "path": "skills/bipolar-risk-interview/SKILL.md",
+      "description": "Use when you need a structured, non-validated interview guide for bipolar risk factors and mood elevation history. Not a diagnostic or validated instrument."
+    },
+    {
+      "name": "functional-impairment-interview",
+      "path": "skills/functional-impairment-interview/SKILL.md",
+      "description": "Use when you need a structured, non-validated interview for functional impact across work, social, and home domains. Not a validated instrument."
+    },
+    {
+      "name": "eating-risk-checklist",
+      "path": "skills/eating-risk-checklist/SKILL.md",
+      "description": "Use when you need a structured, non-validated checklist for eating disorder risk factors and medical red flags. Not a validated screening tool."
+    },
+    {
+      "name": "cognitive-concerns-intake",
+      "path": "skills/cognitive-concerns-intake/SKILL.md",
+      "description": "Use when you need a structured, non-validated intake for cognitive concerns. Not a validated cognitive screening instrument."
+    },
+    {
+      "name": "opioid-mme-calculator",
+      "path": "skills/opioid-mme-calculator/SKILL.md",
+      "description": "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions."
+    },
+    {
+      "name": "distress-screening",
+      "path": "skills/distress-screening/SKILL.md",
+      "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance."
+    },
+    {
+      "name": "wellbeing-screening",
+      "path": "skills/wellbeing-screening/SKILL.md",
+      "description": "Use when assessing subjective well-being or tracking recovery alongside symptom measures. Provides WHO-5 Well-Being Index with scoring and interpretation guidance."
     }
   ]
 }
