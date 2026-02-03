@@ -187,19 +187,25 @@ Skills can be invoked in multiple ways:
    → Uses depression-screening and anxiety-screening skills
    ```
 
-2. **Risk Assessment:**
+2. **Interactive Administration:**
+   ```
+   "Let's start a PHQ-9 assessment"
+   → Uses depression-screening skill in item-by-item mode
+   ```
+
+3. **Risk Assessment:**
    ```
    "The PHQ-9 Item 9 was positive - help me assess suicide risk"
    → Uses suicide-screening skill with C-SSRS or ASQ
    ```
 
-3. **Treatment Planning:**
+4. **Treatment Planning:**
    ```
    "Based on these assessment results, help me create a treatment plan"
    → Uses treatment-planning skill for goals and level of care
    ```
 
-4. **Documentation:**
+5. **Documentation:**
    ```
    "Help me write a SOAP note for this intake session"
    → Uses documentation skill

@@ -28,11 +28,13 @@ This skill provides tools to assess readiness to change and tailor interventions
 **Full assessment and documentation:**
 → [assets/urica.md](assets/urica.md)
 
-## Interactive Administration (Item-by-Item)
+## Interactive Administration (Optional)
 
-1. For readiness ruler, ask the rating(s) and record scores.
-2. For URICA, read items verbatim and record 1-5 responses.
-3. Summarize stage profile and identify dominant stage.
+Use this mode when the clinician says "start" or "administer" readiness screening.
+
+1. **Readiness Ruler:** Ask the 0-10 rating(s) (importance, confidence, readiness) and record scores.
+2. **URICA:** Use the official form and scoring guidance; have the patient complete it, then record 1-5 responses and compute stage scores.
+3. Summarize the stage profile, identify the dominant stage, and offer stage-matched guidance.
 
 ## Clinical Workflow
 

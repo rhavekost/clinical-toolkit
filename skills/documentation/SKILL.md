@@ -32,6 +32,16 @@ This skill provides templates and guidance for standard clinical documentation f
 | Treatment plan | Treatment Plan Template |
 | Safety issue | Safety Documentation Protocols |
 
+## Interactive Mode (Lightweight)
+
+Use this mode when the clinician asks to build a note step-by-step.
+
+1. Confirm the note type (SOAP, DAP/BIRP/GIRP, or treatment plan) and setting.
+2. Ask for required inputs one section at a time and wait for responses.
+3. If information is missing or unclear, ask targeted follow-ups.
+4. Draft the note and ask for confirmation or edits before finalizing.
+5. If safety issues are described, prioritize safety documentation protocols.
+
 ## Usage
 
 This skill can be invoked when you need to:
