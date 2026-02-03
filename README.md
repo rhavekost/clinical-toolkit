@@ -53,16 +53,16 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 | **trauma-screening** | PC-PTSD-5, PCL-5 | PTSD screening, trauma symptom assessment | ✅ Implemented |
 | **substance-screening** | AUDIT-C, DAST-10 | Alcohol/drug use screening, identifying problematic use | ✅ Implemented |
 | **suicide-screening** | C-SSRS, ASQ | Suicide risk assessment, safety planning | ✅ Implemented |
-| **ultra-brief-screening** | PHQ-4 | Rapid depression + anxiety screening | 🚧 V2.1 |
-| **sleep-diary** | Consensus Sleep Diary (CSD) | Sleep pattern tracking, treatment monitoring | 🚧 V2.1 |
-| **motivation-assessment** | Readiness Ruler, URICA (access guidance) | Readiness to change, stage-matched interventions | 🚧 V2.2 |
-| **bipolar-risk-interview** | Non-validated interview guide | Bipolar risk exploration (not diagnostic) | 🚧 V2.2 |
-| **functional-impairment-interview** | Non-validated interview guide | Functional impact interview (not diagnostic) | 🚧 V2.2 |
-| **eating-risk-checklist** | Non-validated checklist | Eating risk red flags (not diagnostic) | 🚧 V2.2 |
-| **cognitive-concerns-intake** | Non-validated intake | Cognitive concerns history (not diagnostic) | 🚧 V2.2 |
-| **opioid-mme-calculator** | CDC MME conversion factors | Opioid dose standardization and safety | 🚧 V2.2 |
-| **distress-screening** | K6, K10 | Psychological distress screening | 🚧 V2.2 |
-| **wellbeing-screening** | WHO-5 | Well-being screening | 🚧 V2.2 |
+| **ultra-brief-screening** | PHQ-4 | Rapid depression + anxiety screening | ✅ Implemented |
+| **sleep-diary** | Consensus Sleep Diary (CSD) | Sleep pattern tracking, treatment monitoring | ✅ Implemented |
+| **motivation-assessment** | Readiness Ruler, URICA (access guidance) | Readiness to change, stage-matched interventions | ✅ Implemented |
+| **bipolar-risk-interview** | Non-validated interview guide | Bipolar risk exploration (not diagnostic) | ✅ Implemented |
+| **functional-impairment-interview** | Non-validated interview guide | Functional impact interview (not diagnostic) | ✅ Implemented |
+| **eating-risk-checklist** | Non-validated checklist | Eating risk red flags (not diagnostic) | ✅ Implemented |
+| **cognitive-concerns-intake** | Non-validated intake | Cognitive concerns history (not diagnostic) | ✅ Implemented |
+| **opioid-mme-calculator** | CDC MME conversion factors | Opioid dose standardization and safety | ✅ Implemented |
+| **distress-screening** | K6, K10 | Psychological distress screening | ✅ Implemented |
+| **wellbeing-screening** | WHO-5 | Well-being screening | ✅ Implemented |
 
 ### Clinical Workflow Skills
 
@@ -483,16 +483,10 @@ Before marking a skill as complete:
 - [x] Comprehensive documentation
 
 ### Future Enhancements (Optional)
-- [ ] Populate clinical-references.md with detailed guidance
 - [ ] Add culturally-adapted instrument versions
 - [ ] Additional validated screening tools
 - [ ] Integration with measurement-based care platforms
 - [ ] Multi-language support
-
-### V2 Roadmap (In Progress)
-
-- **V2.1 (In progress):** PHQ-4, Consensus Sleep Diary
-- **V2.2 (In progress):** Stages of Change (URICA + brief), non-validated interview/checklist tools, opioid MME calculator, K6/K10 distress screening, WHO-5 well-being
 
 ---
 

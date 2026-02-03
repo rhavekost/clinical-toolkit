@@ -2,8 +2,8 @@
 
 This document provides quick reference tables and scoring guides for the validated instruments included in the clinical toolkit.
 
-**Last Updated:** 2026-02-01
-**Status:** 🚧 To be populated during skill implementation
+**Last Updated:** 2026-02-03
+**Status:** ✅ Implemented
 
 ---
 
@@ -13,22 +13,24 @@ This document provides quick reference tables and scoring guides for the validat
 
 | Score Range | Severity | Clinical Actions |
 |-------------|----------|------------------|
-| 0-4 | Minimal depression | *[To be added]* |
-| 5-9 | Mild depression | *[To be added]* |
-| 10-14 | Moderate depression | *[To be added]* |
-| 15-19 | Moderately severe depression | *[To be added]* |
-| 20-27 | Severe depression | *[To be added]* |
+| 0-4 | Minimal depression | Monitor, provide psychoeducation, rescreen if symptoms change |
+| 5-9 | Mild depression | Watchful waiting, brief intervention, reassess in 2-4 weeks |
+| 10-14 | Moderate depression | Active treatment (psychotherapy and/or medication), monitor 2-4 weeks |
+| 15-19 | Moderately severe depression | Combined treatment often indicated, closer follow-up, assess safety |
+| 20-27 | Severe depression | Immediate treatment, specialty referral, consider higher level of care, safety assessment |
 
 **Key Thresholds:**
 - Score ≥10: Cutoff for major depression (88% sensitivity, 88% specificity)
-- 5-point change: Indicates treatment response
-- 10-point change: Clinically significant improvement
+- 5-point change: Approximate minimal clinically important difference (MCID); larger changes indicate greater improvement
 
 **Item 9 (Suicidal Ideation):** ANY score >0 requires immediate follow-up
 
 ### PHQ-2 Scoring
 
-*[Scoring table and interpretation to be added]*
+| Score Range | Interpretation | Action |
+|-------------|----------------|--------|
+| 0-2 | Negative screen | Routine monitoring; administer PHQ-9 only if clinical concern |
+| 3-6 | Positive screen | Administer full PHQ-9 and assess functional impact |
 
 ---
 
@@ -38,19 +40,21 @@ This document provides quick reference tables and scoring guides for the validat
 
 | Score Range | Severity | Clinical Actions |
 |-------------|----------|------------------|
-| 0-4 | Minimal anxiety | *[To be added]* |
-| 5-9 | Mild anxiety | *[To be added]* |
-| 10-14 | Moderate anxiety | *[To be added]* |
-| 15-21 | Severe anxiety | *[To be added]* |
+| 0-4 | Minimal anxiety | Monitor, provide psychoeducation, rescreen if symptoms change |
+| 5-9 | Mild anxiety | Watchful waiting, skills-based support, reassess in 2-4 weeks |
+| 10-14 | Moderate anxiety | Active treatment (CBT and/or medication), monitor 2-4 weeks |
+| 15-21 | Severe anxiety | Active treatment, consider specialty referral, assess safety and impairment |
 
 **Key Thresholds:**
-- Score ≥8: High sensitivity (92%) and specificity (76%)
 - Score ≥10: Commonly used cutoff for GAD
-- 5-point change: Clinically significant improvement
+- 4-point change: Estimated minimal clinically important difference (MCID) in some settings; confirm locally
 
 ### GAD-2 Scoring
 
-*[Scoring table and interpretation to be added]*
+| Score Range | Interpretation | Action |
+|-------------|----------------|--------|
+| 0-2 | Negative screen | Routine monitoring; administer GAD-7 only if clinical concern |
+| 3-6 | Positive screen | Administer full GAD-7 and assess functional impact |
 
 ---
 
@@ -92,24 +96,27 @@ This document provides quick reference tables and scoring guides for the validat
 
 ### PC-PTSD-5 Scoring
 
-*[Scoring table and interpretation to be added]*
+| Score Range | Interpretation | Action |
+|-------------|----------------|--------|
+| 0-2 | Negative screen | No further PTSD assessment unless clinical concern |
+| 3 | Possible PTSD | Consider PCL-5 if symptoms or risk factors present |
+| 4-5 | Positive screen | Administer full PCL-5 and conduct clinical interview |
 
 **Key Facts:**
 - Yes/No format
-- Score of 3-4 indicates positive screen
-- Gender considerations: 4 for males, 3 for females may be optimal
+- Cutoff of 4 is commonly used; some settings use 3 for higher sensitivity
 
 ### PCL-5 Scoring
 
 | Score Range | Interpretation | Clinical Actions |
 |-------------|----------------|------------------|
-| 0-30 | Below PTSD threshold | *[To be added]* |
-| 31-33 | Probable PTSD (provisional cutoff) | *[To be added]* |
-| 34+ | Probable PTSD (higher confidence) | *[To be added]* |
+| 0-30 | Below PTSD threshold | Monitor; reassess if symptoms persist or clinical concern remains |
+| 31-33 | Probable PTSD (provisional cutoff) | Clinical interview to confirm DSM-5 criteria; consider treatment planning |
+| 34+ | Probable PTSD (higher confidence) | Full assessment and treatment planning; assess safety and comorbidity |
 
 **Key Thresholds:**
-- 10-12 point change: Clinically significant improvement
-- Score <28: May indicate return to healthy population range
+- Cutoff 31-33 indicates probable PTSD (provisional)
+- 5-10 point change suggests reliable change; 10-20 point change suggests clinically meaningful improvement
 
 **Subscale Structure:**
 - Cluster B (Items 1-5): Re-experiencing
@@ -123,7 +130,12 @@ This document provides quick reference tables and scoring guides for the validat
 
 ### AUDIT-C Scoring
 
-*[Scoring table and interpretation to be added]*
+| Score Range (Men) | Score Range (Women) | Risk Level | Clinical Actions |
+|-------------------|---------------------|------------|------------------|
+| 0-3 | 0-2 | Low | Positive feedback, rescreen annually |
+| 4-5 | 3-4 | Hazardous | Brief intervention, reassess in 1-3 months |
+| 6-7 | 5-7 | Harmful | Brief intervention + assessment, consider referral |
+| 8-12 | 8-12 | Severe | Specialty referral, consider higher level of care |
 
 **Key Cutoffs:**
 - Men: ≥4 indicates hazardous drinking
@@ -133,11 +145,11 @@ This document provides quick reference tables and scoring guides for the validat
 
 | Score Range | Severity | Clinical Actions |
 |-------------|----------|------------------|
-| 0 | No problems | *[To be added]* |
-| 1-2 | Low level | *[To be added]* |
-| 3-5 | Moderate level | *[To be added]* |
-| 6-8 | Substantial level | *[To be added]* |
-| 9-10 | Severe level | *[To be added]* |
+| 0 | No problems | Positive feedback, routine monitoring |
+| 1-2 | Low level | Brief counseling, monitor at follow-up |
+| 3-5 | Moderate level | Full assessment, consider treatment referral |
+| 6-8 | Substantial level | Specialty referral recommended |
+| 9-10 | Severe level | Immediate specialty referral, consider higher level of care |
 
 ---
 
@@ -145,13 +157,30 @@ This document provides quick reference tables and scoring guides for the validat
 
 ### ASQ Interpretation
 
-*[Scoring guide and response protocols to be added]*
+**Negative screen:** "No" to all questions 1-4
+
+**Positive screen:** "Yes" to any of questions 1-4
+- Perform brief suicide safety assessment or full C-SSRS
+- Determine acuity, protective factors, and level of care
+
+**Acute positive screen:** "Yes" to question 5 (past week)
+- Immediate safety evaluation and escalation per crisis protocol
 
 **Key Principle:** ANY "yes" answer to questions 1-4 is a POSITIVE SCREEN requiring immediate evaluation
 
 ### C-SSRS Interpretation
 
-*[Detailed scoring and risk stratification to be added]*
+**Important:** C-SSRS does not produce a numeric risk score. Risk level is based on the most severe ideation endorsed and any suicidal behavior.
+
+**Risk stratification (quick guide):**
+- **High risk:** Yes to ideation with intent/plan (Q4/Q5) OR suicidal behavior in past 3 months
+- **Moderate risk:** Active ideation without intent/plan (Q3) and no recent behavior
+- **Low risk:** Passive ideation only (Q1/Q2) and no behavior
+
+**Actions:**
+- **Low:** Safety plan, outpatient follow-up, means safety counseling
+- **Moderate:** Same-day evaluation, increase support, consider higher level of care
+- **High/Imminent:** Emergency evaluation, continuous safety measures
 
 **Risk Levels:**
 - Low: Passive ideation, no intent, no plan, no behavior
@@ -165,11 +194,26 @@ This document provides quick reference tables and scoring guides for the validat
 
 ### Reliable Change Index (RCI)
 
-*[Tables for calculating reliable change for each instrument to be added]*
+RCI helps determine whether symptom change exceeds measurement error.
+
+**Steps:**
+1. Obtain test-retest reliability (r) and baseline SD from the instrument manual or validation study.
+2. Compute `SEdiff = SD * sqrt(2 * (1 - r))`.
+3. Compute `RCI = (post - pre) / SEdiff`.
+4. `|RCI| >= 1.96` indicates reliable change (p < .05).
 
 ### Clinically Significant Change
 
-*[Guidelines for determining clinically meaningful improvement to be added]*
+Clinically significant change usually requires:
+- Reliable change (RCI threshold met), AND
+- Movement from the clinical range into a non-clinical range (or meeting an established cutoff)
+
+**Common change guidance (when RCI inputs are unavailable):**
+| Instrument | Change Guidance | Notes |
+|------------|-----------------|-------|
+| PHQ-9 | ~5-point change | Estimated MCID for monitoring |
+| GAD-7 | ~4-point change | Estimated MCID in some settings |
+| PCL-5 | 5-10 points reliable; 10-20 points meaningful | VA guidance |
 
 ### Outcome Tracking Template
 
@@ -301,12 +345,12 @@ These tools are original checklists and interview guides. They are **not validat
 **AUDIT-C:**
 - World Health Organization adaptation
 - Freely available
-- Source: Various public health sources
+- Source: https://www.ncbi.nlm.nih.gov/books/NBK565474/
 
 **DAST-10:**
 - Harvey A. Skinner
 - Freely available for clinical use
-- Source: Various public health sources
+- Source: https://cde.nida.nih.gov/instrument/fc1cfd58-0a95-4117-83d0-254b70b83f4a
 
 **PHQ-4:**
 - Part of the PHQ family; permitted for reproduction and use without permission
@@ -334,4 +378,20 @@ These tools are original checklists and interview guides. They are **not validat
 
 ---
 
-**Note:** This reference document will be expanded with detailed scoring tables, interpretation guidelines, and clinical action recommendations during the implementation phase of each skill.
+## Scoring and Interpretation References
+
+- PHQ-9 scoring and validation: https://pubmed.ncbi.nlm.nih.gov/11556941/
+- PHQ-2 cutoff and validity: https://pubmed.ncbi.nlm.nih.gov/14583691/
+- PHQ-9 minimal clinically important difference (MCID): https://pubmed.ncbi.nlm.nih.gov/15550799/
+- GAD-7 scoring and cutoffs: https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/410326
+- GAD-2 scoring guidance: https://www.uab.edu/medicine/cds/images/PHQ-9-and-GAD-7-Instructions.pdf
+- GAD-7 MCID: https://pubmed.ncbi.nlm.nih.gov/32090765/
+- PC-PTSD-5 scoring guidance: https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp
+- PCL-5 scoring and change guidance: https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp
+- AUDIT-C cutoffs: https://substanceabusepolicy.biomedcentral.com/articles/10.1186/s13011-019-0227-4
+- DAST-10 severity categories: https://cde.nida.nih.gov/instrument/fc1cfd58-0a95-4117-83d0-254b70b83f4a
+- ASQ screening protocol: https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials
+- C-SSRS risk identification: https://cssrs.columbia.edu/the-columbia-scale-c-ssrs/risk-identification/
+- Reliable change and clinically significant change framework: https://doi.org/10.1037/0022-006X.59.1.12
+
+**Note:** This reference document is a quick-reference summary. Always follow local policies and the full instrument manuals when making clinical decisions.

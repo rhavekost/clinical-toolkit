@@ -19,6 +19,19 @@ This skill provides frameworks and tools for developing evidence-based, collabor
 | **Level of Care Guidance** | Matching symptoms to treatment intensity | Criteria for outpatient, IOP, PHP, residential, inpatient |
 | **Measurement-Based Care** | Using assessments to track progress | Baseline, regular monitoring, treatment adjustment |
 
+## Response Style
+
+- Start with the Quick Reference table below.
+- Ask if the user wants the detailed guidance and examples.
+
+## Quick Reference
+
+| Step | Action | Tools |
+|------|--------|-------|
+| 1 | Review assessment results and severity | PHQ-9, GAD-7, PCL-5, AUDIT-C/DAST-10 |
+| 2 | Select level of care | OP, IOP, PHP, residential, inpatient |
+| 3 | Write SMART goals and monitoring plan | SMART + outcome tracking |
+
 ## Usage
 
 This skill can be invoked when you need to:
@@ -48,7 +61,13 @@ This skill can be invoked when you need to:
 - **T - Time-bound:** Specific timeframe for achievement
 
 **Examples:**
-*[Well-formed and poorly-formed goal examples to be added]*
+**Well-Formed vs. Poorly-Formed Goals:**
+- Poor: "Feel less depressed."
+  Good: "Reduce PHQ-9 from 16 to <10 within 8 weeks through weekly CBT and activity scheduling."
+- Poor: "Stop having panic attacks."
+  Good: "Complete 3 interoceptive exposure exercises per week and reduce GAD-7 by 4 points in 6 weeks."
+- Poor: "Sleep better."
+  Good: "Average 7 hours of sleep on 5 nights/week within 6 weeks, tracked with sleep diary."
 
 **Common Goal Areas:**
 - Symptom reduction
@@ -57,7 +76,18 @@ This skill can be invoked when you need to:
 - Relationship enhancement
 - Recovery maintenance
 
-*[Detailed goal-writing guide with examples across diagnostic categories to be added]*
+**Goal-Writing Guide (Detailed):**
+1. **Start with baseline data** (PHQ-9, GAD-7, PCL-5, AUDIT-C/DAST-10).
+2. **Name the target behavior/outcome** in observable terms.
+3. **Set a time frame** that matches acuity and resources.
+4. **Define measurement** (score change, frequency, duration, or functional milestone).
+5. **Use patient language** and confirm buy-in.
+
+**Examples by Domain:**
+- **Depression:** "Increase daily activity to 5 days/week; PHQ-9 decrease by ~5 points in 4-6 weeks."
+- **Anxiety:** "Practice 10 minutes of relaxation daily; GAD-7 decrease by ~4 points in 4-6 weeks."
+- **Trauma:** "Complete grounding skills plan; PCL-5 decrease by 10-20 points over 8-12 weeks."
+- **Substance Use:** "Reduce drinking days to 1/week; AUDIT-C moves from hazardous to low range in 8 weeks."
 
 ### Level of Care Guidance
 
@@ -105,7 +135,17 @@ This skill can be invoked when you need to:
 - Co-occurring conditions
 - Patient preference (when safe)
 
-*[Detailed level of care criteria and decision trees to be added]*
+**Decision Tree (Quick Guide):**
+1. **Imminent risk** or inability to care for self -> **Inpatient**
+2. **Severe symptoms** with unsafe home environment -> **Residential or PHP**
+3. **Moderate impairment** needing structure -> **IOP**
+4. **Mild to moderate symptoms** with stable supports -> **Outpatient**
+
+**Additional Indicators for Higher Level of Care:**
+- Recent suicide attempt or escalating self-harm
+- Severe functional impairment or inability to complete ADLs
+- Psychosis or severe substance withdrawal risk
+- Failure to improve with appropriate outpatient treatment
 
 ### Measurement-Based Care
 
@@ -140,11 +180,20 @@ This skill can be invoked when you need to:
 - When to step down care
 - When to change approaches
 
-*[Detailed measurement-based care implementation guide to be added]*
+**Implementation Guide (Detailed):**
+- **Select measures** aligned with primary problems (1-3 tools max).
+- **Baseline** at intake and **repeat every 2-4 weeks** or every 4 sessions.
+- **Share results** with the patient and document clinical interpretation.
+- **Adjust treatment** if no meaningful improvement after 4-6 sessions.
+- **Escalate level of care** if scores worsen, risk increases, or function declines.
 
 ## Clinical Interpretation
 
-*[Guidelines for translating assessment into treatment planning to be added]*
+**Translating Assessment to Plan (Examples):**
+- **Mild severity:** Low-intensity interventions, psychoeducation, brief therapy.
+- **Moderate severity:** Structured therapy (CBT/DBT), weekly visits, consider meds.
+- **Severe or complex:** Combined treatment, close monitoring, consider higher level of care.
+- **Positive safety screens:** Immediate safety plan and risk-focused interventions.
 
 **Treatment Plan Development Process:**
 1. Review assessment findings
@@ -180,7 +229,12 @@ This skill can be invoked when you need to:
 - Lack of progress over reasonable timeframe
 - Patient request or preference change
 
-*[Detailed safety protocols to be added]*
+**Safety Protocols (Expanded):**
+- Use ASQ or C-SSRS for any positive PHQ-9 Item 9 or clinical concern.
+- Document intent, plan, means, protective factors, and prior behaviors.
+- Include a written safety plan for any elevated risk.
+- Arrange same-day evaluation for moderate to high risk.
+- For imminent risk, activate emergency services and do not leave patient alone.
 
 ## Limitations & Considerations
 
@@ -207,7 +261,11 @@ This skill can be invoked when you need to:
 - Social determinants limiting goal achievement
 - Balancing structure with flexibility
 
-*[Additional limitations and considerations to be added]*
+**Additional Limitations and Considerations:**
+- Resource constraints may limit ideal level-of-care placement.
+- Insurance authorization may require justification and measurable goals.
+- Patient readiness and preference affect pacing and intervention selection.
+- Cultural factors influence goal relevance and engagement.
 
 ## References
 
@@ -224,10 +282,15 @@ This skill can be invoked when you need to:
 - Scott K, Lewis CC. Using measurement-based care to enhance any treatment. Cogn Behav Pract. 2015;22(1):49-59.
 - Fortney JC, Unützer J, Wrenn G, et al. A tipping point for measurement-based care. Psychiatr Serv. 2017;68(2):179-188.
 
-*[Additional references and clinical guidelines to be added]*
+**Additional References:**
+- Bovend'Eerdt et al. SMART goals in rehab (PubMed): https://pubmed.ncbi.nlm.nih.gov/19666905/
+- Measurement-based care overview (PMC): https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5250470/
+- Measurement-based care tipping point (PubMed): https://pubmed.ncbi.nlm.nih.gov/28199986/
+- LOCUS overview (AACP): https://www.communitypsychiatry.org/what-we-do/locus
+- VA/DoD CPG for Suicide Risk (2024): https://www.healthquality.va.gov/guidelines/MH/srb/VADOD-CPG-Suicide-Risk-Full-CPG-2024_Final_508.pdf
 
 ---
 
-**Status:** 🚧 Stub - Implementation pending
+**Status:** ✅ Implemented
 **Priority:** MEDIUM - Phase 3
-**Last Updated:** 2026-02-01
+**Last Updated:** 2026-02-03

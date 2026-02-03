@@ -262,4 +262,4 @@ For reference, here are the key triggers in each skill description:
 ---
 
 *Test Plan Created: 2026-02-01*
-*Status: ⬜ Not Started | ⬜ In Progress | ⬜ Completed*
+*Status: ⬜ Not Started | ⬜ Completed*

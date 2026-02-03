@@ -17,6 +17,19 @@ This skill provides templates and guidance for standard clinical documentation f
 | **Progress Notes** | Session summaries | Outpatient/residential | Varies by format (DAP, BIRP, GIRP) |
 | **Treatment Plan Format** | Treatment planning documentation | All settings | Goals, objectives, interventions, timeline |
 
+## Response Style
+
+- Start with the relevant quick-reference template.
+- Ask if the user wants the detailed examples and expanded guidance.
+
+## Quick Reference
+
+| Need | Use |
+|------|-----|
+| Session note | SOAP or DAP/BIRP/GIRP |
+| Treatment plan | Treatment Plan Template |
+| Safety issue | Safety Documentation Protocols |
+
 ## Usage
 
 This skill can be invoked when you need to:
@@ -65,7 +78,19 @@ This skill can be invoked when you need to:
 - Any changes to treatment plan
 - Safety planning if applicable
 
-*[Detailed SOAP note writing guide with examples to be added]*
+**SOAP Writing Guide (Quick):**
+- **S:** Brief symptom summary in patient's words, changes since last session, stressors
+- **O:** Mental status exam, observed behavior, validated scores (PHQ-9, GAD-7, etc.)
+- **A:** Clinical impression, severity, risk assessment, progress toward goals
+- **P:** Interventions delivered, homework, follow-up timing, safety plan if needed
+
+**Example (abbreviated SOAP):**
+```
+S: "I've been less anxious this week but still waking at 3am."
+O: MSE WNL, GAD-7 = 11 (moderate), PHQ-9 = 8 (mild)
+A: Moderate anxiety with partial response; no SI/HI; risk low
+P: CBT worry time, sleep hygiene plan, follow-up in 2 weeks
+```
 
 ### Progress Note Formats
 
@@ -86,7 +111,30 @@ This skill can be invoked when you need to:
 - **R - Response:** Client's engagement and response
 - **P - Plan:** Next steps and homework
 
-*[Detailed examples of each format to be added]*
+**Brief Examples:**
+
+**DAP Example:**
+```
+D: Reports panic episodes 2x this week; sleep 5-6 hours; GAD-7=13
+A: Moderate anxiety with persistent impairment; risk low
+P: Continue CBT, add interoceptive exposure; follow-up in 1 week
+```
+
+**BIRP Example:**
+```
+B: Tearful, low energy, limited eye contact; PHQ-9=16
+I: Behavioral activation and cognitive restructuring
+R: Engaged, identified 2 pleasant activities
+P: Activity schedule; check-in next week
+```
+
+**GIRP Example:**
+```
+G: Goal 1 - reduce avoidance behaviors
+I: Exposure hierarchy planning
+R: Patient agreed to first two steps
+P: Practice exposure twice before next visit
+```
 
 ### Treatment Plan Documentation
 
@@ -124,11 +172,49 @@ This skill can be invoked when you need to:
    - When plan will be reviewed/updated
    - Discharge criteria
 
-*[Detailed treatment plan template and examples to be added]*
+**Treatment Plan Template (Concise):**
+```
+PROBLEM:
+DIAGNOSIS:
+
+GOAL:
+OBJECTIVE 1:
+  Intervention:
+  Responsible:
+  Target Date:
+OBJECTIVE 2:
+  Intervention:
+  Responsible:
+  Target Date:
+
+MEASUREMENT:
+REVIEW FREQUENCY:
+```
+
+**Example (Condensed):**
+```
+PROBLEM: Depressive symptoms with functional impairment
+DIAGNOSIS: Major Depressive Disorder, Moderate
+GOAL: PHQ-9 < 5 within 12 weeks
+OBJECTIVE 1: 3 pleasurable activities/week by week 4
+  Intervention: Behavioral activation, weekly therapy
+  Responsible: Therapist
+  Target Date: [Date]
+MEASUREMENT: PHQ-9 every 2-4 weeks
+REVIEW FREQUENCY: Monthly
+```
 
 ## Documentation Best Practices
 
-*[Comprehensive best practices guide to be added]*
+**Best Practices (Expanded):**
+- Use objective, behaviorally anchored language
+- Document clinical reasoning for key decisions
+- Include patient agreement and response to interventions
+- Record safety planning steps and resources provided
+- Avoid copy-forward without updating details
+- Maintain clear separation of facts vs. impressions
+- Follow organization and payer documentation rules
+See `docs/references/documentation-standards.md` for extended guidance.
 
 **General Principles:**
 - Write clearly and concisely
@@ -191,7 +277,12 @@ This skill can be invoked when you need to:
 - Report date, time, agency
 - Case number if available
 
-*[Detailed safety documentation protocols to be added]*
+**Safety Documentation Protocols (Expanded):**
+- Record ideation, intent, plan, means, and recent behaviors
+- Document protective factors and reasons for living
+- Note consultations, supervision, or collateral contacts
+- Include level-of-care decision rationale
+- Document crisis resources provided and patient response
 
 ## Limitations & Considerations
 
@@ -229,7 +320,11 @@ This skill can be invoked when you need to:
 - Understand copy-forward risks
 - Regular review of historical notes for accuracy
 
-*[Additional limitations and considerations to be added]*
+**Additional Limitations and Considerations:**
+- Documentation requirements vary by jurisdiction and payer
+- EHR templates can miss nuance; customize for the case
+- Notes can be subpoenaed; write defensibly
+- Balance thoroughness with privacy and minimum necessary principle
 
 ## References
 
@@ -245,13 +340,15 @@ This skill can be invoked when you need to:
 **SOAP Note Format:**
 - Weed LL. Medical records that guide and teach. N Engl J Med. 1968;278(11):593-600.
 
-*[Additional references and clinical guidelines to be added]*
+**Additional References:**
+- APA Record Keeping Guidelines (2007): https://illinoispsychology.org/wp-content/uploads/2015/06/Record-Keeping-Guidelines.pdf
+- HIPAA Privacy Rule (HHS): https://www.hhs.gov/hipaa/for-professionals/privacy/index.html
 
 ---
 
-**Status:** 🚧 Stub - Implementation pending
+**Status:** ✅ Implemented
 **Priority:** LOW - Phase 3
-**Last Updated:** 2026-02-01
+**Last Updated:** 2026-02-03
 """
 
 # Optional parameters
