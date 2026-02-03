@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "clinical-toolkit",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Agent skill framework for clinical mental health screening, assessment interpretation, and documentation support",
     "author": "rhavekost",
     "license": "MIT",
