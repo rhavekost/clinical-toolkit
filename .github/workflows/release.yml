@@ -44,8 +44,7 @@ jobs:
       - name: Update manifest version
         run: |
           VERSION="${{ github.event.inputs.version }}"
-          SKILL_COUNT=$(node -p "require('./manifest/manifest.json').skills.length")
-          node -e "const fs=require('fs');const path='manifest/manifest.json';const m=JSON.parse(fs.readFileSync(path,'utf8'));m.meta.version=process.env.VERSION;fs.writeFileSync(path, JSON.stringify(m, null, 2)+'\\n');"
+          node -e "const fs=require('fs');const path='manifest/manifest.json';const m=JSON.parse(fs.readFileSync(path,'utf8'));m.meta.version='${VERSION}';fs.writeFileSync(path, JSON.stringify(m, null, 2)+'\\n');"
           echo "Updated manifest/manifest.json to version $VERSION"
           cat manifest/manifest.json | grep version
 
@@ -75,6 +74,7 @@ jobs:
         id: changelog
         run: |
           VERSION="${{ github.event.inputs.version }}"
+          SKILL_COUNT=$(node -p "require('./manifest/manifest.json').skills.length")
 
           # Get the last tag, or use initial commit if no tags
           LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || git rev-list --max-parents=0 HEAD)
