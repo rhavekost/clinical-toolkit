@@ -1,7 +1,7 @@
 # Baseline Discovery Test Plan - Claude Code
 
-**Test Date:** 2026-02-01 (Post Phase 1, Task 1.1-1.3 completion)
-**Version:** 0.2.0
+**Test Date:** 2026-02-03 (Post Phase 1, Task 1.1-1.3 completion)
+**Version:** 2.0.0
 **Tester:** [To be completed by user]
 
 ---
