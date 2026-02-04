@@ -1,0 +1,19 @@
+{
+  "id": "geriatrics-tools",
+  "name": "Geriatrics Tools",
+  "description": "Use when assessing medication appropriateness in older adults or screening for delirium or cognitive impairment. Includes STOPP/START v3, 4AT delirium screen, and Mini-Cog.",
+  "category": "clinical-calculators",
+  "tags": [
+    "geriatrics",
+    "stopp-start",
+    "medication-review",
+    "delirium",
+    "4at",
+    "mini-cog",
+    "cognition",
+    "older-adults",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Cardiovascular Risk Tools",
+  "description": "Use when estimating cardiovascular risk, stroke risk in atrial fibrillation, bleeding risk, pneumonia severity (CURB-65), or venous thromboembolism probability (Wells DVT/PE). Includes ASCVD PCE, CHA2DS2-VASc, HAS-BLED, Framingham, HEART, CURB-65, and Wells scores.",
+  "instructions": "# Cardiovascular Risk and Decision Tools\n\n## Description\n\nThis skill provides structured calculation guidance for commonly used cardiovascular risk scores and related decision tools. It supports accurate input collection, calculation, interpretation, and safety caveats.\n\n## Quick Reference\n\n| Tool | Use |\n|------|-----|\n| ASCVD Pooled Cohort Equations | 10-year ASCVD risk estimation |\n| CHA2DS2-VASc | Stroke risk in atrial fibrillation |\n| HAS-BLED | Major bleeding risk in anticoagulated patients |\n| Framingham Risk Score | 10-year cardiovascular risk (general CVD) |\n| HEART Score | Chest pain risk stratification |\n| CURB-65 | Pneumonia severity and disposition support |\n| Wells (DVT) | DVT pretest probability |\n| Wells (PE) | Pulmonary embolism pretest probability |\n\n## Interactive Mode (Lightweight)\n\n1. Confirm clinical context and intended tool.\n2. Collect required inputs with units and timing.\n3. Validate inputs and resolve missing data.\n4. Calculate and present results with interpretation.\n5. Provide safety caveats and limitations.\n\n## Calculators\n\n- [ASCVD Pooled Cohort Equations](assets/ascvd-pce.md)\n- [CHA2DS2-VASc](assets/cha2ds2-vasc.md)\n- [HAS-BLED](assets/has-bled.md)\n- [Framingham Risk Score](assets/framingham-risk.md)\n- [HEART Score](assets/heart-score.md)\n- [CURB-65](assets/curb-65.md)\n- [Wells Score (DVT)](assets/wells-dvt.md)\n- [Wells Score (PE)](assets/wells-pe.md)\n\n## Safety and Limitations\n\n- Support tool only; not diagnostic or prescriptive.\n- Use local policies and clinical judgment.\n- Many tools have population limits and invalid ranges.\n\n## References\n\nSee: [references/cardiovascular-risk-sources.md](references/cardiovascular-risk-sources.md)\n",
+  "conversation_starters": [
+    "Help me with cardiovascular risk tools.",
+    "Guide me through cardiovascular risk tools."
+  ],
+  "knowledge_files": [],
+  "tags": [
+    "ascvd",
+    "pce",
+    "cardiovascular-risk",
+    "cha2ds2-vasc",
+    "has-bled",
+    "framingham",
+    "heart-score",
+    "curb-65",
+    "wells",
+    "dvt",
+    "pe",
+    "stroke-risk",
+    "bleeding-risk",
+    "clinical"
+  ],
+  "category": "clinical-calculators"
+}

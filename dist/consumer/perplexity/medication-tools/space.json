@@ -1,0 +1,19 @@
+{
+  "name": "Medication Tools",
+  "description": "Use when calculating medication conversions or safety metrics. Includes corticosteroid equivalencies, QTc correction formulas, opioid equianalgesic conversions, and warfarin dosing adjustment guidance.",
+  "instructions": "# Medication Tools\n\n## Description\n\nThis skill provides structured guidance for common medication-related calculations used in clinical practice. It supports accurate input collection, calculation, interpretation, and safety caveats.\n\n## Quick Reference\n\n| Tool | Use |\n|------|-----|\n| Corticosteroid Conversion | Convert between steroid potencies |\n| QTc Correction Formulas | Correct QT interval for heart rate |\n| Opioid Equianalgesic Conversion | Estimate equivalent opioid doses |\n| Warfarin Dosing Adjustment | Support INR-based weekly dose adjustments |\n\n## Interactive Mode (Lightweight)\n\n1. Confirm clinical context and intended tool.\n2. Collect required inputs with units and timing.\n3. Validate inputs and resolve missing data.\n4. Calculate and present results with interpretation.\n5. Provide safety caveats and limitations.\n\n## Tools\n\n- [Corticosteroid Conversion](assets/steroid-conversion.md)\n- [QTc Correction Formulas](assets/qtc-corrections.md)\n- [Opioid Equianalgesic Conversion](assets/opioid-equianalgesic.md)\n- [Warfarin Dosing Adjustment](assets/warfarin-dosing.md)\n\n## Safety and Limitations\n\n- Support tool only; not diagnostic or prescriptive.\n- Use local policies and clinical judgment.\n- Many conversions require conservative adjustments and monitoring.\n\n## References\n\nSee: [references/medication-tools-sources.md](references/medication-tools-sources.md)\n",
+  "tags": [
+    "medication",
+    "steroids",
+    "corticosteroid",
+    "qtc",
+    "ecg",
+    "opioid",
+    "equianalgesic",
+    "warfarin",
+    "inr",
+    "anticoagulation",
+    "clinical"
+  ],
+  "category": "clinical-calculators"
+}

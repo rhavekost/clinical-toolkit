@@ -8,7 +8,7 @@
     "copilot-consumer",
     "instruction-pack"
   ],
-  "skillCount": 18,
+  "skillCount": 26,
   "skills": [
     {
       "id": "depression-screening",
@@ -105,6 +105,54 @@
       "name": "Opioid MME Calculator",
       "description": "Use when calculating daily morphine milligram equivalents (MME) to assess opioid dose risk, document totals, or support taper planning. Based on CDC conversion factors and safety cautions.",
       "category": "clinical-workflow"
+    },
+    {
+      "id": "renal-metabolic",
+      "name": "Renal and Metabolic Calculators",
+      "description": "Use when calculating renal function estimates, electrolyte corrections, acid-base physiology metrics, lipid estimates, or BMI. Includes CKD-EPI 2021, Cockcroft-Gault, anion gap, Winters formula, A-a gradient, Friedewald LDL, and related tools.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "cardiovascular-risk",
+      "name": "Cardiovascular Risk Tools",
+      "description": "Use when estimating cardiovascular risk, stroke risk in atrial fibrillation, bleeding risk, pneumonia severity (CURB-65), or venous thromboembolism probability (Wells DVT/PE). Includes ASCVD PCE, CHA2DS2-VASc, HAS-BLED, Framingham, HEART, CURB-65, and Wells scores.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "emergency-decision-rules",
+      "name": "Emergency Decision Rules",
+      "description": "Use when applying validated ED decision rules to reduce unnecessary imaging or testing. Includes Ottawa ankle/knee rules, Canadian C-Spine rule, and the PERC rule.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "medication-tools",
+      "name": "Medication Tools",
+      "description": "Use when calculating medication conversions or safety metrics. Includes corticosteroid equivalencies, QTc correction formulas, opioid equianalgesic conversions, and warfarin dosing adjustment guidance.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "geriatrics-tools",
+      "name": "Geriatrics Tools",
+      "description": "Use when assessing medication appropriateness in older adults or screening for delirium or cognitive impairment. Includes STOPP/START v3, 4AT delirium screen, and Mini-Cog.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "pediatrics-calculators",
+      "name": "Pediatrics Calculators",
+      "description": "Use when applying pediatric decision rules or growth/weight-based calculations. Includes PECARN head injury rule, CDC/WHO growth standards, weight-based dosing rules, Holliday-Segar maintenance fluids, and Parkland burn formula.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "critical-care-severity",
+      "name": "Critical Care Severity",
+      "description": "Use when assessing critical illness severity or neurologic status. Includes GCS, SOFA/qSOFA, MELD, NIHSS, and APACHE IV overview.",
+      "category": "clinical-calculators"
+    },
+    {
+      "id": "primary-care-general",
+      "name": "Primary Care General Tools",
+      "description": "Use when calculating general primary care formulas and decision rules. Includes TDEE/BMR (Mifflin-St Jeor, Harris-Benedict), Centor/McIsaac, and Naegele's rule.",
+      "category": "clinical-calculators"
     },
     {
       "id": "distress-screening",

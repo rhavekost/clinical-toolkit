@@ -1,0 +1,17 @@
+{
+  "name": "Geriatrics Tools",
+  "description": "Use when assessing medication appropriateness in older adults or screening for delirium or cognitive impairment. Includes STOPP/START v3, 4AT delirium screen, and Mini-Cog.",
+  "instructions": "# Geriatrics Tools\n\n## Description\n\nThis skill provides structured guidance for key geriatric tools: medication appropriateness (STOPP/START v3), delirium screening (4AT), and brief cognitive screening (Mini-Cog). It supports accurate input collection, interpretation, and safety caveats.\n\n## Quick Reference\n\n| Tool | Use |\n|------|-----|\n| STOPP/START v3 | Identify potentially inappropriate meds and omissions |\n| 4AT | Rapid delirium screening |\n| Mini-Cog | Brief cognitive screening |\n\n## Interactive Mode (Lightweight)\n\n1. Confirm clinical context and intended tool.\n2. Collect required inputs and findings.\n3. Validate inclusion and exclusion criteria.\n4. Apply tool and present results with interpretation.\n5. Provide safety caveats and next-step guidance.\n\n## Tools\n\n- [STOPP/START v3](assets/stopp-start-v3.md)\n- [4AT Delirium Screen](assets/4at-delirium.md)\n- [Mini-Cog](assets/mini-cog.md)\n\n## Safety and Limitations\n\n- Support tool only; not diagnostic or prescriptive.\n- Use local policies and clinical judgment.\n- Screening tools do not replace comprehensive assessment.\n\n## References\n\nSee: [references/geriatrics-tools-sources.md](references/geriatrics-tools-sources.md)\n",
+  "tags": [
+    "geriatrics",
+    "stopp-start",
+    "medication-review",
+    "delirium",
+    "4at",
+    "mini-cog",
+    "cognition",
+    "older-adults",
+    "clinical"
+  ],
+  "category": "clinical-calculators"
+}

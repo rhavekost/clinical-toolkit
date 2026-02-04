@@ -1,0 +1,24 @@
+{
+  "id": "cardiovascular-risk",
+  "name": "Cardiovascular Risk Tools",
+  "description": "Use when estimating cardiovascular risk, stroke risk in atrial fibrillation, bleeding risk, pneumonia severity (CURB-65), or venous thromboembolism probability (Wells DVT/PE). Includes ASCVD PCE, CHA2DS2-VASc, HAS-BLED, Framingham, HEART, CURB-65, and Wells scores.",
+  "category": "clinical-calculators",
+  "tags": [
+    "ascvd",
+    "pce",
+    "cardiovascular-risk",
+    "cha2ds2-vasc",
+    "has-bled",
+    "framingham",
+    "heart-score",
+    "curb-65",
+    "wells",
+    "dvt",
+    "pe",
+    "stroke-risk",
+    "bleeding-risk",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

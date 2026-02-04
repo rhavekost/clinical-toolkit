@@ -374,6 +374,208 @@
       ]
     },
     {
+      "id": "renal-metabolic",
+      "name": "Renal and Metabolic Calculators",
+      "description": "Use when calculating renal function estimates, electrolyte corrections, acid-base physiology metrics, lipid estimates, or BMI. Includes CKD-EPI 2021, Cockcroft-Gault, anion gap, Winters formula, A-a gradient, Friedewald LDL, and related tools.",
+      "category": "clinical-calculators",
+      "tags": [
+        "renal",
+        "metabolic",
+        "egfr",
+        "ckd-epi",
+        "creatinine",
+        "cystatin-c",
+        "cockcroft-gault",
+        "anion-gap",
+        "acid-base",
+        "winters-formula",
+        "a-a-gradient",
+        "friedewald",
+        "ldl",
+        "bmi",
+        "electrolytes",
+        "clinical"
+      ],
+      "path": "renal-metabolic/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "cardiovascular-risk",
+      "name": "Cardiovascular Risk Tools",
+      "description": "Use when estimating cardiovascular risk, stroke risk in atrial fibrillation, bleeding risk, pneumonia severity (CURB-65), or venous thromboembolism probability (Wells DVT/PE). Includes ASCVD PCE, CHA2DS2-VASc, HAS-BLED, Framingham, HEART, CURB-65, and Wells scores.",
+      "category": "clinical-calculators",
+      "tags": [
+        "ascvd",
+        "pce",
+        "cardiovascular-risk",
+        "cha2ds2-vasc",
+        "has-bled",
+        "framingham",
+        "heart-score",
+        "curb-65",
+        "wells",
+        "dvt",
+        "pe",
+        "stroke-risk",
+        "bleeding-risk",
+        "clinical"
+      ],
+      "path": "cardiovascular-risk/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "emergency-decision-rules",
+      "name": "Emergency Decision Rules",
+      "description": "Use when applying validated ED decision rules to reduce unnecessary imaging or testing. Includes Ottawa ankle/knee rules, Canadian C-Spine rule, and the PERC rule.",
+      "category": "clinical-calculators",
+      "tags": [
+        "emergency",
+        "decision-rules",
+        "ottawa-ankle",
+        "ottawa-knee",
+        "canadian-cspine",
+        "perc",
+        "imaging",
+        "pe",
+        "trauma",
+        "clinical"
+      ],
+      "path": "emergency-decision-rules/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "medication-tools",
+      "name": "Medication Tools",
+      "description": "Use when calculating medication conversions or safety metrics. Includes corticosteroid equivalencies, QTc correction formulas, opioid equianalgesic conversions, and warfarin dosing adjustment guidance.",
+      "category": "clinical-calculators",
+      "tags": [
+        "medication",
+        "steroids",
+        "corticosteroid",
+        "qtc",
+        "ecg",
+        "opioid",
+        "equianalgesic",
+        "warfarin",
+        "inr",
+        "anticoagulation",
+        "clinical"
+      ],
+      "path": "medication-tools/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "geriatrics-tools",
+      "name": "Geriatrics Tools",
+      "description": "Use when assessing medication appropriateness in older adults or screening for delirium or cognitive impairment. Includes STOPP/START v3, 4AT delirium screen, and Mini-Cog.",
+      "category": "clinical-calculators",
+      "tags": [
+        "geriatrics",
+        "stopp-start",
+        "medication-review",
+        "delirium",
+        "4at",
+        "mini-cog",
+        "cognition",
+        "older-adults",
+        "clinical"
+      ],
+      "path": "geriatrics-tools/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "pediatrics-calculators",
+      "name": "Pediatrics Calculators",
+      "description": "Use when applying pediatric decision rules or growth/weight-based calculations. Includes PECARN head injury rule, CDC/WHO growth standards, weight-based dosing rules, Holliday-Segar maintenance fluids, and Parkland burn formula.",
+      "category": "clinical-calculators",
+      "tags": [
+        "pediatrics",
+        "pecarn",
+        "growth-charts",
+        "cdc",
+        "who",
+        "weight-based-dosing",
+        "holliday-segar",
+        "parkland",
+        "burns",
+        "clinical"
+      ],
+      "path": "pediatrics-calculators/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "critical-care-severity",
+      "name": "Critical Care Severity",
+      "description": "Use when assessing critical illness severity or neurologic status. Includes GCS, SOFA/qSOFA, MELD, NIHSS, and APACHE IV overview.",
+      "category": "clinical-calculators",
+      "tags": [
+        "critical-care",
+        "severity",
+        "gcs",
+        "sofa",
+        "qsofa",
+        "meld",
+        "nihss",
+        "apache-iv",
+        "icu",
+        "clinical"
+      ],
+      "path": "critical-care-severity/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
+      "id": "primary-care-general",
+      "name": "Primary Care General Tools",
+      "description": "Use when calculating general primary care formulas and decision rules. Includes TDEE/BMR (Mifflin-St Jeor, Harris-Benedict), Centor/McIsaac, and Naegele's rule.",
+      "category": "clinical-calculators",
+      "tags": [
+        "primary-care",
+        "bmr",
+        "tdee",
+        "mifflin-st-jeor",
+        "harris-benedict",
+        "centor",
+        "mcisaac",
+        "naegele",
+        "pregnancy",
+        "clinical"
+      ],
+      "path": "primary-care-general/",
+      "files": [
+        "pack.json",
+        "instructions.md",
+        "knowledge/"
+      ]
+    },
+    {
       "id": "distress-screening",
       "name": "Distress Screening",
       "description": "Use when screening for nonspecific psychological distress or tracking symptom burden over time. Provides K6 and K10 scales with scoring and interpretation guidance.",

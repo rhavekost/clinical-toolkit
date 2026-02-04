@@ -1,0 +1,20 @@
+{
+  "id": "primary-care-general",
+  "name": "Primary Care General Tools",
+  "description": "Use when calculating general primary care formulas and decision rules. Includes TDEE/BMR (Mifflin-St Jeor, Harris-Benedict), Centor/McIsaac, and Naegele's rule.",
+  "category": "clinical-calculators",
+  "tags": [
+    "primary-care",
+    "bmr",
+    "tdee",
+    "mifflin-st-jeor",
+    "harris-benedict",
+    "centor",
+    "mcisaac",
+    "naegele",
+    "pregnancy",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

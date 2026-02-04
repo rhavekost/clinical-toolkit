@@ -1,0 +1,22 @@
+{
+  "name": "Primary Care General Tools",
+  "description": "Use when calculating general primary care formulas and decision rules. Includes TDEE/BMR (Mifflin-St Jeor, Harris-Benedict), Centor/McIsaac, and Naegele's rule.",
+  "instructions": "# Primary Care General Tools\n\n## Description\n\nThis skill provides structured guidance for common primary care formulas and decision rules, including energy expenditure estimates, strep pharyngitis scoring, and pregnancy dating.\n\n## Quick Reference\n\n| Tool | Use |\n|------|-----|\n| Mifflin-St Jeor | Estimate resting metabolic rate (BMR) |\n| Harris-Benedict | Historical BMR formula |\n| Centor Score | Strep pharyngitis risk (adult) |\n| McIsaac Score | Modified Centor with age adjustment |\n| Naegele's Rule | Estimate due date from LMP |\n\n## Interactive Mode (Lightweight)\n\n1. Confirm clinical context and intended tool.\n2. Collect required inputs with units and timing.\n3. Validate inclusion and exclusion criteria.\n4. Apply tool and present results with interpretation.\n5. Provide safety caveats and limitations.\n\n## Tools\n\n- [Mifflin-St Jeor](assets/mifflin-st-jeor.md)\n- [Harris-Benedict](assets/harris-benedict.md)\n- [Centor Score](assets/centor-score.md)\n- [McIsaac Score](assets/mcisaac-score.md)\n- [Naegele's Rule](assets/naegele-rule.md)\n\n## Safety and Limitations\n\n- Support tool only; not diagnostic or prescriptive.\n- Use local policies and clinical judgment.\n- Many tools are validated for specific populations only.\n\n## References\n\nSee: [references/primary-care-sources.md](references/primary-care-sources.md)\n",
+  "suggested_prompts": [
+    "Use Primary Care General Tools for this scenario.",
+    "Walk me through Primary Care General Tools."
+  ],
+  "tags": [
+    "primary-care",
+    "bmr",
+    "tdee",
+    "mifflin-st-jeor",
+    "harris-benedict",
+    "centor",
+    "mcisaac",
+    "naegele",
+    "pregnancy",
+    "clinical"
+  ],
+  "category": "clinical-calculators"
+}

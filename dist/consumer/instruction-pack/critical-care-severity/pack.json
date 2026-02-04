@@ -1,0 +1,20 @@
+{
+  "id": "critical-care-severity",
+  "name": "Critical Care Severity",
+  "description": "Use when assessing critical illness severity or neurologic status. Includes GCS, SOFA/qSOFA, MELD, NIHSS, and APACHE IV overview.",
+  "category": "clinical-calculators",
+  "tags": [
+    "critical-care",
+    "severity",
+    "gcs",
+    "sofa",
+    "qsofa",
+    "meld",
+    "nihss",
+    "apache-iv",
+    "icu",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "medication-tools",
+  "name": "Medication Tools",
+  "description": "Use when calculating medication conversions or safety metrics. Includes corticosteroid equivalencies, QTc correction formulas, opioid equianalgesic conversions, and warfarin dosing adjustment guidance.",
+  "category": "clinical-calculators",
+  "tags": [
+    "medication",
+    "steroids",
+    "corticosteroid",
+    "qtc",
+    "ecg",
+    "opioid",
+    "equianalgesic",
+    "warfarin",
+    "inr",
+    "anticoagulation",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

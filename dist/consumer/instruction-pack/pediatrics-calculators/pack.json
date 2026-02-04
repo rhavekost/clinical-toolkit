@@ -1,0 +1,20 @@
+{
+  "id": "pediatrics-calculators",
+  "name": "Pediatrics Calculators",
+  "description": "Use when applying pediatric decision rules or growth/weight-based calculations. Includes PECARN head injury rule, CDC/WHO growth standards, weight-based dosing rules, Holliday-Segar maintenance fluids, and Parkland burn formula.",
+  "category": "clinical-calculators",
+  "tags": [
+    "pediatrics",
+    "pecarn",
+    "growth-charts",
+    "cdc",
+    "who",
+    "weight-based-dosing",
+    "holliday-segar",
+    "parkland",
+    "burns",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "emergency-decision-rules",
+  "name": "Emergency Decision Rules",
+  "description": "Use when applying validated ED decision rules to reduce unnecessary imaging or testing. Includes Ottawa ankle/knee rules, Canadian C-Spine rule, and the PERC rule.",
+  "category": "clinical-calculators",
+  "tags": [
+    "emergency",
+    "decision-rules",
+    "ottawa-ankle",
+    "ottawa-knee",
+    "canadian-cspine",
+    "perc",
+    "imaging",
+    "pe",
+    "trauma",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}

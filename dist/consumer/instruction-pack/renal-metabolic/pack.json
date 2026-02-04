@@ -1,0 +1,26 @@
+{
+  "id": "renal-metabolic",
+  "name": "Renal and Metabolic Calculators",
+  "description": "Use when calculating renal function estimates, electrolyte corrections, acid-base physiology metrics, lipid estimates, or BMI. Includes CKD-EPI 2021, Cockcroft-Gault, anion gap, Winters formula, A-a gradient, Friedewald LDL, and related tools.",
+  "category": "clinical-calculators",
+  "tags": [
+    "renal",
+    "metabolic",
+    "egfr",
+    "ckd-epi",
+    "creatinine",
+    "cystatin-c",
+    "cockcroft-gault",
+    "anion-gap",
+    "acid-base",
+    "winters-formula",
+    "a-a-gradient",
+    "friedewald",
+    "ldl",
+    "bmi",
+    "electrolytes",
+    "clinical"
+  ],
+  "instructionsFile": "instructions.md",
+  "knowledgeDir": "knowledge"
+}
