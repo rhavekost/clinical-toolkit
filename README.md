@@ -1,6 +1,6 @@
 # Clinical Toolkit
 
-**Version:** 2.0.2
+**Version:** 2.5.0
 **Status:** ✅ Production Ready - All Core Features Implemented
 **License:** MIT
 
@@ -71,6 +71,19 @@ The Clinical Toolkit provides structured frameworks for common clinical tasks in
 | **intake-interview** | HEADSS, Biopsychosocial, Safety Assessment | Conducting comprehensive intake evaluations | ✅ Implemented |
 | **treatment-planning** | SMART Goals, Level of Care, Measurement-Based Care | Developing treatment plans, determining care level | ✅ Implemented |
 | **documentation** | SOAP Notes, Progress Notes, Treatment Plans | Writing clinical documentation | ✅ Implemented |
+
+### Clinical Calculator Skills
+
+| Skill | Tools | Use When | Status |
+|-------|-------|----------|--------|
+| **renal-metabolic** | CKD-EPI 2021, Cockcroft-Gault, anion gap, Winters, A-a gradient, Friedewald LDL, BMI | Renal function estimates, electrolyte corrections, acid-base, lipid estimates | ✅ Implemented |
+| **cardiovascular-risk** | ASCVD PCE, CHA2DS2-VASc, HAS-BLED, Framingham, HEART, CURB-65, Wells DVT/PE | Cardiovascular risk, AF stroke/bleeding risk, chest pain and VTE decision tools | ✅ Implemented |
+| **emergency-decision-rules** | Ottawa ankle/knee, Canadian C-Spine, PERC | ED imaging/testing decision support | ✅ Implemented |
+| **medication-tools** | Steroid conversion, QTc correction, opioid equianalgesic conversion, warfarin adjustment | Medication conversion and safety calculations | ✅ Implemented |
+| **geriatrics-tools** | STOPP/START v3, 4AT, Mini-Cog | Medication appropriateness and cognitive/delirium screening | ✅ Implemented |
+| **pediatrics-calculators** | PECARN, CDC/WHO growth charts, weight-based dosing, Holliday-Segar, Parkland | Pediatric decision rules and growth/fluid/burn calculations | ✅ Implemented |
+| **critical-care-severity** | GCS, SOFA/qSOFA, MELD, NIHSS, APACHE IV | Critical illness severity and neurologic assessments | ✅ Implemented |
+| **primary-care-general** | Mifflin-St Jeor, Harris-Benedict, Centor/McIsaac, Naegele | Primary care formulas and decision rules | ✅ Implemented |
 
 ---
 
@@ -546,4 +559,4 @@ Special recognition to:
 ---
 
 *Last Updated: 2026-02-03*
-*Version 2.0.2 - Production Ready*
+*Version 2.5.0 - Production Ready*
